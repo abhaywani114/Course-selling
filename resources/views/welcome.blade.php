@@ -1,6 +1,7 @@
-@extends('layout\layout')
+@extends('layout.layout')
 @section('content')
 <style>
+   /*//hi*/
    .intro-section {
    height: 100vh;
    min-height: 900px;
