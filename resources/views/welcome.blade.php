@@ -1,4 +1,4 @@
-@extends('layout\layout')
+@extends('layout.layout')
 @section('content')
 <style>
    .intro-section {
