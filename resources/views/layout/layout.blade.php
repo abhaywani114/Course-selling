@@ -72,6 +72,7 @@
                 width: 300px;
                 padding: 0px;
                 object-fit: cover;
+                margin-left: -20px;
             }
 
             @media only screen and (max-width: 920px) {
@@ -84,7 +85,7 @@
                 }
                 
                 .nab_bar_logo {
-                    margin-left: -20px;
+                    margin-left: unset;
                 }
                 
                 #navbarSupportedContent {
