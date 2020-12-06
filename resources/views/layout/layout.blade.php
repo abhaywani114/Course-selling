@@ -82,6 +82,11 @@
                     /* padding-top: 15px;
                     align-items: unset;   */
                 }
+                
+                .nab_bar_logo {
+                    margin-left: -20px;
+                }
+                
                 #navbarSupportedContent {
                     position: absolute;
                     background: #fffffffa;
