@@ -271,7 +271,7 @@
             <div class="col-md-12">
                 <div>
                     <p class="p-0 m-0">
-                        Copyright ©2020 All rights reserved | Designed with <i class="icon-heart" aria-hidden="true"></i> by <strong>Network Venture</strong>
+                        Copyright ©2020 All rights reserved | Designed with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>Network Venture</strong>
                     </p>
                 </div>
             </div>
