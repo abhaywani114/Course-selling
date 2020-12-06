@@ -105,7 +105,7 @@
 				 </div>
 
 				 <div class="form-group">
-					<input type="text" name="price" class="form-control" placeholder="Price" required>
+					<input type="number" name="price" class="form-control" placeholder="Price" required>
 				</div>
 
 				 <div class="form-group">
