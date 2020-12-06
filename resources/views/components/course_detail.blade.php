@@ -63,35 +63,35 @@
   @if(!empty($course->details))
 		<div>
 			<h5 class="mt-3" ><strong style="border-bottom:2.5px solid #003e71">Details</strong></h5>
-			<p class="pt-1">{{$course->details}}</p>
+			<p class="pt-1">{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
 		</div>
   @endif
 
     @if(!empty($course->structure))
 		<div>
 			<h5 class="mt-3" ><strong style="border-bottom:2.5px solid #003e71">Structure</strong></h5>
-			<p class="pt-1">{{$course->structure}}</p>
+			<p class="pt-1">{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
 		</div>
     @endif
 
     @if(!empty($course->course_aims))
 		<div>
 			<h5 class="mt-3" ><strong style="border-bottom:2.5px solid #003e71">Course Aims</strong></h5>
-		    <p class="pt-1">{{$course->course_aims}}</p>
+		    <p class="pt-1">{!! nl2br(strip_tags($course->course_aims, '<p><a><br>'));  !!}</p>
     </div>
     @endif
 
   @if(!empty($course->tmc))
 		<div>
 			<h5 class="mt-3" ><strong style="border-bottom:2.5px solid #003e71">Timetable & Marking Criteria</strong></h5>
-        <p class="pt-1">{{$course->tmc}}</p>
+        <p class="pt-1">{!! nl2br(strip_tags($course->tmc, '<p><a><br>'));  !!}</p>
 		</div>
   @endif
 
    @if(!empty($course->tmc))
 		<div>
 			<h5 class="mt-3" ><strong style="border-bottom:2.5px solid #003e71">Study Aid</strong></h5>
-         <p class="pt-1">{{$course->study_aid}}</p>
+         <p class="pt-1">{!! nl2br(strip_tags($course->tmc, '<p><a><br>'));  !!}</p>
 		</div>
     @endif
 

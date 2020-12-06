@@ -22,7 +22,7 @@
 				 <div class="form-group">
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="description"	rows="5" placeholder="Description" required
-							 />{{$teacher->description??''}}</textarea>
+							 />{!! nl2br(strip_tags($teacher->description??'', '<p><a><br>'));  !!}</textarea>
 				</div>
 
 				 <div class="form-group">

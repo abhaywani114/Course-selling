@@ -103,7 +103,7 @@ Route::post('/admin/courses/entrolled_students', [CoursesController::class, "enr
 	name('admin.courses.entrolled_students')->middleware('CheckUType:admin');;
 
 Route::post('/courses/view-course-detail-modal', [CoursesController::class, "viewCourseDetailModal"])->
-	name('admin.courses.viewCourseDetail')->middleware('CheckUType:admin');;
+	name('admin.courses.viewCourseDetail');
 
 Route::post('/courses/view-mail-modal', [CoursesController::class, "viewMailModal"])->
 	name('admin.courses.mail_modal')->middleware('CheckUType:admin');;
