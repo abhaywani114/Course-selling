@@ -375,6 +375,9 @@
 
 
         const addToCart = (productId, productName, productPrice) => {
+            if (localStorage.getItem('cart') == null) {
+                localStorage.setItem('cart', JSON.stringify([]));
+            }
 
             const productsInCart  =  JSON.parse(localStorage.getItem('cart'));
             const isAlreadyInCart = $.grep(productsInCart, el => {return el.id == productId}).length; 
