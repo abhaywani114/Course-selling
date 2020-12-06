@@ -232,8 +232,13 @@ function updateCourses(id) {
 	$.post("{{route('admin.courses.update')}}", {
 		course_id:id
 	}).done((res) => {
-		$("#res").html(res);
-		$("#update_course_modal").modal('show');
+	    
+	    if ($('.modal.in, .modal.show').length < 1) {
+	        $('.modal-backdrop').remove();
+			$("#res").html(res);
+			$("#update_course_modal").modal('show');
+		}
+
 	});
 }
 
@@ -241,8 +246,11 @@ function mailCourses(id) {
 	$.post("{{route('admin.courses.mail_modal')}}", {
 		course_id:id
 	}).done((res) => {
-		$("#res").html(res);
-		$("#mail_course_modal").modal('show');
+	   if ($('.modal.in, .modal.show').length < 1) {
+	        $('.modal-backdrop').remove();
+			$("#res").html(res);
+			$("#mail_course_modal").modal('show');
+		}
 	});
 }
 

@@ -145,6 +145,7 @@
                      </div>
                      <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
                         <button onclick="signMeUp()" class="btn shopping_cart_btn" style="width: 90px;">Sign Up</button>
+                        <img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-left: -30px;display:none;" id="loading-signup" / >
                         <a href="#login" onclick="showLogin()"
                            style="text-decoration:none;float:right;text-align:right;">I already have an account!</a>
                      </div>
@@ -163,6 +164,7 @@
                      </div>
                      <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
                         <button onclick="loginMeNow()" class="btn shopping_cart_btn" style="width: 90px;">Sign In</button>
+                        <img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-right: auto;margin-left: 10px;display: none;" id="loading-signin" / >
                         <a href="#login" onclick="showSignUp()"
                            style="text-decoration:none;float:right;text-align:right;">I am a new user!</a>
                      </div>
@@ -182,6 +184,7 @@
                      <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
                         <button type="submit" class="btn shopping_cart_btn"  onclick="resetpassword()"
                               style="width: 140px;">Reset Password</button>
+                        <img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-right: auto;margin-left: 10px;display: none;" id="loading-reset-pwd" / >
                         <a href="#login" onclick="showLogin()"
                            style="text-decoration:none;float:right;text-align:right;">Back</a>
                      </div>
@@ -383,36 +386,49 @@
 
    function signMeUp() {
 	 event.preventDefault();
+      $("#loading-signup").css('display', 'unset')
 	   $.post("{{route('usermanagement.signup')}}", $("#sign_up_form").serialize() ).done( (res) => {
 		   $("#sign_up_response").html(`<span class="text-success"><strong>${res.msg}</strong></span>`);
+         $("#loading-signup").css('display', 'none')
 		   $("#sign_up_form")[0].reset();
-   		}).fail( (data) => {
+   	}).fail( (data) => {
 			$("#sign_up_response").html(handleValdationError(data));
-   		});
+         $("#loading-signup").css('display', 'none');
+   	});
    }
 
    function resetpassword() {
        event.preventDefault();
+       $("#loading-reset-pwd").css('display','unset');
       $.post("{{route('usermanagement.reset')}}", $("#reset_password_form").serialize() ).done( (res) => {
             $("#reset_password_response").html(`<span class="text-success"><strong>${res.msg}</strong></span>`);
             $("#reset_password_form")[0].reset();
+            $("#loading-reset-pwd").css('display','none');
       }).fail( (data) => {
-             $("#reset_password_response").html(handleValdationError(data));
+            $("#reset_password_response").html(handleValdationError(data));
+            $("#loading-reset-pwd").css('display','none');
         });
    }
    
    function loginMeNow() {
 	   event.preventDefault();
+      $("#loading-signin").css('display','unset');
 	   $.post("{{route('usermanagement.login')}}", $("#sign_in_form").serialize() ).done( (res) => {
-	   		if (res.success == true)
+	   		if (res.success == true) {
 		   		$("#sign_in_response").html(`<span class="text-success"><strong>${res.msg}</strong></span>`);
-			else
+               setTimeout(() => {
+                  window.location.reload()
+                  $("#loading-signin").css('display','none');
+               }, 2000);
+            } else {
 		   		$("#sign_in_response").html(`<span class="text-danger"><strong>${res.error}</strong></span>`);
+               $("#loading-signin").css('display','none');
+            }
 
-		   $("#sign_in_form")[0].reset();
-			setTimeout(() => window.location.reload(), 2000);
+		       $("#sign_in_form")[0].reset();
    		}).fail( (data) => {
 			   $("#sign_in_response").html(handleValdationError(data));
+            $("#loading-signin").css('display','none');
    		});
    }
 

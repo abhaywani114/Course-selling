@@ -11642,3 +11642,14 @@ Stack trace:
 #45 D:\\Server_Files\\Network Venture\\project_7001a\\server.php(21): require_once('D:\\\\Server_Files...')
 #46 {main}
 "} 
+[2020-12-06 07:20:50] local.INFO: Indipay Payment Request Initiated:   
+[2020-12-06 10:24:29] local.INFO: array (
+  'Error' => 'Invalid username/password',
+  'File' => 'D:\\Server_Files\\Network Venture\\project_7001a\\app\\Http\\Controllers\\UserManagementController.php',
+  'Line' => 84,
+)  
+[2020-12-06 10:25:34] local.INFO: array (
+  'Error' => 'Invalid username/password',
+  'File' => 'D:\\Server_Files\\Network Venture\\project_7001a\\app\\Http\\Controllers\\UserManagementController.php',
+  'Line' => 84,
+)  
