@@ -224,7 +224,7 @@
 				<li class="nav-item dropdown">
       				  <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" 
 						role="button" data-toggle="dropdown" aria-haspopup="true" 
-						aria-expanded="false">User</a>
+						aria-expanded="false">{{Auth::User()->name}}</a>
 					<div class="dropdown-menu" aria-labelledby="adminDropdown">
 					  <a class="dropdown-item" href="{{route('user.my_courses')}}">My Courses</a>
 					  <a class="dropdown-item" href="{{route('myprofile.update')}}">My Settings</a>
