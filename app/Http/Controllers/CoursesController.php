@@ -45,8 +45,28 @@ class CoursesController extends Controller
 			$array['who_should_attend'] = $request->who_should_attend;
 			$array['status']			= $request->status;
 			$array['seat_limit']		= $request->seat_limit;
-			if (empty($request->course_id))
+
+			if (empty($request->course_id)) {				
 				$array['available_seats']	= $request->seat_limit;
+			} else {
+				$enrolled = DB::table('payment')->
+					join('payment_course','payment_course.payment_id','payment.id')->
+					where([
+						'payment_course.course_id'	=> $request->course_id,
+						'status'					=> 'success'
+					])->
+					get()->count();
+				
+				$array['available_seats']	= $request->seat_limit - $enrolled;
+
+				if ($array['available_seats'] < 0) {
+					return response()->json(array(
+						'success' => false,
+						'errors' =>	["Enrolled seat exceedes seat limit."]
+					), 400);
+				}
+			}
+
 			$array['updated_at']		= now();
 
 			if (empty($request->course_id))
