@@ -17,10 +17,10 @@
    /* Full height */
    min-height: 100%;
    /* Create the parallax scrolling effect */
-   background-attachment: fixed;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
    }
    .slide-1:before {
    position: absolute;
