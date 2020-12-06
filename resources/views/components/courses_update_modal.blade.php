@@ -35,27 +35,32 @@
 				 </div>
 
 				 <div class="form-group">
+				 	<span>Duration</span>
 					<input type="text" name="duration" class="form-control"
 						value="{{$course->duration??''}}" placeholder="Duration (Ex: 1 hour)" required>
 				 </div>
 
 				 <div class="form-group">
+				 	<span>Price</span>
 					<input type="text" name="price" class="form-control"
-						value="{{$course->price??''}}" placeholder="Price" required>
+						value="{{$course->price??''}}" placeholder="Price (*All prices are in USD)" required>
 				</div>
 
 				 <div class="form-group">
+				 	<span>Who should attend?</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="who_should_attend" rows="2" placeholder="who should attend?"
 						 required>{{$course->who_should_attend??''}}</textarea>
 				</div>
 
 				 <div class="form-group">
+				 	<span>Short Description</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="desp"	rows="2" placeholder="Short Description"
 						 required>{{$course->short_description??''}}</textarea>
 				</div>
 				  <div class="form-group">
+				 	<span>Visibility</span>
 		            <select type="text" name="status" class="form-control"  required>
 		              <option value="active" class="form-control">Active</option>
 		              <option value="inactive" class="form-control">Inactive</option>
@@ -63,30 +68,35 @@
 		         </div>
 				<hr/>
 				 <div class="form-group">
+				 	<span>Course Details</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name='details' rows="4" 
 						placeholder="Course Details">{{$course->details??''}}</textarea>
 				</div>
 
 				 <div class="form-group">
+				 	<span>Course Structure</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="structure"	rows="4" 
-							placeholder="Course Structure">{{$course->details??''}}</textarea>
+							placeholder="Course Structure">{{$course->structure??''}}</textarea>
 				</div>
 
 				 <div class="form-group">
+				 	<span>Course Course Aims</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 					name="aims"	rows="4" 
 						placeholder="Course Course Aims">{{$course->course_aims??''}}</textarea>
 				</div>
 
 				 <div class="form-group">
+				 	<span>Timetable & Marking Criteria</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="tmc"
 							rows="4" placeholder="Timetable & Marking Criteria">{{$course->tmc??''}}</textarea>
 				</div>
 
 				 <div class="form-group">
+				 	<span>Study Aid</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="study_aid"
 						rows="4" placeholder="Study Aid">{{$course->study_aid??''}}</textarea>
