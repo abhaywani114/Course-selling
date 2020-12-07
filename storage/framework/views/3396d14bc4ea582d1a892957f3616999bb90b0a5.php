@@ -17,7 +17,7 @@
                </div>
 
 		<div>
-			<p class="pt-1 text-justify"><?php echo e($teacher->description); ?></p>
+			<p class="pt-1 text-justify"><?php echo nl2br(strip_tags($teacher->description??'', '<p><a><br>'));; ?></p>
 		</div>
 
 		</div>

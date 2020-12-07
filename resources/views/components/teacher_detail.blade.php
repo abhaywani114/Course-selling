@@ -17,7 +17,8 @@
                </div>
 
 		<div>
-			<p class="pt-1 text-justify">{{ $teacher->description }}</p>
+			<p class="pt-1 text-justify">{!! 
+        nl2br(strip_tags($teacher->description??'', '<p><a><br>'));  !!}</p>
 		</div>
 
 		</div>

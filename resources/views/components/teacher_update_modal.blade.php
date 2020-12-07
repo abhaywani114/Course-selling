@@ -3,7 +3,7 @@
   <div class="modal-dialog  modal-dialog-centered modal-md" role="document">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h4 class="modal-title">New Teacher</h4>
+			<h4 class="modal-title">Update Teacher</h4>
 			<button type="button" class="text-white close" data-dismiss="modal">&times;</button>
 		</div>
 		<div class="modal-body">
@@ -22,7 +22,7 @@
 				 <div class="form-group">
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
 						name="description"	rows="5" placeholder="Description" required
-							 />{!! nl2br(strip_tags($teacher->description??'', '<p><a><br>'));  !!}</textarea>
+							 />{{$teacher->description??''}}</textarea>
 				</div>
 
 				 <div class="form-group">
@@ -34,7 +34,7 @@
                 	  <div class="col-md-10 mx-auto d-block">
 						 <input type="submit" onclick="update_teacher_ajax()" data-dismiss="modal"
 							class=" shopping_cart_btn btn btn-primary py-1 px-5 btn-block btn-pill w-100" 
-							value="Add Teacher">
+							value="Update Teacher">
                   	</div>
                </div>
 
