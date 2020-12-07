@@ -323,7 +323,7 @@
       <div class="row mt-2 justify-content-center">
          <div class="col-sm-7 col-md-10 col-lg-7">
             <h2 class="section-title mb-3">Contact Us</h2>
-            <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+            <p class="mb-5"></p>
             <form method="post" id="contact_form" data-aos="fade" class="aos-init aos-animate">
                <div class="form-group row">
                   <div class="col-md-6 mb-3 mb-lg-0">
