@@ -156,8 +156,7 @@
 		   color: #fff;
 		   }
 		   .p_course {
-		   min-height: 58px;
-		   max-height: 58px;
+		   min-height: 100px;
 		   }
 
 			.modal-header {
@@ -204,7 +203,7 @@
                 <ul class="navbar-nav m-auto">
                     <li><a   href="/#home-section" class="nav-link active"><span>Home</span></a></li>
                     <li><a href="/#courses-section" class="nav-link"><span>Courses</span></a></li>
-                    <li><a href="/#teachers-section" class="nav-link"><span>Teachers</span></a></li>
+                    <li><a href="/#teachers-section" class="nav-link"><span>Faculty</span></a></li>
                     <li><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
 
 					<?php if(auth()->guard()->check()): ?>	
@@ -216,7 +215,7 @@
 						aria-expanded="false">Admin</a>
 					<div class="dropdown-menu" aria-labelledby="adminDropdown">
 					  <a class="dropdown-item" href="<?php echo e(route('admin.courses')); ?>">Manage Courses</a>
-					  <a class="dropdown-item" href="<?php echo e(route('admin.teachers')); ?>">Manage Teachers</a>
+					  <a class="dropdown-item" href="<?php echo e(route('admin.teachers')); ?>">Manage Faculty</a>
 					  <a class="dropdown-item" href="<?php echo e(route('admin.view_payment')); ?>">View Payments</a>
 					  <a class="dropdown-item" href="<?php echo e(route('admin.manage_admins')); ?>">Manage Admins</a>
 					  <a class="dropdown-item" href="<?php echo e(route('myprofile.update')); ?>">My Settings</a>
@@ -299,6 +298,11 @@
                 <span  class="text-red del_cart_item close" style="margin: 0px 5px;color:#fff">&times;</span>
             </div>
         </div>
+        <form method="post" action="<?php echo e(route('payment.checkout')); ?>">
+            <input type="hidden" name="productsInCart" id="productsInCart_input">
+            <input type="submit" name="submit" id="checkout_submit" style="display:none;" />
+            <?php echo csrf_field(); ?>
+        </form>
        <div class="modal-footer" style="border: none;padding: 10px 0px;">
             <button type="button" onclick="cartCheckOut()" class="btn shopping_cart_btn" data-dismiss="modal">Checkout</button>
       </div>
@@ -314,7 +318,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div id="payment"></div>
     <script> 
         AOS.init();
@@ -410,7 +413,7 @@
                         <span>${index + 1}. ${product.productName}</span>
                     </div>
                     <div class="col-md-4 text-right">
-                        <span>${product.productPrice} USD</span>
+                        <span>${product.productPrice} <?php echo e(env('CURRENCY_CODE')); ?> </span>
                         <span onclick="deleteCartProduct(${product.id})" 
                             class="text-red del_cart_item close" style="margin: 0px 5px;">×</span>
                     </div>
@@ -419,7 +422,7 @@
             });
 
             $("#cart_product_details").html(html);
-            $("#cart_total_amount").html(`${amount} USD`);
+            $("#cart_total_amount").html(`${amount} <?php echo e(env('CURRENCY_CODE')); ?> `);
         }
 
         const deleteCartProduct = function (productId) {
@@ -430,15 +433,14 @@
         }
 
         const cartCheckOut = function () {
+            <?php if(auth()->guard()->check()): ?>
              let productsInCart  =  localStorage.getItem('cart');
-
-            $.post("<?php echo e(route('payment.checkout')); ?>", {
-                productsInCart:productsInCart                
-            }).done( (res) => {
-                $("#payment").html(res);
-            }).fail( (data) => {
-                messageModal(handleValdationError(data));
-            });
+             $("#productsInCart_input").val(productsInCart);
+             $("#checkout_submit").click();
+            <?php endif; ?>
+            <?php if(auth()->guard()->guest()): ?>
+                messageModal("Please login first to checkout.");
+            <?php endif; ?>
         }
 
         $('.nav-link').on('click', function(){

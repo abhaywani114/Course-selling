@@ -300,7 +300,7 @@
         </div>
         <form method="post" action="{{route('payment.checkout')}}">
             <input type="hidden" name="productsInCart" id="productsInCart_input">
-            <input type="submit" name="submit" id="checkout_submit" />
+            <input type="submit" name="submit" id="checkout_submit" style="display:none;" />
             @csrf
         </form>
        <div class="modal-footer" style="border: none;padding: 10px 0px;">
@@ -433,18 +433,14 @@
         }
 
         const cartCheckOut = function () {
+            @Auth
              let productsInCart  =  localStorage.getItem('cart');
              $("#productsInCart_input").val(productsInCart);
              $("#checkout_submit").click();
-           /*  
-            $.post("{{route('payment.checkout')}}", {
-                productsInCart:productsInCart                
-            }).done( (res) => {
-                $("#payment").html(res);
-            }).fail( (data) => {
-                messageModal(handleValdationError(data));
-            });
-            */
+            @endauth
+            @guest
+                messageModal("Please login first to checkout.");
+            @endguest
         }
 
         $('.nav-link').on('click', function(){
