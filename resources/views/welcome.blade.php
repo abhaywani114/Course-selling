@@ -22,13 +22,13 @@
     background-repeat: no-repeat !important;
     background-size: cover !important;
    }
-   .slide-1:before {
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   background: #031528;
-   opacity: .9;
-   border-bottom-right-radius: 0px;
+   .slide-1:before, .pallax {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #003e7185;
+    opacity: 1;
+    border-bottom-right-radius: 0px;
    }
    .form-box {
    padding: 40px;
@@ -118,6 +118,7 @@
 }
 </style>
 <div class="slide-1" id="home-section" >
+   <div class="pallax"></div>
    <div class="container">
       <div class="row intro_custom_1 ">
          <div class="col-lg-6 mb-4 text-white">
