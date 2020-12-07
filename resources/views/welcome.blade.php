@@ -293,7 +293,7 @@
                         </div>
                      </div>
                      
-                     <div class="carousel-item @if ($x == 0) active @endif">
+                     <div class="carousel-item ">
                         <div class="testimonial text-white">
                            <!--Avatar-->
                            <div class="avatar mx-auto mb-4">
@@ -311,7 +311,7 @@
                         </div>
                      </div>
                      
-                     <div class="carousel-item @if ($x == 0) active @endif">
+                     <div class="carousel-item">
                         <div class="testimonial text-white">
                            <!--Avatar-->
                            <div class="avatar mx-auto mb-4">
