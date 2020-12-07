@@ -156,8 +156,7 @@
 		   color: #fff;
 		   }
 		   .p_course {
-		   min-height: 58px;
-		   max-height: 58px;
+		   min-height: 100px;
 		   }
 
 			.modal-header {
