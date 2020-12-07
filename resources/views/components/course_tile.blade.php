@@ -5,7 +5,7 @@
          <a href="javascript:void(0)"><img src='{{asset("img/upload/$c->image")}}' alt="{{$c->name}}" class="img-fluid w-100"></a>
       </figure>
       <div class="course-inner-text py-4 px-4">
-         <span class="course-price">${{$c->price}}</span>
+         <span class="course-price">{{$c->price}} {{env('CURRENCY_CODE')}}</span>
          <div class="meta">{{$c->duration}} | {{date("d M Y", strtotime($c->date))}}   @if(empty($user))
             | Seat Left: {{$c->available_seats}}/{{$c->seat_limit}}
          @endif</div>

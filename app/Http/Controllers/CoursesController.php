@@ -141,7 +141,7 @@ class CoursesController extends Controller
 			})->
 
 			addColumn('price', function ($c) {
-				return "$c->price USD";
+				return "$c->price ".env('CURRENCY_CODE');
 			})->
 
 			addColumn('date', function ($c) {

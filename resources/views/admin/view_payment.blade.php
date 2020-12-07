@@ -61,7 +61,7 @@
           <td>{{$payment->transaction_id}}</td>
           <td>{{$payment->course_name}}</td>
           <td>{{$payment->username}}</td>
-          <td class="text-right">{{$payment->course_price}} USD</td>
+          <td class="text-right">{{$payment->course_price}} {{env('CURRENCY_CODE')}}</td>
           <td @if ($payment->status == 'failed') 
              onclick="messageModal('{{$payment->note}}')"
               style="cursor:pointer;color:blue;"

@@ -26,7 +26,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: #003e7185;
+    background: #003e713d;
     opacity: 1;
     border-bottom-right-radius: 0px;
    }
@@ -120,10 +120,12 @@
 <div class="slide-1" id="home-section" >
    <div class="pallax"></div>
    <div class="container">
-      <div class="row intro_custom_1 ">
-         <div class="col-lg-6 mb-4 text-white">
+      <div class="row intro_custom_1 " >
+         <div class="col-lg-6 mb-4 text-white" >
+            <div style="position: absolute;bottom: 0;">
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
             <p class="mb-4 aos-init" data-aos="fade-up" data-aos-delay="500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+         </div>
          </div>
          <div class="col-lg-5 ml-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="5000">
             <div class="tab-content">
@@ -216,7 +218,7 @@
 						 <h5 class="h5 text-black mb-4">Welcome {{\Auth::User()->name}}!</h5>
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item pl-0">You are logged in as admin.
-                           <br/>You can manage your courses, teachers and payments by clicking Admin link in the navigation bar.</li>
+                           <br/>You can manage your courses, faculty and payments by clicking Admin link in the navigation bar.</li>
 							  </ul>
 					</div>
 			    </div>
@@ -246,7 +248,7 @@
    <div class="container ">
       <div class="row mb-3 mt-5 justify-content-center">
          <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
-            <h2 class="teachers-section-section-title section-title">Teachers</h2>
+            <h2 class="teachers-section-section-title section-title">Faculty</h2>
          </div>
       </div>
       <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">

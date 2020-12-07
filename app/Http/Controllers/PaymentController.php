@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Softon\Indipay\Facades\Indipay; 
+use Omnipay\Omnipay;
 use Illuminate\Http\Request;
 use \Exception;
 use \Log;
@@ -11,6 +11,15 @@ use \Auth;
 
 class PaymentController extends Controller
 {
+     public $gateway;
+    
+    public function __construct() {
+        $this->gateway = Omnipay::create('PayPal_Rest');
+        $this->gateway->setClientId(env('PAYPAL_CLIENT_ID'));
+        $this->gateway->setSecret(env('PAYPAL_CLIENT_SECRET'));
+        $this->gateway->setTestMode(true); //set it to 'false' when go live
+    }
+
     public function checkout(Request $request) {
     	try {
     		
@@ -64,15 +73,24 @@ class PaymentController extends Controller
     			$total += $course->price;
     		}
 
-    		 $parameters = [
-		        'transaction_no' => $tx_id,
-		        'amount' => $total,
-		        'name' => Auth::User()->name,
-		        'email' => Auth::User()->email
-		      ];
+    		
 
-		      $order = Indipay::prepare($parameters);
-		      return Indipay::process($order);
+           $response = $this->gateway->purchase(array(
+                'amount' => $total,
+                'name' => Auth::User()->name,
+                'email' => Auth::User()->email,
+                'currency' => env('CURRENCY_CODE'),
+                'returnUrl' => route('payment_response',$tx_id),
+                'cancelUrl' => route('payment_response', $tx_id),
+            ))->send();
+
+            if ($response->isRedirect()) {
+                $response->redirect(); // this will automatically forward the customer
+            } else {
+                // not successful
+                return $response->getMessage();
+            }
+
     	} catch (Exception $e) {
 
 			Log::info([
@@ -88,52 +106,66 @@ class PaymentController extends Controller
     }
 
       public function response(Request $request) {
-        // For default Gateway
-        $response = Indipay::response($request);
-        // For Otherthan Default Gateway
-        
-        $check_if_processed = DB::table('payment')->
+    
+       $check_if_processed = DB::table('payment')->
            where([
-                'transaction_id' => $response['transaction_no'],
+                'transaction_id' => $request->tx_id,
                 'status' => "success"
             ])->first();
 
         if (!empty($check_if_processed)) {
-            abort(403);
+          //  abort(403);
         }
 
-        if ($response['transaction_status'] == 'success' && $response['status'] == 'success') {
-        	
-        	DB::table('payment')->
-	        	where('transaction_id', $response['transaction_no'])->
-	        	update([
-	        		'status' => "success",
-	        	 	"updated_at" => now()
-	        	]);
+        // Once the transaction has been approved, we need to complete it.
+        if ($request->input('paymentId') && $request->input('PayerID')) {
+            $transaction = $this->gateway->completePurchase(array(
+                'payer_id'             => $request->input('PayerID'),
+                'transactionReference' => $request->input('paymentId'),
+            ));
+            $response = $transaction->send();
+            if ($response->isSuccessful()) {
+                 DB::table('payment')->
+                    where('transaction_id', $request->tx_id)->
+                    update([
+                        'status' => "success",
+                        "updated_at" => now()
+                    ]);
 
-            $course_ids = DB::table('courses')->
-                join('payment_course','payment_course.course_id', 'courses.id')->
-                join('payment','payment.id','payment_course.payment_id')->
-                where('payment.transaction_id', $response['transaction_no'])->
-                select('courses.*')->get()->pluck('id')->toArray();
+                $course_ids = DB::table('courses')->
+                    join('payment_course','payment_course.course_id', 'courses.id')->
+                    join('payment','payment.id','payment_course.payment_id')->
+                    where('payment.transaction_id', $request->tx_id)->
+                    select('courses.*')->get()->pluck('id')->toArray();
 
-            DB::table('courses')->
-                whereIn('id', $course_ids)->decrement('available_seats',1);
+                DB::table('courses')->
+                    whereIn('id', $course_ids)->decrement('available_seats',1);
 
-            app('App\Http\Controllers\mailController')->sendInvoice($response['transaction_no']);
+                app('App\Http\Controllers\mailController')->sendInvoice($request->tx_id);
+                $status = 'success';
+                $errMsg = "";
+            }  else {
+                 $status = 'failed';
+                $errMsg = $response->getMessage() ?? "Payment failed";
+            }
 
-	        $status = 'success';
         } else {
-        	DB::table('payment')->
-	        	where('transaction_id', $response['transaction_no'])->
-	        	update([
-	        		'status' => "failed", 
-	        		"note" => $response['failure_reason'],
-	        		"updated_at" => now()
-	        ]);
-	        $status = 'failed';
+             $status = 'failed';
+             $errMsg = "Payment canceled";
         }
-     	return view("admin.payment_status", compact('status', 'response'));
+
+        if ( $status == 'failed') {
+            DB::table('payment')->
+                where('transaction_id',$request->tx_id)->
+                update([
+                    'status' => "failed", 
+                    "note" => $errMsg ?? '',
+                    "updated_at" => now()
+            ]);
+        }
+
+     	return view("admin.payment_status", compact('status','errMsg'));
+        
     }  
 
     public function view_payment() {

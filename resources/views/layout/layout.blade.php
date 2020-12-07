@@ -203,7 +203,7 @@
                 <ul class="navbar-nav m-auto">
                     <li><a   href="/#home-section" class="nav-link active"><span>Home</span></a></li>
                     <li><a href="/#courses-section" class="nav-link"><span>Courses</span></a></li>
-                    <li><a href="/#teachers-section" class="nav-link"><span>Teachers</span></a></li>
+                    <li><a href="/#teachers-section" class="nav-link"><span>Faculty</span></a></li>
                     <li><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
 
 					@auth	
@@ -215,7 +215,7 @@
 						aria-expanded="false">Admin</a>
 					<div class="dropdown-menu" aria-labelledby="adminDropdown">
 					  <a class="dropdown-item" href="{{route('admin.courses')}}">Manage Courses</a>
-					  <a class="dropdown-item" href="{{route('admin.teachers')}}">Manage Teachers</a>
+					  <a class="dropdown-item" href="{{route('admin.teachers')}}">Manage Faculty</a>
 					  <a class="dropdown-item" href="{{route('admin.view_payment')}}">View Payments</a>
 					  <a class="dropdown-item" href="{{route('admin.manage_admins')}}">Manage Admins</a>
 					  <a class="dropdown-item" href="{{route('myprofile.update')}}">My Settings</a>
@@ -298,6 +298,11 @@
                 <span  class="text-red del_cart_item close" style="margin: 0px 5px;color:#fff">&times;</span>
             </div>
         </div>
+        <form method="post" action="{{route('payment.checkout')}}">
+            <input type="hidden" name="productsInCart" id="productsInCart_input">
+            <input type="submit" name="submit" id="checkout_submit" />
+            @csrf
+        </form>
        <div class="modal-footer" style="border: none;padding: 10px 0px;">
             <button type="button" onclick="cartCheckOut()" class="btn shopping_cart_btn" data-dismiss="modal">Checkout</button>
       </div>
@@ -408,7 +413,7 @@
                         <span>${index + 1}. ${product.productName}</span>
                     </div>
                     <div class="col-md-4 text-right">
-                        <span>${product.productPrice} USD</span>
+                        <span>${product.productPrice} {{env('CURRENCY_CODE')}} </span>
                         <span onclick="deleteCartProduct(${product.id})" 
                             class="text-red del_cart_item close" style="margin: 0px 5px;">×</span>
                     </div>
@@ -417,7 +422,7 @@
             });
 
             $("#cart_product_details").html(html);
-            $("#cart_total_amount").html(`${amount} USD`);
+            $("#cart_total_amount").html(`${amount} {{env('CURRENCY_CODE')}} `);
         }
 
         const deleteCartProduct = function (productId) {
@@ -429,7 +434,9 @@
 
         const cartCheckOut = function () {
              let productsInCart  =  localStorage.getItem('cart');
-
+             $("#productsInCart_input").val(productsInCart);
+             $("#checkout_submit").click();
+           /*  
             $.post("{{route('payment.checkout')}}", {
                 productsInCart:productsInCart                
             }).done( (res) => {
@@ -437,6 +444,7 @@
             }).fail( (data) => {
                 messageModal(handleValdationError(data));
             });
+            */
         }
 
         $('.nav-link').on('click', function(){

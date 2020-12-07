@@ -106,7 +106,7 @@
 				 </div>
 
 				 <div class="form-group">
-					<input type="number" name="price" class="form-control" placeholder="Price (*All prices are in USD)" required>
+					<input type="number" name="price" class="form-control" placeholder="Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
 				</div>
 
 				 <div class="form-group">

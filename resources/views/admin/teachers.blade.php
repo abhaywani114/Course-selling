@@ -35,7 +35,7 @@
    <div class="container bg-white">
 		<div class="row pt-5 mb-4">
        		 <div class="col-sm-7 col-md-10 col-lg-7  justify-content-center align-self-center">
-				<h2 class="section-title my-2">Manage Teachers</h2>
+				<h2 class="section-title my-2">Manage Faculty</h2>
 			</div>
 
        		 <div class="col-sm-5 col-md-2 col-lg-5 text-right  justify-content-center align-self-center">
@@ -68,14 +68,14 @@
   <div class="modal-dialog  modal-dialog-centered modal-md" role="document">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h4 class="modal-title">New Teacher</h4>
+			<h4 class="modal-title">New Faculty</h4>
 			<button type="button" class="text-white close" data-dismiss="modal">&times;</button>
 		</div>
 		<div class="modal-body">
 			<form method="post" id="new_teacher_form">
 
 				 <div class="form-group">
-					<input type="text" name="name" class="form-control" placeholder="Teacher Name" required />
+					<input type="text" name="name" class="form-control" placeholder="Faculty Name" required />
 				 </div>
 
 				 <div class="form-group">
@@ -95,7 +95,7 @@
                 	  <div class="col-md-10 mx-auto d-block">
 						 <input type="submit" onclick="save_teacher()" data-dismiss="modal"
 							class=" shopping_cart_btn btn btn-primary py-1 px-5 btn-block btn-pill w-100" 
-							value="Add Teacher">
+							value="Add Faculty">
                   	</div>
                </div>
 

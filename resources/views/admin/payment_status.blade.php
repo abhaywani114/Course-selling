@@ -40,14 +40,13 @@
   			<img class=" my-3 d-block w-50 mx-auto" 
   				src="{{asset('img/payment_success.png')}}">
   			<h1 class="text-success text-center">Payment Successful</h1>
-  			<h5 class="text-success text-center">Transaction ID: {{ $response['transaction_no']}} | Amount:  {{ $response['amount']}} USD</h5>
+  			<h5 class="text-success text-center">Transaction ID: {{ request()->tx_id }}</h5>
   			@else
-  			
   			<img class=" my-3 d-block w-100 mx-auto" 
   				src="{{asset('img/payment_failed.jpg')}}">
   			<h1 class="text-danger text-center">Payment Failed</h1>
-  			<h5 class="text-danger text-center">Transaction ID: {{ $response['transaction_no']}} | Amount: {{ $response['amount']}} USD</h5>
-  			<h6 class="text-danger text-center">{{$response['failure_reason']}}</h6>
+  			<h5 class="text-danger text-center">Transaction ID: {{ request()->tx_id }}</h5>
+  			<h6 class="text-danger text-center">{{$errMsg ?? ''}}</h6>
   			@endif
   			  <button onclick="window.location = '/'" class="btn shopping_cart_btn w-50 mx-auto d-block mt-5" >Home</button>
   		</div>

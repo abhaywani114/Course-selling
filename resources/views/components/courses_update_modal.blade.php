@@ -43,7 +43,7 @@
 				 <div class="form-group">
 				 	<span>Price</span>
 					<input type="text" name="price" class="form-control"
-						value="{{$course->price??''}}" placeholder="Price (*All prices are in USD)" required>
+						value="{{$course->price??''}}" placeholder="Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
 				</div>
 
 				 <div class="form-group">
