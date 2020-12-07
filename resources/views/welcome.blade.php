@@ -292,7 +292,43 @@
                            <!--Review-->
                         </div>
                      </div>
-                     @endfor
+                     
+                     <div class="carousel-item @if ($x == 0) active @endif">
+                        <div class="testimonial text-white">
+                           <!--Avatar-->
+                           <div class="avatar mx-auto mb-4">
+                              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid mx-auto d-block"
+                                 alt="First sample avatar image">
+                           </div>
+                           <!--Content-->
+                           <p class="text-justify">
+                              <br/>
+                              <i class="fa fa-quote-left"></i> Very good need more like this course.
+                           </p>
+                           <h4 class="font-weight-bold">Rajeev Jahagirdar</h4>
+                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <!--Review-->
+                        </div>
+                     </div>
+                     
+                     <div class="carousel-item @if ($x == 0) active @endif">
+                        <div class="testimonial text-white">
+                           <!--Avatar-->
+                           <div class="avatar mx-auto mb-4">
+                              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid mx-auto d-block"
+                                 alt="First sample avatar image">
+                           </div>
+                           <!--Content-->
+                           <p class="text-justify">
+                              <br/>
+                              <i class="fa fa-quote-left"></i> Keep up the good work
+                           </p>
+                           <h4 class="font-weight-bold">Winster D'Souza</h4>
+                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <!--Review-->
+                        </div>
+                     </div>
+               @endfor
                   </div>
                   <!--Slides-->
                   <!--Controls-->
