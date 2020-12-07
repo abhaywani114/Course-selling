@@ -247,7 +247,7 @@
       <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">
          {!! $teachers !!}
       </div>
-      <div style="margin-top: -65px;">
+      <div style="">
          <button class="btn shopping_cart_btn" onclick="moreTeacher()" 
             style="margin: auto;display: block;width: 150px;color:#fff;border-color:#fff;"><i 
             class="fa fa-angle-down"></i> More</button><br/><br/>
