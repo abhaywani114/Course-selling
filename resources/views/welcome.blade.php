@@ -143,6 +143,9 @@
                      <div class="form-group mb-4">
                         <input type="password" name="password_confirmation" class="form-control" placeholder="Re-type Password" required>
                      </div>
+                     <div class="form-group mb-4">
+                          <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_SITE_KEY')}}"></div>
+                     </div>
                      <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
                         <button onclick="signMeUp()" class="btn shopping_cart_btn" style="width: 90px;">Sign Up</button>
                         <img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-left: -30px;display:none;" id="loading-signup" / >
@@ -363,6 +366,7 @@
 
 @endsection
 @section('js')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
    function showLogin() {
        $("#signupme").removeClass('show active');
@@ -391,9 +395,11 @@
 		   $("#sign_up_response").html(`<span class="text-success"><strong>${res.msg}</strong></span>`);
          $("#loading-signup").css('display', 'none')
 		   $("#sign_up_form")[0].reset();
+         grecaptcha.reset();
    	}).fail( (data) => {
 			$("#sign_up_response").html(handleValdationError(data));
          $("#loading-signup").css('display', 'none');
+         grecaptcha.reset();
    	});
    }
 
@@ -404,9 +410,11 @@
             $("#reset_password_response").html(`<span class="text-success"><strong>${res.msg}</strong></span>`);
             $("#reset_password_form")[0].reset();
             $("#loading-reset-pwd").css('display','none');
+            grecaptcha.reset();
       }).fail( (data) => {
             $("#reset_password_response").html(handleValdationError(data));
             $("#loading-reset-pwd").css('display','none');
+            grecaptcha.reset();
         });
    }
    

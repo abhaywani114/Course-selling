@@ -11,6 +11,7 @@ use \Exception;
 use \Log;
 use DB;
 use Hash;
+use App\Rules\ValidRecaptcha;
 
 class UserManagementController extends Controller
 {
@@ -22,7 +23,8 @@ class UserManagementController extends Controller
 			$validator = Validator::make($request->all(),[
 				"name"		=>	"required|min:5",
 				"email"		=>	"required|email:rfc|unique:users,email",
-				"password"	=>	"required|confirmed"
+				"password"	=>	"required|confirmed",
+				 'g-recaptcha-response' => [new ValidRecaptcha]
 			]);
 
 			if ($validator->fails()) {
