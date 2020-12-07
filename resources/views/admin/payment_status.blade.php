@@ -52,6 +52,7 @@
   			  <button onclick="window.location = '/'" class="btn shopping_cart_btn w-50 mx-auto d-block mt-5" >Home</button>
   		</div>
 	</div>
+  <br/><br/>
 </div>
 <script type="text/javascript">
   
