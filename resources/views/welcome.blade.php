@@ -321,7 +321,7 @@
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
-                              <i class="fa fa-quote-left"></i> Keep up the good work
+                              <i class="fa fa-quote-left"></i> Keep up the good work.
                            </p>
                            <h4 class="font-weight-bold">Winster D'Souza</h4>
                            <h6 class="font-weight-bold my-3">Student</h6>
