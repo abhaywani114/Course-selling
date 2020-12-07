@@ -272,13 +272,12 @@
                <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
                   data-interval="2500">
                   <!--Slides-->
-                  <div class="carousel-inner" role="listbox">
-                     @for($x =0; $x < 4; $x++)
-                     <div class="carousel-item @if ($x == 0) active @endif">
+                  <div class="carousel-inner" role="listbox" style="min-height: 500px;">
+                     <div class="carousel-item active">
                         <div class="testimonial text-white">
                            <!--Avatar-->
                            <div class="avatar mx-auto mb-4">
-                              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid mx-auto d-block"
+                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
                                  alt="First sample avatar image">
                            </div>
                            <!--Content-->
@@ -297,7 +296,7 @@
                         <div class="testimonial text-white">
                            <!--Avatar-->
                            <div class="avatar mx-auto mb-4">
-                              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid mx-auto d-block"
+                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
                                  alt="First sample avatar image">
                            </div>
                            <!--Content-->
@@ -315,7 +314,7 @@
                         <div class="testimonial text-white">
                            <!--Avatar-->
                            <div class="avatar mx-auto mb-4">
-                              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid mx-auto d-block"
+                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
                                  alt="First sample avatar image">
                            </div>
                            <!--Content-->
@@ -328,7 +327,7 @@
                            <!--Review-->
                         </div>
                      </div>
-               @endfor
+\
                   </div>
                   <!--Slides-->
                   <!--Controls-->
