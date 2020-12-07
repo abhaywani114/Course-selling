@@ -290,7 +290,7 @@
                               adipisicing elit. Dolore cum accusamus eveniet molestias voluptatum inventore laboriosam labore
                               sit, aspernatur praesentium iste impedit quidem dolor veniam.
                            </p>
-                           <h4 class="font-weight-bold">Anna Deynah</h4>
+                           <h4 class="font-weight-bold">Ahmad Bilal</h4>
                            <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
                            <!--Review-->
                         </div>
