@@ -130,7 +130,7 @@ Route::post('/admin/teachers/delete', [TeacherController::class, "deleteTeacher"
 	name('admin.teachers.delete')->middleware('CheckUType:admin');;
 
 Route::post("/teachers/paginatiom", [TeacherController::class, "teacher_tile"])->
-	name("teachers.pagination")->middleware('CheckUType:admin');;
+	name("teachers.pagination");
 
 Route::post('/courses/view-teacher-detail-modal', [TeacherController::class, "viewTeacherDetailModal"])->
 	name('admin.courses.viewTeacherDetail');
