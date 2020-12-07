@@ -284,14 +284,11 @@
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
-                              <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                              eos
-                              id officiis hic tenetur quae quaerat ad velit ab. Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit. Dolore cum accusamus eveniet molestias voluptatum inventore laboriosam labore
-                              sit, aspernatur praesentium iste impedit quidem dolor veniam.
-                           </p>
-                           <h4 class="font-weight-bold">Ahmad Bilal</h4>
-                           <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+                              <i class="fa fa-quote-left"></i> It was a great experience and an opportunity for me 
+                              to be guided on how to structure my future study and preparation for the exam.
+                              </p>
+                           <h4 class="font-weight-bold">Mohamed Naell</h4>
+                           <h6 class="font-weight-bold my-3">Student</h6>
                            <!--Review-->
                         </div>
                      </div>
