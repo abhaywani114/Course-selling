@@ -22,7 +22,7 @@ class mailController extends Controller
 			Mail::send('email.contact_support',compact('data') , function($message) use ($data) {
 			   $sub = $data['subject'];
 			   $message->from(env('MAIL_FROM_ADDRESS'), 'Support' );
-			   $message->to(env('MAIL_FROM_ADDRESS'),'Support')->subject("$sub | Contact Request");
+			   $message->to(env('MAIL_CONTACT_ADDRESS'))->subject("$sub | Contact Request");
 			});
 
 		return ['status' =>	true];
