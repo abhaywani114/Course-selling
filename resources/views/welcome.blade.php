@@ -122,7 +122,7 @@
    <div class="container">
       <div class="row intro_custom_1 " >
          <div class="col-lg-6 mb-4 text-white" >
-            <div style="position: absolute;bottom: 0;">
+            <div class="intro_subtitle_mainsection">
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
             <p class="mb-4 aos-init" data-aos="fade-up" data-aos-delay="500">FRCS Mock-Exam Course, Trauma & Orthopaedics, Clinical & Viva Feedback.</p>
          </div>

@@ -72,9 +72,14 @@
                 width: 300px;
                 padding: 0px;
                 object-fit: cover;
-                margin-left: -20px;
+                padding:5px;
+                /*margin-left: -20px;*/
             }
-
+                
+            .intro_subtitle_mainsection {
+                position: absolute;bottom: 0;
+            }
+            
             @media only screen and (max-width: 920px) {
                 .navbar {
                     padding-left: 1rem !important;
@@ -84,6 +89,10 @@
                     align-items: unset;   */
                 }
                 
+                .intro_subtitle_mainsection {
+                    position: unset;bottom: 0;
+                }
+                 
                 .nab_bar_logo {
                     margin-left: unset;
                 }
