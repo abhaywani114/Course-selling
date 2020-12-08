@@ -26,7 +26,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: #003e713d;
+    background: #003e716b;
     opacity: 1;
     border-bottom-right-radius: 0px;
    }
@@ -248,7 +248,7 @@
    <div class="container ">
       <div class="row mb-3 mt-5 justify-content-center">
          <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
-            <h2 class="teachers-section-section-title section-title">Faculty</h2>
+            <h2 class="teachers-section-section-title section-title">Teaching Faculty</h2>
          </div>
       </div>
       <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">
