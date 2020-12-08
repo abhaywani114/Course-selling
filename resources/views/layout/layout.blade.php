@@ -367,7 +367,7 @@
             $.post("{{route('admin.courses.viewCourseDetail')}}", {
                 course_id : course_id
              }).done( (res) => {
-                $("#course_res_div").append(res);
+                $("#course_res_div").html(res);
                 if ($('.modal.in, .modal.show').length < 1) {
                     $('.modal-backdrop').remove();
                     $("#product_detail_modal").modal('show')
@@ -379,7 +379,7 @@
             $.post("{{route('admin.courses.viewTeacherDetail')}}", {
                 teacher_id : teacher_id
              }).done( (res) => {
-                $("#course_res_div").append(res);
+                $("#course_res_div").html (res);
                 if ($('.modal.in, .modal.show').length < 1) {
                     $('.modal-backdrop').remove();
                     $("#person_detail").modal('show')
