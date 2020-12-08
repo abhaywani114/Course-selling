@@ -124,7 +124,7 @@
          <div class="col-lg-6 mb-4 text-white" >
             <div style="position: absolute;bottom: 0;">
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
-            <p class="mb-4 aos-init" data-aos="fade-up" data-aos-delay="500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+            <p class="mb-4 aos-init" data-aos="fade-up" data-aos-delay="500">FRCS Mock-Exam Course, Trauma & Orthopaedics, Clinical & Viva Feedback.</p>
          </div>
          </div>
          <div class="col-lg-5 ml-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="5000">
@@ -323,6 +323,62 @@
                               <i class="fa fa-quote-left"></i> Keep up the good work.
                            </p>
                            <h4 class="font-weight-bold">Winster D'Souza</h4>
+                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <!--Review-->
+                        </div>
+                     </div>
+                     
+                     <div class="carousel-item">
+                        <div class="testimonial text-white">
+                           <!--Avatar-->
+                           <div class="avatar mx-auto mb-4">
+                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
+                                 alt="First sample avatar image">
+                           </div>
+                           <!--Content-->
+                           <p class="text-justify">
+                              <br/>
+                              <i class="fa fa-quote-left"></i> It gave me a good idea of the difficulty level of the exam, 
+                              I will definately change my strategy of studying.
+                           </p>
+                           <h4 class="font-weight-bold">Harry Benjamin-Laing</h4>
+                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <!--Review-->
+                        </div>
+                     </div>
+                     
+                     <div class="carousel-item">
+                        <div class="testimonial text-white">
+                           <!--Avatar-->
+                           <div class="avatar mx-auto mb-4">
+                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
+                                 alt="First sample avatar image">
+                           </div>
+                           <!--Content-->
+                           <p class="text-justify">
+                              <br/>
+                              <i class="fa fa-quote-left"></i> It will help me become more succinct and clear 
+                              in my presentation of case and on the basis of my observation.
+                           </p>
+                           <h4 class="font-weight-bold">Nicholas Bezzina</h4>
+                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <!--Review-->
+                        </div>
+                     </div>
+                     
+                     <div class="carousel-item">
+                        <div class="testimonial text-white">
+                           <!--Avatar-->
+                           <div class="avatar mx-auto mb-4">
+                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
+                                 alt="First sample avatar image">
+                           </div>
+                           <!--Content-->
+                           <p class="text-justify">
+                              <br/>
+                              <i class="fa fa-quote-left"></i> Very constructive feedback demonstrating how to organise the answers.
+                           </p>
+                           <h4 class="font-weight-bold">Umesh Birole</h4>
                            <h6 class="font-weight-bold my-3">Student</h6>
                            <!--Review-->
                         </div>
