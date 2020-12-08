@@ -76,7 +76,7 @@
    font-size: 1.2rem;
    }
    .teacher .position {
-   min-height: 50px;
+   min-height: 95px;
    color: #adb5bd;
    }
    .teacher img {
