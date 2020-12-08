@@ -111,12 +111,16 @@ class PaymentController extends Controller
            where([
                'transaction_id' => $request->tx_id,
             ])->
-           orWhere('payment_id', $request->input('paymentId'))->
-           whereNotIn('status', ['pending'])->
+           orWhere('payment_id', $request->input('paymentId') ?? '0000')->
            first();
+         
 
         if (!empty($check_if_processed)) {
-           abort(403);
+            if ($check_if_processed->status != 'pending') {
+               abort(403);
+            }
+        } else {
+            abort(404);
         }
 
         // Once the transaction has been approved, we need to complete it.
