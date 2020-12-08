@@ -16,6 +16,7 @@ class Payment extends Migration
         Schema::create('payment', function (Blueprint $table) {
             $table->id();
             $table->text('transaction_id');
+            $table->text('payment_id')->nullable();
             $table->integer('user_id');
             $table->text('note')->nullable();
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending');

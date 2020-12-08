@@ -13,6 +13,8 @@
          <p class="p_course">{{$c->short_description}}</p>
       </div>
       <div class="d-flex border-top stats" style="position: absolute;bottom: 0;width: 100%;">
+         <button class="btn  shopping_btn mr-2" onclick="courseDetails({{$c->id}})">Deatils</button>
+
          @if(empty($user))
          <button class="btn  shopping_btn" @if ($c->available_seats > 0) 
                  onclick="addToCart('{{$c->id}}', '{{$c->name}}', '{{$c->price}}')"

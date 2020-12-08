@@ -109,12 +109,14 @@ class PaymentController extends Controller
     
        $check_if_processed = DB::table('payment')->
            where([
-                'transaction_id' => $request->tx_id,
-                'status' => "success"
-            ])->first();
+               'transaction_id' => $request->tx_id,
+            ])->
+           orWhere('payment_id', $request->input('paymentId'))->
+           whereNotIn('status', ['pending'])->
+           first();
 
         if (!empty($check_if_processed)) {
-          //  abort(403);
+           abort(403);
         }
 
         // Once the transaction has been approved, we need to complete it.
@@ -129,6 +131,7 @@ class PaymentController extends Controller
                     where('transaction_id', $request->tx_id)->
                     update([
                         'status' => "success",
+                        'payment_id' =>$request->input('paymentId'),
                         "updated_at" => now()
                     ]);
 
