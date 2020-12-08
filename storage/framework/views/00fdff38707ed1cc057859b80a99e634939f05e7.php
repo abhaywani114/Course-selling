@@ -72,9 +72,14 @@
                 width: 300px;
                 padding: 0px;
                 object-fit: cover;
-                margin-left: -20px;
+                padding:5px;
+                /*margin-left: -20px;*/
             }
-
+                
+            .intro_subtitle_mainsection {
+                position: absolute;bottom: 0;
+            }
+            
             @media  only screen and (max-width: 920px) {
                 .navbar {
                     padding-left: 1rem !important;
@@ -84,6 +89,10 @@
                     align-items: unset;   */
                 }
                 
+                .intro_subtitle_mainsection {
+                    position: unset;bottom: 0;
+                }
+                 
                 .nab_bar_logo {
                     margin-left: unset;
                 }
@@ -203,7 +212,8 @@
                 <ul class="navbar-nav m-auto">
                     <li><a   href="/#home-section" class="nav-link active"><span>Home</span></a></li>
                     <li><a href="/#courses-section" class="nav-link"><span>Courses</span></a></li>
-                    <li><a href="/#teachers-section" class="nav-link"><span>Faculty</span></a></li>
+                    <li><a href="/#teachers-section" class="nav-link"><span>Teaching Faculty</span></a></li>
+                    <li><a href="/#review-section" class="nav-link"><span>Testimonials</span></a></li>
                     <li><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
 
 					<?php if(auth()->guard()->check()): ?>	

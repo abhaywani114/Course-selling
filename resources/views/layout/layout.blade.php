@@ -212,7 +212,8 @@
                 <ul class="navbar-nav m-auto">
                     <li><a   href="/#home-section" class="nav-link active"><span>Home</span></a></li>
                     <li><a href="/#courses-section" class="nav-link"><span>Courses</span></a></li>
-                    <li><a href="/#teachers-section" class="nav-link"><span>Faculty</span></a></li>
+                    <li><a href="/#teachers-section" class="nav-link"><span>Teaching Faculty</span></a></li>
+                    <li><a href="/#review-section" class="nav-link"><span>Testimonials</span></a></li>
                     <li><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
 
 					@auth	

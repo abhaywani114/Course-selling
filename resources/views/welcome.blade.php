@@ -240,8 +240,8 @@
       <div class="row m-0 p-0" id="courses_div" style="width:100%">
         {!! $course !!}
       </div>
-      <button class="btn shopping_cart_btn" onclick="moreCourses()" style="margin: auto;display: block;width: 150px;"><i 
-         class="fa fa-angle-down"></i> More</button>
+<!--       <button class="btn shopping_cart_btn" onclick="moreCourses()" style="margin: auto;display: block;width: 150px;"><i 
+         class="fa fa-angle-down"></i> More</button> -->
    </div>
 </div>
 <div class="slide-1  pt-3" id="teachers-section" >
@@ -261,7 +261,7 @@
       </div>
    </div>
 </div>
-<div class="slide-1 mb-3" id="review-section" >
+<div class="slide-1 mb-3" id="review-section" style="min-height: 60%;" >
    <div class="parallax-curtain">
       <div class="container">
          <div class="row mb-2 pt-5 justify-content-center">
@@ -272,14 +272,9 @@
                <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
                   data-interval="2500">
                   <!--Slides-->
-                  <div class="carousel-inner" role="listbox" style="min-height: 500px;">
+                  <div class="carousel-inner text -center mt-5 mb-3 " role="listbox" style="min-height: 200px;">
                      <div class="carousel-item active">
-                        <div class="testimonial text-white">
-                           <!--Avatar-->
-                           <div class="avatar mx-auto mb-4">
-                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
-                                 alt="First sample avatar image">
-                           </div>
+                        <div class="testimonial text-white p-4">
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
@@ -287,54 +282,39 @@
                               to be guided on how to structure my future study and preparation for the exam.
                               </p>
                            <h4 class="font-weight-bold">Mohamed Naell</h4>
-                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <h6 class="font-weight-bold my-3">Candidate</h6>
                            <!--Review-->
                         </div>
                      </div>
                      
                      <div class="carousel-item ">
-                        <div class="testimonial text-white">
-                           <!--Avatar-->
-                           <div class="avatar mx-auto mb-4">
-                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
-                                 alt="First sample avatar image">
-                           </div>
+                        <div class="testimonial text-white p-4">
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
                               <i class="fa fa-quote-left"></i> Very good need more like this course.
                            </p>
                            <h4 class="font-weight-bold">Rajeev Jahagirdar</h4>
-                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <h6 class="font-weight-bold my-3">Candidate</h6>
                            <!--Review-->
                         </div>
                      </div>
                      
                      <div class="carousel-item">
-                        <div class="testimonial text-white">
-                           <!--Avatar-->
-                           <div class="avatar mx-auto mb-4">
-                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
-                                 alt="First sample avatar image">
-                           </div>
+                        <div class="testimonial text-white p-4">
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
                               <i class="fa fa-quote-left"></i> Keep up the good work.
                            </p>
                            <h4 class="font-weight-bold">Winster D'Souza</h4>
-                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <h6 class="font-weight-bold my-3">Candidate</h6>
                            <!--Review-->
                         </div>
                      </div>
                      
                      <div class="carousel-item">
-                        <div class="testimonial text-white">
-                           <!--Avatar-->
-                           <div class="avatar mx-auto mb-4">
-                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
-                                 alt="First sample avatar image">
-                           </div>
+                        <div class="testimonial text-white p-4">
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
@@ -342,18 +322,13 @@
                               I will definately change my strategy of studying.
                            </p>
                            <h4 class="font-weight-bold">Harry Benjamin-Laing</h4>
-                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <h6 class="font-weight-bold my-3">Candidate</h6>
                            <!--Review-->
                         </div>
                      </div>
                      
                      <div class="carousel-item">
-                        <div class="testimonial text-white">
-                           <!--Avatar-->
-                           <div class="avatar mx-auto mb-4">
-                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
-                                 alt="First sample avatar image">
-                           </div>
+                        <div class="testimonial text-white p-4">
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
@@ -361,29 +336,23 @@
                               in my presentation of case and on the basis of my observation.
                            </p>
                            <h4 class="font-weight-bold">Nicholas Bezzina</h4>
-                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <h6 class="font-weight-bold my-3">Candidate</h6>
                            <!--Review-->
                         </div>
                      </div>
                      
                      <div class="carousel-item">
-                        <div class="testimonial text-white">
-                           <!--Avatar-->
-                           <div class="avatar mx-auto mb-4">
-                              <img src="{{asset('/img/user.png')}}" class="rounded-circle img-fluid mx-auto d-block" style="width:270px; height:auto;"
-                                 alt="First sample avatar image">
-                           </div>
+                        <div class="testimonial text-white p-4">
                            <!--Content-->
                            <p class="text-justify">
                               <br/>
                               <i class="fa fa-quote-left"></i> Very constructive feedback demonstrating how to organise the answers.
                            </p>
                            <h4 class="font-weight-bold">Umesh Birole</h4>
-                           <h6 class="font-weight-bold my-3">Student</h6>
+                           <h6 class="font-weight-bold my-3">Candidate</h6>
                            <!--Review-->
                         </div>
                      </div>
-\
                   </div>
                   <!--Slides-->
                   <!--Controls-->
