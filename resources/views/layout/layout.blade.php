@@ -252,7 +252,7 @@
 
 
 			</ul> 
-                <!-- <button onclick="renderCart()" data-toggle="modal" data-target="#shopping_cart" class="btn shopping_cart_btn"><i class="fa fa-shopping-cart"></i> Cart</button> -->
+                <button onclick="renderCart()" data-toggle="modal" data-target="#shopping_cart" class="btn shopping_cart_btn"><i class="fa fa-shopping-cart"></i> Cart</button>
             </div>
 
         </nav>   
