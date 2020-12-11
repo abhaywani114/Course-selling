@@ -291,11 +291,9 @@
 @if (!empty($course))
 
         <h2 class="course_title_main">{{$course->name}}</h2>
+        <h4 style="font-size:17px;text-transform: capitalize;"
+            class="course_title_main" >{{$course->short_description}}</h4>
         <hr class="course_divider_hr" />
-        <div>
-          <p style="font-size: 20px;margin-bottom: 5px;">Supported by:</p>
-          <img src="{{asset('img/sp.webp')}}">
-         </div>
          <div>
             <h2 class="course_places_available">PLACES AVAILABLE</h2>
               <div class="table-responsive">
@@ -629,6 +627,13 @@
         <div class="form-group">
             <input type="text" name="email" class="form-control" 
                placeholder="Email" required>
+         </div>
+
+
+        <div class="form-group">
+            <span>Booking Date</span>
+            <input type="date" name="booking_date" class="form-control"  
+                required>
          </div>
 
         <div class="form-group">

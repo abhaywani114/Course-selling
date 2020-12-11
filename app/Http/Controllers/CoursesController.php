@@ -140,7 +140,7 @@ EOD;
 
 			addColumn('send_email', function ($c) {
 				return <<<EOD
-			<span onclick="mailCourses($c->id)" class="edit_btn text-success"><i class="fa fa-envelope"></i></span>
+			<!--span onclick="mailCourses($c->id)" class="edit_btn text-success"><i class="fa fa-envelope"></i></span-->
 EOD;
 			})->
 

@@ -32,6 +32,7 @@ class Payment extends Migration
             $table->text('country');
             $table->text('intrest');
             $table->enum('type', ['participant', 'observer']);
+            $table->date('booking_date');
             $table->integer('price');
             $table->timestamps();
         });

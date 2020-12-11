@@ -37,10 +37,18 @@
   		<div class="pt-5 text-left mx-auto col-6">
   			
   			@if ( $status == 'success')
-  			<img class=" my-3 d-block w-50 mx-auto" 
+  			<img class=" my-3 d-block w-25 mx-auto" 
   				src="{{asset('img/payment_success.png')}}">
   			<h1 class="text-success text-center">Payment Successful</h1>
   			<h5 class="text-success text-center">Transaction ID: {{ request()->tx_id }}</h5>
+        <h6 style="line-height: 1.5;font-size: 16px;text-align: justify;">
+          <strong>Dear candidate,</strong><br/>
+          Many thanks for registering for the ‘ FRCS Mock-Exam Course ‘ on <strong>{{date("Y-m-d", strtotime($payment_course_->booking_date))}}</strong><br/>
+          Your place as <strong>{{ucfirst($payment_course_->type)}}</strong> is now confirmed <br/>
+          Fee paid = <strong>{{$payment_course_->price}}</strong><br/>
+          Payment date = <strong>{{date("Y-m-d")}}</strong><br/>
+          A Zoom registration link to join will be sent to you 2 days prior to the course.<br/>
+          As a course candidate, you are entitled to a discount on our award winning revision book ‘Concise Orthopaedic Notes ‘.Please contact us back if interested</h6>
   			@else
   			<img class=" my-3 d-block w-100 mx-auto" 
   				src="{{asset('img/payment_failed.jpg')}}">

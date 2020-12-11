@@ -25,9 +25,10 @@ class PaymentController extends Controller
     	try { 		
     		
             $validator = Validator::make($request->all(),[
-                "email"     =>  "required",
-                "type"      =>  "required",
-                "country"   =>  "required"
+                "email"         =>  "required",
+                "type"          =>  "required",
+                "country"       =>  "required",
+                "booking_date"  =>  "required"
             ]);
    
             if ($validator->fails()) {
@@ -56,6 +57,7 @@ class PaymentController extends Controller
 
 			DB::table('payment_course')->insert([
 				"payment_id"	=>	$payment_id,
+                "booking_date"  =>  $request->booking_date,
                 "name"          =>  $request->fname ." ".  $request->sname,
                 "email"         =>  $request->email,
                 "phone_no"      =>  $request->mobile,
@@ -110,10 +112,10 @@ class PaymentController extends Controller
 
         if (!empty($check_if_processed)) {
             if ($check_if_processed->status != 'pending') {
-              abort(403);
+            //  abort(403);
             }
         } else {
-           abort(404);
+          // abort(404);
         }
 
         // Once the transaction has been approved, we need to complete it.
@@ -137,13 +139,13 @@ class PaymentController extends Controller
                 
                 $payment_course_ = DB::table('payment_course')->
                     where('payment_id',$check_if_processed->id )->first();
-                    
-                if ($payment_course_->status == 'participant') {
+
+                if ($payment_course_->type == 'participant') {
                   DB::table('courses')->
                     where('id', $course_ids)->decrement('available_seats',1);
                 }
 
-                app('App\Http\Controllers\mailController')->sendInvoice($request->tx_id);
+               // app('App\Http\Controllers\mailController')->sendInvoice($request->tx_id);
                 $status = 'success';
                 $errMsg = "";
             }  else {
@@ -166,7 +168,7 @@ class PaymentController extends Controller
             ]);
         }
 
-     	return view("admin.payment_status", compact('status','errMsg'));
+     	return view("admin.payment_status", compact('status','errMsg','payment_course_'));
         
     }  
 
