@@ -354,23 +354,9 @@
          </div>
       </div>
       <div class="course_section_details mt-5">
-         <h1>        DETAILS    </h1>
-         <div class="uk-panel uk-margin">
-            <p>{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
-         </div>
-      </div>
-
-      <div class="course_section_details mt-5">
          <h1 style=""><span>Overview</span></h1>
          <div class="uk-panel uk-margin">
             <p>{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
-         </div>
-      </div>
-
-      <div class="course_section_details mt-5">
-         <h1 style=""><span>Structure</span></h1>
-         <div class="uk-panel uk-margin">
-            <p>{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
          </div>
       </div>
 
@@ -381,6 +367,13 @@
          </div>
       </div>
 
+      <div class="course_section_details mt-5">
+         <h1 style=""><span>Structure</span></h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
+         </div>
+      </div>
+      
       <div class="course_section_details mt-5">
          <h1 style=""><span>Timetable & Marking Criteria</span></h1>
          <div class="uk-panel uk-margin">
