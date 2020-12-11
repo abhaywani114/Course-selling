@@ -134,7 +134,7 @@ class CoursesController extends Controller
 				$url = route('admin.view_entries', $c->id);
 
 				return <<<EOD
-				<a href="$url" target="_blank" style="text-decoration:none;">$enrolled</a> / $c->seat_limit	
+				$enrolled / $c->seat_limit	
 EOD;
 			})->
 

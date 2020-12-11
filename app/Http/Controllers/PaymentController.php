@@ -145,7 +145,7 @@ class PaymentController extends Controller
                     where('id', $course_ids)->decrement('available_seats',1);
                 }
 
-               // app('App\Http\Controllers\mailController')->sendInvoice($request->tx_id);
+               app('App\Http\Controllers\mailController')->sendInvoice($request->tx_id);
                 $status = 'success';
                 $errMsg = "";
             }  else {
