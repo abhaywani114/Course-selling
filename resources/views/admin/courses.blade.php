@@ -51,7 +51,6 @@
 			<tr>
 				<th style="width:30px">No</th>
 				<th style="width:300px">Course Name</th>
-				<th style="">Price</th>
 				<th style="">Date</th>
 				<th style="">Enrolled</th>
 				<th style="">Status</th>
@@ -101,12 +100,21 @@
 					<input type="number" name="seat_limit" class="form-control" value="0" placeholder="Allowed Seats" required>
 				 </div>
 
+				<div class="form-group">
+					<span>Available Seats</span>
+					<input type="number" name="available_seats" class="form-control" value="0" placeholder="Available Seats" required>
+				 </div>
+
 				 <div class="form-group">
 					<input type="text" name="duration" class="form-control" placeholder="Duration (Ex: 1 hour)" required>
 				 </div>
 
 				 <div class="form-group">
-					<input type="number" name="price" class="form-control" placeholder="Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
+					<input type="number" name="participant_price" class="form-control" placeholder="Participant Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
+				</div>
+
+				 <div class="form-group">
+					<input type="number" name="observer_price" class="form-control" placeholder="Observer Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
 				</div>
 
 				 <div class="form-group">
@@ -151,7 +159,7 @@
 				</div>
 
 				 <div class="form-group">
-					<input type="file" name="image" class="form-control" placeholder="Price" >
+					<input type="file" name="image" class="form-control" placeholder="" >
 				</div>
 
 				 <div class="form-group row">
@@ -189,7 +197,6 @@ var courseTable = $('#course_table').DataTable({
 	columns: [
 		{data: 'DT_RowIndex', name: 'DT_RowIndex'},
 		{data: 'name', name: 'name'},
-		{data: 'price', name: 'price'},
 		{data: 'date', name: 'date'},
 		{data: 'student_enrolled', name: 'student_enrolled'},
 		{data: 'status', name: 'status'},
@@ -199,7 +206,7 @@ var courseTable = $('#course_table').DataTable({
 	],
 	"order": [],
 	"columnDefs": [
-		{"className": "text-center", "targets": [0,3,4,5,6,7,8]},
+		{"className": "text-center", "targets": [0,3,4,5,6,7]},
 		{"className": "text-right", "targets": [2]}
 	]
 });

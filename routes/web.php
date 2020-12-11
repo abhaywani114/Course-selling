@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use \DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	$course = app("App\Http\Controllers\CoursesController")->course_tile()->render();
+	$course = DB::table('courses')->first(); 
+	// app("App\Http\Controllers\CoursesController")->course_tile()->render();
 
 	$teachers = app("App\Http\Controllers\TeacherController")->teacher_tile()->render();
 
-	$subscribed = app("App\Http\Controllers\CoursesController")->resentCourseSubscribed();
+	$subscribed = collect();
+	//app("App\Http\Controllers\CoursesController")->resentCourseSubscribed();
+	
+	$is_admin = !empty(request()->admin);
 
-    return view('welcome',compact('course','teachers','subscribed'));
+    return view('welcome',compact('course','teachers','subscribed', 'is_admin'));
 });
 
 Route::get('/admin/courses', function () {

@@ -117,8 +117,9 @@
     color: red;
 }
 </style>
-<div class="slide-1" id="home-section" >
-   <div class="pallax"></div>
+<div class="slide-1" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @endif >
+   <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @endif ></div>
+   @if ($is_admin)
    <div class="container">
       <div class="row intro_custom_1 " >
          <div class="col-lg-6 mb-4 text-white" >
@@ -229,19 +230,181 @@
          </div>
       </div>
    </div>
+   @endif
 </div>
 <div class="slide-1 mb-5" id="courses-section" >
    <div class="container">
       <div class="row mb-3 mt-5 justify-content-center">
-         <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+     <!--     <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
             <h2 class="section-title">Courses</h2>
+         </div> -->
+      </div>
+      <div class="row m-0 p-0" id="courses_div" style="width:100%;display: block">
+        {{-- !! var_dump($course) !!--}}
+        <style type="text/css">
+           
+           .course_title_main {
+               margin-bottom: 0!important;
+               text-align: left!important;
+               animation-name: uk-fade;
+               animation-duration: .8s;
+               animation-timing-function: linear;
+               line-height: 1.2;
+               color: #003673;
+               font-weight: 100;
+               text-transform: uppercase;
+               margin: 0 0 20px 0; 
+               color: #006ba1;
+               font-size: 40px;
+           }
+           .course_divider_hr {
+            display:block;
+             margin: 20px 0 20px 0;    
+             width: 80px;
+             max-width: 100%;
+             border-top: 4px solid #007dc3;
+             vertical-align: top;
+           }
+           .course_places_available {
+             line-height: 1.238;
+             font-weight: 300;
+             text-transform: uppercase;
+             border-left: 3px solid #00F;
+             padding-left: 10px;
+             margin: 25px 0px;
+           }
+
+           .courses_reg_btn {
+             width: 160px;
+             font-size: 16px;
+             font-weight: 700;
+             margin-top: 10px;
+             border-radius: 10px;
+             border: 3px solid
+           }
+           .course_section_details > h1 {
+                      border-left: 3px solid #00F;
+             padding-left: 10px;
+           }
+
+        </style>
+@if (!empty($course))
+
+        <h2 class="course_title_main">{{$course->name}}</h2>
+        <hr class="course_divider_hr" />
+        <div>
+          <p style="font-size: 20px;margin-bottom: 5px;">Supported by:</p>
+          <img src="{{asset('img/sp.webp')}}">
+         </div>
+         <div>
+            <h2 class="course_places_available">PLACES AVAILABLE</h2>
+              <div class="table-responsive">
+              <table class="table table-sm table-borderless mb-0">
+                <tbody>
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+                    <td>{{date("Y-M-d",strtotime($course->date))}}</td>
+                  </tr>
+
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Registration</strong></th>
+                    <td>{{$course->registration}}</td>
+                  </tr>
+
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Zoom Meeting</strong></th>
+                    <td>{{$course->meeting_time}}</td>
+                  </tr>
+
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Duration</strong></th>
+                    <td>{{$course->duration}}</td>
+                  </tr>
+
+                  <tr>
+                   <th class="pl-0 w-25" scope="row"><strong>who should attend?</strong></th>
+                    <td>{{$course->who_should_attend}}</td>
+                  </tr>
+
+                  <tr>
+                   <th class="pl-0 w-25" scope="row"><strong>Allowed Seats</strong></th>
+                    <td>{{$course->seat_limit}}</td>
+                  </tr>
+
+                  <tr>
+                   <th class="pl-0 w-25" scope="row"><strong>Available Seats</strong></th>
+                    <td>{{$course->available_seats}}</td>
+                  </tr>
+
+                   <tr>
+                   <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
+                    <td> £{{$course->participant_price}} per candidate or £{{$course->observer_price}} per observer</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              </div>
+               <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
+                     <button class="btn shopping_cart_btn courses_reg_btn"
+                    @if ($course->available_seats != 0)
+                     data-toggle="modal" data-target="#registration_modal"
+                    @else
+                      onclick="messageModal('0 seats left.')"
+                    @endif />
+                     Register Here</button>
+               </div>
          </div>
       </div>
-      <div class="row m-0 p-0" id="courses_div" style="width:100%">
-        {!! $course !!}
+      <div class="course_section_details mt-5">
+         <h1>        DETAILS    </h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
+         </div>
       </div>
-<!--       <button class="btn shopping_cart_btn" onclick="moreCourses()" style="margin: auto;display: block;width: 150px;"><i 
-         class="fa fa-angle-down"></i> More</button> -->
+
+      <div class="course_section_details mt-5">
+         <h1 style=""><span>Overview</span></h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
+         </div>
+      </div>
+
+      <div class="course_section_details mt-5">
+         <h1 style=""><span>Structure</span></h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
+         </div>
+      </div>
+
+      <div class="course_section_details mt-5">
+         <h1 style=""><span>Course Aims</span></h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->course_aims, '<p><a><br>'));  !!}</p>
+         </div>
+      </div>
+
+      <div class="course_section_details mt-5">
+         <h1 style=""><span>Timetable & Marking Criteria</span></h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->tmc, '<p><a><br>'));  !!}</p>
+         </div>
+      </div>
+
+      <div class="course_section_details mt-5">
+         <h1 style=""><span>Study Aid</span></h1>
+         <img class='mt-3 mb-3' src="{{asset('img/firas_book.webp')}}">
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->study_aid, '<p><a><br>'));  !!}</p>
+         </div>
+         <div class="form-group" style="align-items: center;display: flex;
+            justify-content: space-between;">
+                <button onclick="signMeUp()" style="width: 300px;" 
+                 class="btn shopping_cart_btn courses_reg_btn" >
+                  Link to purchase book at Amazon</button>
+            </div>
+      </div>
+@endif
+
    </div>
 </div>
 <div class="slide-1  pt-3" id="teachers-section" >
@@ -422,8 +585,84 @@
 <style>
 .table-borderless, .table-borderless > tbody, .table-borderless >  tbody> tr, .table-borderless >  tbody> tr > th, .table-borderless >  tbody> tr > td {
 	border: none !important;
-}
+},
 </style>
+
+<!-- Modal -->
+<div id="registration_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-dialog-centered" role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Registration</h4>
+        <button type="button" class="text-white close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+     <form method="post" action="{{route('payment.checkout')}}">
+        
+         <div class="form-group">
+            <input type="text" name="fname" class="form-control" 
+               placeholder="First Name" required>
+         </div>
+
+        <div class="form-group">
+            <input type="text" name="sname" class="form-control" 
+               placeholder="Surname" required>
+         </div>
+
+         <div class="form-group">
+            <input type="text" name="hospital" class="form-control" 
+               placeholder="Hospital / Institution" required>
+         </div>
+
+         <div class="form-group">
+            <input type="text" name="country" class="form-control" 
+               placeholder="Country" required>
+         </div>
+
+         <div class="form-group">
+            <input type="tel" name="mobile" class="form-control" 
+               placeholder="Mobile" required>
+         </div>
+
+        <div class="form-group">
+            <input type="text" name="email" class="form-control" 
+               placeholder="Email" required>
+         </div>
+
+        <div class="form-group">
+          <span>Price</span>
+           <select type="text" name="type" class="form-control"  required>
+              <option value="participant" class="form-control">Participant: £{{$course->participant_price ?? 0}}</option>
+              <option value="observer" 
+                class="form-control">Observer : £{{$course->observer_price ?? 0}}</option>
+            </select>
+        </div>
+
+         <div class="form-group p-1">
+            <span class="p-1">Area of Intrest</span>
+            @foreach (['Knee','Hip','Trauma', 'Shoulder','Sports Rehab',
+               'Foot & Ankle' , 'FRCS Exam Preperation'] as $f)
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" value="{{$f}}" 
+                    name="intrest[]"
+                    id="defaultCheck_{{str_replace(' ', '_', $f)}}">
+                 <label class="form-check-label" for="defaultCheck_{{str_replace(' ', '_', $f)}}">
+                   {{$f}}
+                 </label>
+               </div>
+            @endforeach
+         </div>
+         @csrf
+          <div class="modal-footer" style="border: none;padding: 10px 0px;">
+               <button type="submit" class="btn shopping_cart_btn">Checkout</button>
+         </div>
+     </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection
 @section('js')

@@ -46,7 +46,6 @@
 				<th style="width:30px;">No</th>
 				<th style="width:75px;">Date</th>
         <th style="">Tx Id</th>
-        <th style="width:200px">Course Name</th>
 				<th style="width:200px">Username</th>
 				<th style="width:75px">Amount</th>
 				<th style="width:30px">Status</th>
@@ -59,9 +58,8 @@
           <td class="text-center">{{$loop->index + 1}}</td>
           <td>{{date("mDY", strtotime($payment->updated_at))}}</td>
           <td>{{$payment->transaction_id}}</td>
-          <td>{{$payment->course_name}}</td>
-          <td>{{$payment->username}}</td>
-          <td class="text-right">{{$payment->course_price}} {{env('CURRENCY_CODE')}}</td>
+          <td>{{$payment->name}}</td>
+          <td class="text-right">{{$payment->price}} {{env('CURRENCY_CODE')}}</td>
           <td @if ($payment->status == 'failed') 
              onclick="messageModal('{{$payment->note}}')"
               style="cursor:pointer;color:blue;"

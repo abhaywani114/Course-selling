@@ -34,6 +34,11 @@
 					<input type="number" name="seat_limit" class="form-control" value="{{$course->seat_limit??0}}" placeholder="Allowed Seats" required>
 				 </div>
 
+				<div class="form-group">
+					<span>Available Seats</span>
+					<input type="number" name="available_seats" class="form-control" value="{{$course->available_seats??0}}"  placeholder="Available Seats" required>
+				 </div>
+
 				 <div class="form-group">
 				 	<span>Duration</span>
 					<input type="text" name="duration" class="form-control"
@@ -43,8 +48,21 @@
 				 <div class="form-group">
 				 	<span>Price</span>
 					<input type="text" name="price" class="form-control"
-						value="{{$course->price??''}}" placeholder="Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
+						 placeholder="Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
 				</div>
+
+				<div class="form-group">
+				 	<span>Participant Price</span>
+					<input type="number" name="participant_price" class="form-control"
+					value="{{$course->participant_price??''}}" 
+					 placeholder="Participant Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
+				</div>
+
+				 <div class="form-group">
+				 	<span>Observer Price</span>
+					<input type="number" name="observer_price" value="{{$course->observer_price??''}}" class="form-control" placeholder="Observer Price (*All prices are in {{env('CURRENCY_CODE')}})" required>
+				</div>
+
 
 				 <div class="form-group">
 				 	<span>Who should attend?</span>

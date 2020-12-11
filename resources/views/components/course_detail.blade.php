@@ -91,7 +91,7 @@
    @if(!empty($course->tmc))
 		<div>
 			<h5 class="mt-3" ><strong style="border-bottom:2.5px solid #003e71">Study Aid</strong></h5>
-         <p class="pt-1">{!! nl2br(strip_tags($course->tmc, '<p><a><br>'));  !!}</p>
+         <p class="pt-1">{!! nl2br(strip_tags($course->study_aid, '<p><a><br>'));  !!}</p>
 		</div>
     @endif
 

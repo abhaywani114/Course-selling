@@ -32,15 +32,12 @@ tr:nth-child(even) {
 		  <tr>
 		    <td style="text-align: center">{{$loop->index + 1}}</td>
 		    <td style="text-align: left">{{$c->name}}</td>
-		    <td style="text-align: right;">{{$c->price}} {{env('CURRENCY_CODE')}}</td>
+		    <td style="text-align: right;">{{$payment->price}} {{env('CURRENCY_CODE')}}</td>
 		  </tr>
 	@endforeach
 	  <tr>
 	    <td style="text-align: center;" colspan="2"><strong>Total Price</strong></td>
-	    <td style="text-align: right;">{{ $courses->reduce(function	($a, $b){
-	    		return $a + $b->price;
-	    	})
-	     }} {{env('CURRENCY_CODE')}}</td>
+	    <td style="text-align: right;">{{$payment->price}} {{env('CURRENCY_CODE')}}</td>
 	  </tr>
 	<tbody>
 	</tbody>

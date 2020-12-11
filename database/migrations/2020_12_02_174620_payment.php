@@ -17,7 +17,6 @@ class Payment extends Migration
             $table->id();
             $table->text('transaction_id');
             $table->text('payment_id')->nullable();
-            $table->integer('user_id');
             $table->text('note')->nullable();
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending');
             $table->timestamps();
@@ -26,10 +25,17 @@ class Payment extends Migration
         Schema::create('payment_course', function (Blueprint $table) {
             $table->id();
             $table->integer('payment_id');
-            $table->integer('course_id');
+            $table->text('name');
+            $table->text('email');
+            $table->bigInteger('phone_no');
+            $table->text('hospital');
+            $table->text('country');
+            $table->text('intrest');
+            $table->enum('type', ['participant', 'observer']);
             $table->integer('price');
             $table->timestamps();
         });
+
     }
 
     /**

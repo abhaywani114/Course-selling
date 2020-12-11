@@ -20,7 +20,8 @@ class CoursesController extends Controller
 				'reg_time'			=>	"required",
 				"zoom_time"			=>	"required",
 				"duration"			=>	"required",
-				"price"				=>	"required",
+				"participant_price"	=>	"required",
+				"observer_price"	=>	"required",
 				"who_should_attend" =>	"required",
 				"desp"				=>	"required",
 				"seat_limit"		=>	"required",
@@ -40,33 +41,13 @@ class CoursesController extends Controller
 			$array['registration']		= $request->reg_time;
 			$array['meeting_time']		= $request->zoom_time;
 			$array['duration']			= $request->duration;
-			$array['price']				= $request->price;
+			$array['participant_price']	= $request->participant_price;
+			$array['observer_price']	= $request->observer_price;
 			$array['short_description'] = $request->desp;
 			$array['who_should_attend'] = $request->who_should_attend;
 			$array['status']			= $request->status;
 			$array['seat_limit']		= $request->seat_limit;
-
-			if (empty($request->course_id)) {				
-				$array['available_seats']	= $request->seat_limit;
-			} else {
-				$enrolled = DB::table('payment')->
-					join('payment_course','payment_course.payment_id','payment.id')->
-					where([
-						'payment_course.course_id'	=> $request->course_id,
-						'status'					=> 'success'
-					])->
-					get()->count();
-				
-				$array['available_seats']	= $request->seat_limit - $enrolled;
-
-				if ($array['available_seats'] < 0) {
-					return response()->json(array(
-						'success' => false,
-						'errors' =>	["Enrolled seat exceedes seat limit."]
-					), 400);
-				}
-			}
-
+			$array['available_seats']	= $request->available_seats;
 			$array['updated_at']		= now();
 
 			if (empty($request->course_id))
@@ -140,10 +121,6 @@ class CoursesController extends Controller
 				return $c->name;
 			})->
 
-			addColumn('price', function ($c) {
-				return "$c->price ".env('CURRENCY_CODE');
-			})->
-
 			addColumn('date', function ($c) {
 				return date("d-M-Y", strtotime($c->date));
 			})->
@@ -153,14 +130,9 @@ class CoursesController extends Controller
 			})->
 
 			addColumn('student_enrolled', function ($c) {
-				$enrolled = DB::table('payment')->
-				join('payment_course','payment_course.payment_id','payment.id')->
-				where([
-					'payment_course.course_id'	=> $c->id,
-					'status'					=> 'success'
-				])->
-				get()->count();
+				$enrolled = $c->seat_limit - $c->available_seats;
 				$url = route('admin.view_entries', $c->id);
+
 				return <<<EOD
 				<a href="$url" target="_blank" style="text-decoration:none;">$enrolled</a> / $c->seat_limit	
 EOD;
@@ -180,22 +152,9 @@ EOD;
 			})->
 
 			addColumn('delete', function ($c) {
-				$enrolled = DB::table('payment')->
-					join('payment_course','payment_course.payment_id','payment.id')->
-					where([
-						'payment_course.course_id'	=> $c->id,
-						'status'					=> 'success'
-					])->
-					first();
-				if (empty($enrolled)) {
 				return <<<EOD
 				<span onclick="delete_course($c->id)" class="edit_btn text-danger"><i class="fa fa-trash"></i></span>
 EOD;
-				} else {
-				return <<<EOD
-				<span onclick="messageModal('This course had been purchased. Now cannot be deleted.')" class="edit_btn text-muted"><i class="fa fa-trash"></i></span>
-EOD;				
-				}
 			})->
 			escapeColumns([])->make(true);
 	}

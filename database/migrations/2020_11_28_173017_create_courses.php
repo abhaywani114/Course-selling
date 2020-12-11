@@ -20,7 +20,8 @@ class CreateCourses extends Migration
 			$table->time('registration');
 			$table->time('meeting_time');
 			$table->string('duration');
-			$table->double('price', 8, 2);
+            $table->double('participant_price', 8, 2);
+			$table->double('observer_price', 8, 2);
 			$table->text("short_description");
 			$table->text("who_should_attend");
             $table->integer('seat_limit')->default(0);

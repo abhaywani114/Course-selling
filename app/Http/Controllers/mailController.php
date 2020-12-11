@@ -62,22 +62,24 @@ class mailController extends Controller
 	}
 
 	public function sendInvoice($tx_id) {
-		$courses =	DB::table('courses')->
-		                join('payment_course','payment_course.course_id', 'courses.id')->
-		                join('payment','payment.id','payment_course.payment_id')->
-		                where('payment.transaction_id', $tx_id)->
-		                select('courses.*')->get();
 
-		 $user  = DB::table('users')->
-		 	join('payment','payment.user_id','users.id')->
+		$courses =	DB::table('courses')->limit(1)->get();
+		 $payment  = DB::table('payment')->
+		 	join('payment_course','payment.id','payment_course.payment_id')->
 		 	where('payment.transaction_id', $tx_id)->
-		 	select('users.*')->
 		 	first();
 
-		Mail::send('email.course_invoice', compact('courses', 'tx_id'), function($message) use ($tx_id, $user) {
+		Mail::send('email.course_invoice', compact('courses', 'payment','tx_id'), function($message) use ($tx_id, $payment) {
            $message->from(env('MAIL_FROM_ADDRESS'));
-           $message->to($user->email, $user->name)->
+           $message->to($payment->email, $payment->name)->
            subject("Invoice | $tx_id");
+       });
+
+		$courses =	DB::table('courses')->first();
+		Mail::send('email.course_reg', compact('courses', 'payment','tx_id'), function($message) use ($tx_id, $payment) {
+           $message->from(env('MAIL_FROM_ADDRESS'));
+           $message->to(env('MAIL_FROM_ADDRESS'))->
+           subject("Payment Recv | $tx_id");
        });
 	}
 

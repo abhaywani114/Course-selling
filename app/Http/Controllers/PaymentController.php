@@ -8,6 +8,7 @@ use \Exception;
 use \Log;
 use DB;
 use \Auth;
+use \Validator;
 
 class PaymentController extends Controller
 {
@@ -17,68 +18,60 @@ class PaymentController extends Controller
         $this->gateway = Omnipay::create('PayPal_Rest');
         $this->gateway->setClientId(env('PAYPAL_CLIENT_ID'));
         $this->gateway->setSecret(env('PAYPAL_CLIENT_SECRET'));
-        $this->gateway->setTestMode(false); //set it to 'false' when go live
+        $this->gateway->setTestMode(true); //set it to 'false' when go live
     }
 
     public function checkout(Request $request) {
-    	try {
+    	try { 		
     		
-    		if (empty(Auth::User())) {
-				return response()->json(array(
-					'success' => false,
-					'errors' => ["Please login first"]
-				), 400);
-    		}
-
-    		$cart = json_decode($request->productsInCart, true);
-    		$tx_id = strtoupper(substr(preg_replace("/[^a-zA-Z0-9]+/", "",  base64_encode(random_bytes(16))), 0, 16));
-
-            if (empty($cart)) {
+            $validator = Validator::make($request->all(),[
+                "email"     =>  "required",
+                "type"      =>  "required",
+                "country"   =>  "required"
+            ]);
+   
+            if ($validator->fails()) {
                 return response()->json(array(
                     'success' => false,
-                    'errors' => ["Your cart is empty. PLease add some courses to your cart to checkout."]
+                    'errors' => $validator->getMessageBag()->toArray()
                 ), 400);
-            }
+            } 
 
-            $is_any_null = DB::table('courses')->whereIn('id', array_map(function($f) {
-                return $f['id'];                
-                }, $cart) )->where('available_seats', 0)->get();
-
-            if ($is_any_null->count() > 0) {
-                $error_array = $is_any_null->pluck('name')->toArray();
-                array_unshift($error_array, "0 Seats avaliable for Courses:");
-                return response()->json(array(
-                    'success' => false,
-                    'errors' => $error_array
-                ), 400);
-            }
+    		$tx_id = strtoupper(
+                substr(preg_replace("/[^a-zA-Z0-9]+/", "",  
+                    base64_encode(random_bytes(16))), 0, 16));
 
     		$payment_id = DB::table('payment')->insertGetId([
     			"transaction_id"	=>	$tx_id,
-    			"user_id"			=>	Auth::User()->id,
 				"updated_at"		=> 	now(),
 				"created_at"		=>	now()
     		]);
 
-    		$total = 0;
-    		foreach ($cart as $c) {
-    			$course = DB::table('courses')->find($c['id']);
-    			DB::table('payment_course')->insert([
-    				"payment_id"	=>	$payment_id,
-    				"course_id"		=>	$course->id,
-    				"price"			=>	$course->price,
-    				"updated_at"	=> 	now(),
-    				"created_at"	=>	now()
-    			]);
-    			$total += $course->price;
-    		}
+			$course = DB::table('courses')->first();
+            
+            if ($request->type == 'participant')
+                $price  = $course->participant_price;
+            elseif ($request->type == 'observer')
+                $price  = $course->observer_price;
 
-    		
+			DB::table('payment_course')->insert([
+				"payment_id"	=>	$payment_id,
+                "name"          =>  $request->fname ." ".  $request->sname,
+                "email"         =>  $request->email,
+                "phone_no"      =>  $request->mobile,
+                "hospital"      =>  $request->hospital,
+                "country"       =>  $request->country,
+                "intrest"       =>  implode(',', $request->intrest),
+                "type"          =>  $request->type,
+				"price"			=>	$price,
+				"updated_at"	=> 	now(),
+				"created_at"	=>	now()
+			]);
 
            $response = $this->gateway->purchase(array(
-                'amount' => $total,
-                'name' => Auth::User()->name,
-                'email' => Auth::User()->email,
+                'amount' => $price,
+                'name' => "$request->fname $request->sname",
+                'email' => $request->email,
                 'currency' => env('CURRENCY_CODE'),
                 'returnUrl' => route('payment_response',$tx_id),
                 'cancelUrl' => route('payment_response', $tx_id),
@@ -117,10 +110,10 @@ class PaymentController extends Controller
 
         if (!empty($check_if_processed)) {
             if ($check_if_processed->status != 'pending') {
-               abort(403);
+              abort(403);
             }
         } else {
-            abort(404);
+           abort(404);
         }
 
         // Once the transaction has been approved, we need to complete it.
@@ -129,6 +122,7 @@ class PaymentController extends Controller
                 'payer_id'             => $request->input('PayerID'),
                 'transactionReference' => $request->input('paymentId'),
             ));
+
             $response = $transaction->send();
             if ($response->isSuccessful()) {
                  DB::table('payment')->
@@ -139,14 +133,15 @@ class PaymentController extends Controller
                         "updated_at" => now()
                     ]);
 
-                $course_ids = DB::table('courses')->
-                    join('payment_course','payment_course.course_id', 'courses.id')->
-                    join('payment','payment.id','payment_course.payment_id')->
-                    where('payment.transaction_id', $request->tx_id)->
-                    select('courses.*')->get()->pluck('id')->toArray();
-
-                DB::table('courses')->
-                    whereIn('id', $course_ids)->decrement('available_seats',1);
+                $course_ids = DB::table('courses')->first()->id;
+                
+                $payment_course_ = DB::table('payment_course')->
+                    where('payment_id',$check_if_processed->id )->first();
+                    
+                if ($payment_course_->status == 'participant') {
+                  DB::table('courses')->
+                    where('id', $course_ids)->decrement('available_seats',1);
+                }
 
                 app('App\Http\Controllers\mailController')->sendInvoice($request->tx_id);
                 $status = 'success';
@@ -178,12 +173,6 @@ class PaymentController extends Controller
     public function view_payment() {
     	$data = DB::table('payment')->
     		join('payment_course','payment_course.payment_id','payment.id')->
-    		leftjoin('courses','courses.id','payment_course.course_id')->
-    		leftjoin('users','users.id','payment.user_id')->
-    		orderBy("payment.created_at",'desc')->
-    		select("payment.*",'courses.name as course_name', 'users.name as username',
-    			DB::RAW("SUM(payment_course.price) as course_price"))->
-            groupBy('payment.transaction_id')->
     		get();
 
     	return view('admin.view_payment', compact('data'));
