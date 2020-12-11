@@ -388,7 +388,7 @@
          </div>
       </div>
 
-      <div class="course_section_details mt-5">
+      <div class="course_section_details mt-5" id="study_aid_section">
          <h1 style=""><span>Study Aid</span></h1>
          <img class='mt-3 mb-3' src="{{asset('img/firas_book.webp')}}">
          <div class="uk-panel uk-margin">

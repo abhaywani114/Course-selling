@@ -214,6 +214,7 @@
                     <li><a href="/#courses-section" class="nav-link"><span>Courses</span></a></li>
                     <li><a href="/#teachers-section" class="nav-link"><span>Teaching Faculty</span></a></li>
                     <li><a href="/#review-section" class="nav-link"><span>Testimonials</span></a></li>
+                    <li><a href="/#study_aid_section" class="nav-link"><span>Revision Book</span></a></li>
                     <li><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
 
 					@auth	
