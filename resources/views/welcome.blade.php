@@ -122,7 +122,7 @@
    <div class="container">
       <div class="row intro_custom_1 text-white " >
          <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @else 
-            style="text-align: right;margin-left: auto;padding-top:6em;"  @endif >
+            style="text-align: right;margin-left: auto;padding-top:15em;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
             <ul style="list-style: none;">

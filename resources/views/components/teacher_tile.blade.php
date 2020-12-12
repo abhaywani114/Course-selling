@@ -4,8 +4,7 @@
          <img src='{{asset("img/upload/$t->image")}}' alt="Image" 
             class=" rounded-circle mx-auto" style="width: 200px;height: 200px;object-fit: cover;" >
          <div class="py-2">
-            <h3 class="text-black">{{$t->name}}</h3>
-            <p class="position">{!! str_replace(',', ', <br/>', $t->designation) !!}</p>
+           <span class="position">    <span class="text-black" style="color: #808080">{{$t->name}},</span>{!! str_replace(',', ', <br/>', $t->designation) !!}</span>
          </div>
          <div class="d-flex border-top stats ">
 		  <button class="btn  shopping_btn" onclick="teacherDetails('{{$t->id}}')">Details</button>
