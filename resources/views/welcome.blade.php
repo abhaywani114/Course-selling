@@ -334,12 +334,12 @@
                   </tr>
 
                   <tr>
-                   <th class="pl-0 w-25" scope="row"><strong>Allowed Seats</strong></th>
+                   <th class="pl-0 w-25" scope="row"><strong>Allowed Seats (Participants)</strong></th>
                     <td>{{$course->seat_limit}}</td>
                   </tr>
 
                   <tr>
-                   <th class="pl-0 w-25" scope="row"><strong>Available Seats</strong></th>
+                   <th class="pl-0 w-25" scope="row"><strong>Available Seats (Participants)</strong></th>
                     <td>{{$course->available_seats}}</td>
                   </tr>
 
@@ -353,11 +353,7 @@
               </div>
                <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
                      <button class="btn shopping_cart_btn courses_reg_btn"
-                    @if ($course->available_seats != 0)
-                     data-toggle="modal" data-target="#registration_modal"
-                    @else
-                      onclick="messageModal('0 seats left.')"
-                    @endif />
+                     data-toggle="modal" data-target="#registration_modal" />
                      Register Here</button>
                </div>
          </div>
@@ -641,7 +637,7 @@
         <div class="form-group">
           <span>Price</span>
            <select type="text" name="type" class="form-control"  required>
-              <option value="participant" class="form-control">Participant: £{{$course->participant_price ?? 0}}</option>
+              <option value="participant" class="form-control" @if ($course->available_seats == 0) disabled @endif>Participant: £{{$course->participant_price ?? 0}}   @if ($course->available_seats == 0) (0 Seats Left) @endif </option>
               <option value="observer" 
                 class="form-control">Observer : £{{$course->observer_price ?? 0}}</option>
             </select>
