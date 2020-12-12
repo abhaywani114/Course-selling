@@ -143,6 +143,6 @@ Route::post('/courses/view-teacher-detail-modal', [TeacherController::class, "vi
 
 	//Payment
 Route::post("/payment/checkout", [PaymentController::class, "checkout"])->
-	name("payment.checkout")->middleware('CheckUType:both');;
+	name("payment.checkout");
 
 Route::get("/payment/{tx_id}/response", [PaymentController::class, "response"])->name("payment_response");
