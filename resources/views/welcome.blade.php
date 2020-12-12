@@ -126,9 +126,9 @@
             style="text-align: center;margin-left: auto;padding-top:5em;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
-            <ul  style="color: #fff">
+            <ul  style="color: #fff;list-style: none;">
+              <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
               <li class="mb-4 h4 text-white" >Cover all viva stations , short and intermediate clinicals.</li>  
-              <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>  
                <li class="mb-4 h4 text-white">Faculty  formally trained to provide high quality questions and feedback.</li>  
             </ul>
             
@@ -310,11 +310,11 @@
                 <tbody>
                   <tr>
                     <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-                    <td>{{date("Y-M-d",strtotime($course->date))}}</td>
+                    <td>{{date("d F Y",strtotime($course->date))}}</td>
                   </tr>
 
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Registration</strong></th>
+                    <th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
                     <td>{{$course->registration}}</td>
                   </tr>
 
