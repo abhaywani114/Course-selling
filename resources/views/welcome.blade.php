@@ -118,17 +118,18 @@
 }
 </style>
 <div class="slide-1" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @endif >
-   <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @endif ></div>
-   <div class="container">
+   <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10" @endif ></div>
+   <div class="container"  @if(!$is_admin) style=" z-index: 12;
+    position: absolute;" @endif>
       <div class="row intro_custom_1 text-white " >
          <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @else 
-            style="text-align: right;margin-left: auto;padding-top:15em;"  @endif >
+            style="text-align: center;margin-left: auto;padding-top:5em;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
-            <ul style="list-style: none;">
-              <li class="mb-4 aos-init h4" data-aos="fade-up" data-aos-delay="500">- Cover all viva stations , short and intermediate clinicals.</li>  
-              <li class="mb-4 aos-init h4" data-aos="fade-up" data-aos-delay="500">- Faculty to candidate ratio 1:1</li>  
-               <li class="mb-4 aos-init h4" data-aos="fade-up" data-aos-delay="500">- Faculty  formally trained to provide high quality questions and feedback.</li>  
+            <ul  style="list-style: none;color: #fff">
+              <li class="mb-4 h4 text-white" >- Cover all viva stations , short and intermediate clinicals.</li>  
+              <li class="mb-4 h4 text-white" >- Faculty to candidate ratio 1:1</li>  
+               <li class="mb-4 h4 text-white" >- Faculty  formally trained to provide high quality questions and feedback.</li>  
             </ul>
             
          </div>
