@@ -28,7 +28,6 @@ class PaymentController extends Controller
                 "email"         =>  "required",
                 "type"          =>  "required",
                 "country"       =>  "required",
-                "booking_date"  =>  "required"
             ]);
    
             if ($validator->fails()) {
@@ -57,13 +56,13 @@ class PaymentController extends Controller
 
 			DB::table('payment_course')->insert([
 				"payment_id"	=>	$payment_id,
-                "booking_date"  =>  $request->booking_date,
+                "booking_date"  =>  now(),
                 "name"          =>  $request->fname ." ".  $request->sname,
                 "email"         =>  $request->email,
                 "phone_no"      =>  $request->mobile,
                 "hospital"      =>  $request->hospital,
                 "country"       =>  $request->country,
-                "intrest"       =>  implode(',', $request->intrest),
+                "intrest"       =>  '',
                 "type"          =>  $request->type,
 				"price"			=>	$price,
 				"updated_at"	=> 	now(),
@@ -112,10 +111,10 @@ class PaymentController extends Controller
 
         if (!empty($check_if_processed)) {
             if ($check_if_processed->status != 'pending') {
-            //  abort(403);
+             abort(403);
             }
         } else {
-          // abort(404);
+          abort(404);
         }
 
         // Once the transaction has been approved, we need to complete it.

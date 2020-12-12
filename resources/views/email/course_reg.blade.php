@@ -73,10 +73,5 @@ tr:nth-child(even) {
 	    <td style="text-align: left">Price</td>
 	    <td style="text-align: right;">{{$payment->price}}</td>
 	 </tr>
-	 <tr>
-	    <td style="text-align: center">10</td>
-	    <td style="text-align: left">Booking Date</td>
-	    <td style="text-align: right;">{{$payment->booking_date}}</td>
-	 </tr>
 </table>
 @endsection

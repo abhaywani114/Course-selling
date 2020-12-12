@@ -637,14 +637,7 @@
             <input type="text" name="email" class="form-control" 
                placeholder="Email" required>
          </div>
-
-
-        <div class="form-group">
-            <span>Booking Date</span>
-            <input type="date" name="booking_date" class="form-control"  
-                required>
-         </div>
-
+         
         <div class="form-group">
           <span>Price</span>
            <select type="text" name="type" class="form-control"  required>
@@ -653,21 +646,6 @@
                 class="form-control">Observer : £{{$course->observer_price ?? 0}}</option>
             </select>
         </div>
-
-         <div class="form-group p-1">
-            <span class="p-1">Area of Intrest</span>
-            @foreach (['Knee','Hip','Trauma', 'Shoulder','Sports Rehab',
-               'Foot & Ankle' , 'FRCS Exam Preperation'] as $f)
-               <div class="form-check">
-                 <input class="form-check-input" type="checkbox" value="{{$f}}" 
-                    name="intrest[]"
-                    id="defaultCheck_{{str_replace(' ', '_', $f)}}">
-                 <label class="form-check-label" for="defaultCheck_{{str_replace(' ', '_', $f)}}">
-                   {{$f}}
-                 </label>
-               </div>
-            @endforeach
-         </div>
          @csrf
           <div class="modal-footer" style="border: none;padding: 10px 0px;">
                <button type="submit" class="btn shopping_cart_btn">Checkout</button>

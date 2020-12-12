@@ -43,7 +43,7 @@
   			<h5 class="text-success text-center">Transaction ID: {{ request()->tx_id }}</h5>
         <h6 style="line-height: 1.5;font-size: 16px;text-align: justify;">
           <strong>Dear candidate,</strong><br/>
-          Many thanks for registering for the ‘ FRCS Mock-Exam Course ‘ on <strong>{{date("Y-m-d", strtotime($payment_course_->booking_date))}}</strong><br/>
+          Many thanks for registering for the 'FRCS Mock-Exam Course'<br/>
           Your place as <strong>{{ucfirst($payment_course_->type)}}</strong> is now confirmed <br/>
           Fee paid = <strong>{{$payment_course_->price}}</strong><br/>
           Payment date = <strong>{{date("Y-m-d")}}</strong><br/>
