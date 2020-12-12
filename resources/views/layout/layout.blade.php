@@ -17,8 +17,8 @@
             .navbar {
                 padding-top: 0;
                 padding-bottom: 0;
-                padding-left: 7rem;
-                padding-right: 7rem;
+                padding-left: 3.5rem;
+                padding-right: 3.5rem;
                 -webkit-box-shadow: 4px 0 20px -5px rgb(188 207 223);
                 box-shadow: 4px 0 20px -5px rgb(188 207 223);
             }
@@ -33,7 +33,7 @@
                 color: #444242d9;
                 display: inline-block;
                 text-decoration: none!important;
-                font-size: 17px;
+                font-size: 15.5px;
                 margin: 0px 20px;
             }
             li > .nav-link > span:hover, li > .nav-link > span:active,

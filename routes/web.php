@@ -14,6 +14,7 @@ use \DB;
 |
 */
 
+ 
 Route::get('/', function () {
 	$course = DB::table('courses')->first(); 
 	// app("App\Http\Controllers\CoursesController")->course_tile()->render();

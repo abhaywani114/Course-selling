@@ -107,10 +107,17 @@
 				</div>
 
 				 <div class="form-group">
-				 	<span>Timetable & Marking Criteria</span>
+				 	<span>Timetable</span>
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
-						name="tmc"
-							rows="4" placeholder="Timetable & Marking Criteria">{{$course->tmc??''}}</textarea>
+						name="timetable"
+							rows="4" placeholder="Timetable">{{$course->timetable??''}}</textarea>
+				</div>
+
+					 <div class="form-group">
+				 	<span>Marking Criteria</span>
+					 <textarea class="form-control " style="height:auto" id="" cols="30" 
+						name="marking"
+							rows="4" placeholder="Marking Criteria">{{$course->marking??''}}</textarea>
 				</div>
 
 				 <div class="form-group">

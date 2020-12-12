@@ -65,8 +65,11 @@ class CoursesController extends Controller
 			if (!empty($request->aims))
 				$array['course_aims']	=	$request->aims;
 
-			if (!empty($request->tmc))
-				$array['tmc']	=	$request->tmc;
+			if (!empty($request->timetable))
+				$array['timetable']	=	$request->timetable;
+
+			if (!empty($request->marking))
+				$array['marking']	=	$request->marking;
 
 			if (!empty($request->study_aid))
 				$array['study_aid']	=	$request->study_aid;

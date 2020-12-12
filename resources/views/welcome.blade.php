@@ -119,16 +119,21 @@
 </style>
 <div class="slide-1" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @endif >
    <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @endif ></div>
-   @if ($is_admin)
    <div class="container">
-      <div class="row intro_custom_1 " >
-         <div class="col-lg-6 mb-4 text-white" >
-            <div class="intro_subtitle_mainsection">
+      <div class="row intro_custom_1 text-white " >
+         <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @endif >
+            <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
-            <p class="mb-4 aos-init" data-aos="fade-up" data-aos-delay="500">FRCS Mock-Exam Course, Trauma & Orthopaedics, Clinical & Viva Feedback.</p>
+            <ul>
+              <li class="mb-4 aos-init h4" data-aos="fade-up" data-aos-delay="500">Cover all viva stations , short and intermediate clinicals.</li>  
+              <li class="mb-4 aos-init h4" data-aos="fade-up" data-aos-delay="500">Faculty to candidate ratio 1:1</li>  
+               <li class="mb-4 aos-init h4" data-aos="fade-up" data-aos-delay="500">Faculty  formally trained to provide high quality questions and feedback.</li>  
+            </ul>
+            
          </div>
          </div>
          <div class="col-lg-5 ml-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="5000">
+   @if ($is_admin)
             <div class="tab-content">
 			@guest
                <div  id="signupme" class="tab-pane fade welcome_tab show in active">
@@ -223,15 +228,17 @@
 							  </ul>
 					</div>
 			    </div>
-
+         @endif
 				@endif
 			@endauth
             </div>
          </div>
-      </div>
+
+      </div>      
    </div>
-   @endif
+
 </div>
+
 <div class="slide-1 mb-5" id="courses-section" >
    <div class="container">
       <div class="row mb-3 mt-5 justify-content-center">
@@ -375,21 +382,28 @@
       </div>
       
       <div class="course_section_details mt-5">
-         <h1 style=""><span>Timetable & Marking Criteria</span></h1>
+         <h1 style=""><span>Timetable</span></h1>
          <div class="uk-panel uk-margin">
-            <p>{!! nl2br(strip_tags($course->tmc, '<p><a><br>'));  !!}</p>
+            <p>{!! nl2br(strip_tags($course->timetable, '<p><a><br>'));  !!}</p>
+         </div>
+      </div>
+
+       <div class="course_section_details mt-5">
+         <h1 style=""><span>Marking Criteria</span></h1>
+         <div class="uk-panel uk-margin">
+            <p>{!! nl2br(strip_tags($course->marking, '<p><a><br>'));  !!}</p>
          </div>
       </div>
 
       <div class="course_section_details mt-5" id="study_aid_section">
-         <h1 style=""><span>Study Aid</span></h1>
-         <img class='mt-3 mb-3' src="{{asset('img/firas_book.webp')}}">
+         <h1 style=""><span>Revision Book</span></h1>
+         <img class='mt-3 mb-3 w-25' src="{{asset('img/firas_book.webp')}}">
          <div class="uk-panel uk-margin">
             <p>{!! nl2br(strip_tags($course->study_aid, '<p><a><br>'));  !!}</p>
          </div>
          <div class="form-group" style="align-items: center;display: flex;
             justify-content: space-between;">
-                <button onclick="signMeUp()" style="width: 300px;" 
+                <button onclick="window.open('https://www.amazon.co.uk/Concise-Orthopaedic-Notes-Revision-Examinations-ebook/dp/B087ZR9ZB7/')" style="width: 300px;" 
                  class="btn shopping_cart_btn courses_reg_btn" >
                   Link to purchase book at Amazon</button>
             </div>

@@ -30,7 +30,8 @@ class CreateCourses extends Migration
 			$table->longText('details')->nullable();
 			$table->longText('structure')->nullable();
 			$table->longText('course_aims')->nullable();
-			$table->longText('tmc')->nullable();
+            $table->longText('timetable')->nullable();
+			$table->longText('marking')->nullable();
 			$table->longText('study_aid')->nullable();
 			$table->text('image')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');

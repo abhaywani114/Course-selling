@@ -150,7 +150,12 @@
 
 				 <div class="form-group">
 					 <textarea class="form-control " style="height:auto" id="" cols="30" 
-						name="tmc"	rows="4" placeholder="Timetable & Marking Criteria"></textarea>
+						name="timetable"	rows="4" placeholder="Timetable"></textarea>
+				</div>
+
+				<div class="form-group">
+					 <textarea class="form-control " style="height:auto" id="" cols="30" 
+						name="marking"	rows="4" placeholder="Marking Criteria"></textarea>
 				</div>
 
 				 <div class="form-group">
