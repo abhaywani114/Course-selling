@@ -121,7 +121,8 @@
    <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @endif ></div>
    <div class="container">
       <div class="row intro_custom_1 text-white " >
-         <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @endif >
+         <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @else 
+            style="text-align: right;margin-left: auto;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Expert</h1>
             <ul>
