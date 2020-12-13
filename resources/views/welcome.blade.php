@@ -126,7 +126,8 @@
             style="text-align: center;margin-left: auto;padding-top:5em;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
-            <ul  style="color: #fff;list-style: none;">
+            <h6 class="text-white">CPD approved by RCSEd</h6>
+            <ul  style="color: #fff;list-style: none;text-align: left;">
               <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
               <li class="mb-4 h4 text-white" >Cover all viva stations , short and intermediate clinicals.</li>  
                <li class="mb-4 h4 text-white">Faculty  formally trained to provide high quality questions and feedback.</li>  
@@ -304,7 +305,7 @@
             class="course_title_main" >{{$course->short_description}}</h4>
         <hr class="course_divider_hr" />
          <div>
-            <h2 class="course_places_available">PLACES AVAILABLE</h2>
+            <h2 class="course_places_available">UPCOMING COURSES</h2>
               <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
