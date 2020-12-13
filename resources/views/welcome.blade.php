@@ -108,14 +108,22 @@
    border-radius: 12px;
    box-shadow: 1px 1px 7px 6px #ffffffa1;
    }
-
-
-#sign_up_response > ul > li {
+	#sign_up_response > ul > li {
 	color:red;
-}
-#sign_in_response > ul > li {
-    color: red;
-}
+	}
+	#sign_in_response > ul > li {
+	color: red;
+	}
+	
+	.left_padding > li {
+		padding-left: 3em;
+	}
+
+	@media only screen and (max-width: 920px) {
+		.left_padding > li {
+			padding-left: 0;
+		}
+	}
 </style>
 <div class="slide-1" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="min-height: 65%;" @endif >
    <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10;max-height: 65%" @endif ></div>
@@ -127,7 +135,7 @@
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
             <h6 class="text-white">CPD approved by RCSEd</h6>
-            <ul  style="color: #fff;list-style: none;text-align: left;">
+            <ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
               <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
               <li class="mb-4 h4 text-white" >Cover all viva stations , short and intermediate clinicals.</li>  
                <li class="mb-4 h4 text-white">Faculty  formally trained to provide high quality questions and feedback.</li>  
@@ -353,10 +361,53 @@
               </table>
               </div>
                <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
-                     <button class="btn shopping_cart_btn courses_reg_btn"
+            <!--          <button class="btn shopping_cart_btn courses_reg_btn"
                      data-toggle="modal" data-target="#registration_modal" />
+                     Register Here</button> -->
+		            <button class="btn shopping_cart_btn courses_reg_btn"
+		             onclick="window.location = 'https://registrations.formstack.com/forms/19th_december_frcs_registration_form'" />
+		             Register Here</button>
+               </div>
+
+            	  <div class="form-group" style="align-items: center;">
+            	  	<br/>
+         	  	      <div class="table-responsive">
+		              <table class="table table-sm table-borderless mb-0">
+		                <tbody>
+		                  <tr>
+		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+		                  </tr>
+		                  <tr>
+		                    <td>9th January 2021</td>
+		                  </tr>
+		    	          </tbody>
+		        	  </table>
+			      </div>	
+                    <button class="btn shopping_cart_btn courses_reg_btn"
+                     onclick="window.location = 'https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf'" />
                      Register Here</button>
                </div>
+
+             <div class="form-group" style="align-items: center;">
+            	  	<br/>
+         	  	      <div class="table-responsive">
+		              <table class="table table-sm table-borderless mb-0">
+		                <tbody>
+		                  <tr>
+		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+		                  </tr>
+		                  <tr>
+		                    <td>6th March 2020</td>
+		                  </tr>
+		    	          </tbody>
+		        	  </table>
+			      </div>	
+                    <button class="btn shopping_cart_btn courses_reg_btn"
+                     onclick="window.location = 'https://www.oruk.org/events/upcoming-events/vivaclincalmarch/" />
+                     Register Here</button>
+               </div>
+
+
          </div>
       </div>
       <div class="course_section_details mt-5">
