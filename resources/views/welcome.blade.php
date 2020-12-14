@@ -134,8 +134,8 @@
             style="text-align: center;margin-left: auto;padding-top:5em;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
-            <h6 class="text-white">CPD approved by RCSEd</h6>
             <ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
+              <li class="mb-4 h4 text-white">CPD approved by RCSEd</li>
               <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
               <li class="mb-4 h4 text-white" >Cover all viva stations , short and intermediate clinicals.</li>  
                <li class="mb-4 h4 text-white">Faculty  formally trained to provide high quality questions and feedback.</li>  
@@ -249,16 +249,41 @@
    </div>
 
 </div>
+<style type="">
+  
+  .btn-floating {
+    background: #0D87E1;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 15px;
+    display: block;
+    width: 40px;
+    text-align: center;
+  }
 
-<div class="slide-1 mb-5" id="courses-section" >
-   <div class="container">
+  .btn-floating > i {
+    color: #fff;
+  }
+
+</style>
+<div class="slide-1 mb-5" id="courses-section" > 
+   <div class="container" style="position: relative;">
+        <div style="position:   absolute; top: 0;right: 0;">
+           <a class="btn-floating" style="background: #F44336;"
+             href="https://www.youtube.com/channel/UCpKGX6esbmV364XDaTQGckQ?view_as=subscriber" 
+          target="_blank"  ><i class="fa fa-youtube"></i></a>
+      <a class="btn-floating"  href="https://twitter.com/Dr_FirasArnaout" 
+          target="_blank"  ><i class="fa fa-twitter"></i></a>
+        <a class="btn-floating"  href="https://www.facebook.com/TheFRCSMentor" 
+          target="_blank" style="background: #3F51B5;"><i class="fa fa-facebook"></i></a>
+     </div>
       <div class="row mb-3 mt-5 justify-content-center">
      <!--     <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
             <h2 class="section-title">Courses</h2>
          </div> -->
       </div>
       <div class="row m-0 p-0" id="courses_div" style="width:100%;display: block">
-        {{-- !! var_dump($course) !!--}}
         <style type="text/css">
            
            .course_title_main {
@@ -328,11 +353,6 @@
                   </tr>
 
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Zoom Meeting</strong></th>
-                    <td>{{$course->meeting_time}}</td>
-                  </tr>
-
-                  <tr>
                     <th class="pl-0 w-25" scope="row"><strong>Duration</strong></th>
                     <td>{{$course->duration}}</td>
                   </tr>
@@ -340,16 +360,6 @@
                   <tr>
                    <th class="pl-0 w-25" scope="row"><strong>who should attend?</strong></th>
                     <td>{{$course->who_should_attend}}</td>
-                  </tr>
-
-                  <tr>
-                   <th class="pl-0 w-25" scope="row"><strong>Allowed Seats (Participants)</strong></th>
-                    <td>{{$course->seat_limit}}</td>
-                  </tr>
-
-                  <tr>
-                   <th class="pl-0 w-25" scope="row"><strong>Available Seats (Participants)</strong></th>
-                    <td>{{$course->available_seats}}</td>
                   </tr>
 
                    <tr>
@@ -360,11 +370,26 @@
                 </tbody>
               </table>
               </div>
-               <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
+               <div class="form-group" style="align-items: center;">
+                    <div class="form-group" style="align-items: center;">
+                    <br/>
+                      <div class="table-responsive">
+                    <table class="table table-sm table-borderless mb-0">
+                      <tbody>
+                        <tr>
+                          <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+                        </tr>
+                        <tr>
+                          <td>{{date("d F Y",strtotime($course->date))}}</td>
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
+            </div>
             <!--          <button class="btn shopping_cart_btn courses_reg_btn"
                      data-toggle="modal" data-target="#registration_modal" />
                      Register Here</button> -->
-		            <button class="btn shopping_cart_btn courses_reg_btn"
+		            <button class="btn shopping_cart_btn courses_reg_btn mt-0"
 		             onclick="window.location = 'https://registrations.formstack.com/forms/19th_december_frcs_registration_form'" />
 		             Register Here</button>
                </div>
