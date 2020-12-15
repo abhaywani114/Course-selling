@@ -343,11 +343,6 @@
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-                    <td>{{date("d F Y",strtotime($course->date))}}</td>
-                  </tr>
-
-                  <tr>
                     <th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
                     <td>{{$course->registration}}</td>
                   </tr>
