@@ -282,7 +282,7 @@
             <div class="col-md-12">
                 <div>
                     <p class="p-0 m-0">
-                        Copyright ©2020 All rights reserved | Designed with <i class="fa fa-heart" aria-hidden="true"></i> by <strong><a href="https://www.network-venture.com/" target="_blank">Network Venture</a></strong>
+                        Copyright ©2020 All rights reserved | Designed with <i class="fa fa-heart" aria-hidden="true"></i> by <strong><a href="https://www.network-venture.com/" target="_blank" style="color:#fff">Network Venture</a></strong>
                     </p>
                 </div>
             </div>
