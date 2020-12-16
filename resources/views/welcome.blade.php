@@ -381,12 +381,16 @@
                   </table>
               </div>
             </div>
-            <!--          <button class="btn shopping_cart_btn courses_reg_btn"
+            <!-- <button class="btn shopping_cart_btn courses_reg_btn"
                      data-toggle="modal" data-target="#registration_modal" />
                      Register Here</button> -->
-		            <button class="btn shopping_cart_btn courses_reg_btn mt-0"
-		             onclick="window.location = 'https://registrations.formstack.com/forms/19th_december_frcs_registration_form'" />
-		             Register Here</button>
+				<div>
+					<p class="m-0 p-0"><strong>In association with</strong></p>
+					<img class="d-block mt-3 mb-3 w-50" src="{{asset('img/assoc_1.jpg')}}" />
+				</div>
+		        <button class="btn shopping_cart_btn courses_reg_btn mt-0"
+		          onclick="window.location = 'https://registrations.formstack.com/forms/19th_december_frcs_registration_form'" />
+		          Register Here</button>
                </div>
 
             	  <div class="form-group" style="align-items: center;">
@@ -403,6 +407,12 @@
 		    	          </tbody>
 		        	  </table>
 			      </div>	
+			
+				<div>
+					<p class="m-0 p-0"><strong>In association with</strong></p>
+					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
+				</div>
+
                     <button class="btn shopping_cart_btn courses_reg_btn"
                      onclick="window.location = 'https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf'" />
                      Register Here</button>
@@ -422,6 +432,12 @@
 		    	          </tbody>
 		        	  </table>
 			      </div>	
+				
+				<div>
+					<p class="m-0 p-0"><strong>In association with</strong></p>
+					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
+				</div>
+
                     <button class="btn shopping_cart_btn courses_reg_btn"
                      onclick="window.location = 'https://www.oruk.org/events/upcoming-events/vivaclincalmarch/" />
                      Register Here</button>
