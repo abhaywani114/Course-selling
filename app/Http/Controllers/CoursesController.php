@@ -258,4 +258,10 @@ EOD;
 			orderBy('payment.created_at', 'desc')->
 			select('courses.*')->get();
 	}
+
+	function enrolledCourse($date) {
+		return DB::table('payment_course')->where('booking_date', $date)->
+			where('type','participant')->
+			get()->count();
+	}
 }

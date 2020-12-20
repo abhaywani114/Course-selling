@@ -413,7 +413,7 @@
 				</div>
 
                     <button class="btn shopping_cart_btn courses_reg_btn"
-                     onclick="window.location = 'https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf'" />
+                     onclick="window.open('https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf')" />
                      Register Here</button>
                </div>
 
@@ -440,10 +440,39 @@
 				</div>
 
                     <button class="btn shopping_cart_btn courses_reg_btn"
-                     onclick="window.location = 'https://www.oruk.org/events/upcoming-events/vivaclincalmarch/" />
+                     onclick="window.open('https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf')" />
                      Register Here</button>
                </div>
+      
 
+        <hr style="col-md-4 col-sm-12" />
+
+             <div class="form-group" style="align-items: center;">
+                  <br/>
+                    <div class="table-responsive">
+                  <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+                      </tr>
+                      <tr>
+                        <td>20th February 2021</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>  
+        
+        <div>
+          <p class="m-0 p-0"><strong>In association with</strong></p>
+          <img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
+        </div>
+
+        <button class="btn shopping_cart_btn courses_reg_btn"
+                     data-toggle="modal" data-target="#registration_modal_feb" />
+                     Register Here</button>
+
+               </div>
+         </div>
 
 			<hr style="col-md-4 col-sm-12" />
 
@@ -468,12 +497,11 @@
 				</div>
 
 				<button class="btn shopping_cart_btn courses_reg_btn"
-                     data-toggle="modal" data-target="#registration_modal" />
+                     data-toggle="modal" data-target="#registration_modal_a" />
                      Register Here</button>
 
                </div>
          </div>
-      </div>
       <div class="course_section_details mt-5">
          <h1 style=""><span>Overview</span></h1>
          <div class="uk-panel uk-margin">
@@ -707,8 +735,9 @@
 },
 </style>
 
+@foreach ([ 'a' => '2021-04-17', 'feb' => '2021-02-20' ] as $key => $value)
 <!-- Modal -->
-<div id="registration_modal" class="modal fade" role="dialog">
+<div id="registration_modal_{{$key}}" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-dialog-centered" role="document">
 
     <!-- Modal content-->
@@ -753,11 +782,12 @@
         <div class="form-group">
           <span>Price</span>
            <select type="text" name="type" class="form-control"  required>
-              <option value="participant" class="form-control" @if ($course->available_seats == 0) disabled @endif>Participant: £{{$course->participant_price ?? 0}}   @if ($course->available_seats == 0) (0 Seats Left) @endif </option>
+              <option value="participant" class="form-control" @if ( (16 - app('\App\Http\Controllers\CoursesController')->enrolledCourse($value)) < 1) disabled @endif>Participant: £{{$course->participant_price ?? 0}}  @if (16 - app('\App\Http\Controllers\CoursesController')->enrolledCourse($value) < 1) (0 Seats Left) @endif </option>
               <option value="observer" 
                 class="form-control">Observer : £{{$course->observer_price ?? 0}}</option>
             </select>
         </div>
+        <input type="hidden" name="booking_date" value="{{$value}}">
          @csrf
           <div class="modal-footer" style="border: none;padding: 10px 0px;">
                <button type="submit" class="btn shopping_cart_btn">Checkout</button>
@@ -767,6 +797,7 @@
     </div>
   </div>
 </div>
+@endforeach
 
 @endsection
 @section('js')

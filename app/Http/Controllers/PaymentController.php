@@ -18,7 +18,7 @@ class PaymentController extends Controller
         $this->gateway = Omnipay::create('PayPal_Rest');
         $this->gateway->setClientId(env('PAYPAL_CLIENT_ID'));
         $this->gateway->setSecret(env('PAYPAL_CLIENT_SECRET'));
-        $this->gateway->setTestMode(false); //set it to 'false' when go live
+        $this->gateway->setTestMode(true); //set it to 'false' when go live
     }
 
     public function checkout(Request $request) {
@@ -56,7 +56,7 @@ class PaymentController extends Controller
 
 			DB::table('payment_course')->insert([
 				"payment_id"	=>	$payment_id,
-                "booking_date"  =>  now(),
+                "booking_date"  =>  $request->booking_date,
                 "name"          =>  $request->fname ." ".  $request->sname,
                 "email"         =>  $request->email,
                 "phone_no"      =>  $request->mobile,
@@ -111,7 +111,7 @@ class PaymentController extends Controller
 
         if (!empty($check_if_processed)) {
             if ($check_if_processed->status != 'pending') {
-             abort(403);
+         //    abort(403);
             }
         } else {
           abort(404);
