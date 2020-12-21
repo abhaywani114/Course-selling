@@ -9,7 +9,7 @@
         <meta property="og:title" content=">FRCS Mock-Exam Course | Viva And Clinical With Individual Feedback" />
         <meta property="og:description" content=">FRCS Mock-Exam Course | Viva And Clinical With Individual Feedback" />
         <meta property="og:url" content="{{url('/')}}"/>
-        <meta property="og:image" content="{{asset('/img/logo.svg')}}"/>
+        <meta property="og:image" content="{{asset('/img/link_preview.png')}}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{asset('/img/favicon-32x32.png')}}" type="image/x-icon" />
