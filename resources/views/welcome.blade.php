@@ -353,7 +353,6 @@
             <h2 class="course_places_available">UPCOMING COURSES</h2>
                <div class="form-group" style="align-items: center;">
                     <div class="form-group" style="align-items: center;">
-                    <br/>
                       <div class="table-responsive">
                     <table class="table table-sm table-borderless mb-0">
                       <tbody class="course_tbody">
@@ -379,7 +378,6 @@
 
 				<hr style="col-md-4 col-sm-12" />
             	  <div class="form-group" style="align-items: center;">
-            	  	<br/>
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
 		                <tbody class="course_tbody">
@@ -407,7 +405,6 @@
         <hr style="col-md-4 col-sm-12" />
 
              <div class="form-group" style="align-items: center;">
-                  <br/>
                     <div class="table-responsive">
                   <table class="table table-sm table-borderless mb-0">
                     <tbody class="course_tbody">
@@ -435,7 +432,6 @@
 				<hr style="col-md-4 col-sm-12" />
 
              <div class="form-group" style="align-items: center;">
-            	  	<br/>
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
 		                <tbody class="course_tbody">
@@ -462,7 +458,6 @@
 			<hr style="col-md-4 col-sm-12" />
 
              <div class="form-group" style="align-items: center;">
-            	  	<br/>
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
 		                <tbody class="course_tbody">
