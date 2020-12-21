@@ -123,10 +123,16 @@
 		.left_padding > li {
 			padding-left: 0;
 		}
+    .welcome_height {
+          min-height: 85% !important;
+    }
 	}
+    .welcome_height {
+        min-height: 65%;
+  }
 </style>
-<div class="slide-1" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="min-height: 65%;" @endif >
-   <div class="pallax" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10;max-height: 65%" @endif ></div>
+<div class="slide-1 welcome_height" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="min-height: 65%;" @endif >
+   <div class="pallax welcome_height" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10;max-height: 65%;" @endif></div>
    <div class="container"  @if(!$is_admin) style=" z-index: 12;
     position: absolute;" @endif>
       <div class="row intro_custom_1 text-white " >
