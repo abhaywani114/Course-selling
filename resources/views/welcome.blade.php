@@ -131,7 +131,7 @@
     position: absolute;" @endif>
       <div class="row intro_custom_1 text-white " >
          <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @else 
-            style="text-align: center;margin-left: auto;padding-top:5em;"  @endif >
+            style="text-align: center;margin-left: auto;padding-top:2em;"  @endif >
             <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
             <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
             <ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
@@ -330,6 +330,12 @@
              padding-left: 10px;
            }
 
+           .course_tbody {
+              font-size: 18px;
+              padding-bottom: 10px;
+              display: block;
+          }
+
         </style>
 @if (!empty($course))
 
@@ -339,38 +345,12 @@
         <hr class="course_divider_hr" />
          <div>
             <h2 class="course_places_available">UPCOMING COURSES</h2>
-              <div class="table-responsive">
-              <table class="table table-sm table-borderless mb-0">
-                <tbody>
-                  <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
-                    <td>{{$course->registration}}</td>
-                  </tr>
-
-                  <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Duration</strong></th>
-                    <td>{{$course->duration}}</td>
-                  </tr>
-
-                  <tr>
-                   <th class="pl-0 w-25" scope="row"><strong>who should attend?</strong></th>
-                    <td>{{$course->who_should_attend}}</td>
-                  </tr>
-
-                   <tr>
-                   <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
-                    <td> £{{$course->participant_price}} per candidate or £{{$course->observer_price}} per observer</td>
-                  </tr>
-
-                </tbody>
-              </table>
-              </div>
                <div class="form-group" style="align-items: center;">
                     <div class="form-group" style="align-items: center;">
                     <br/>
                       <div class="table-responsive">
                     <table class="table table-sm table-borderless mb-0">
-                      <tbody>
+                      <tbody class="course_tbody">
                         <tr>
                           <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
                         </tr>
@@ -396,7 +376,7 @@
             	  	<br/>
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
-		                <tbody>
+		                <tbody class="course_tbody">
 		                  <tr>
 		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 		                  </tr>
@@ -413,37 +393,10 @@
 				</div>
 
                     <button class="btn shopping_cart_btn courses_reg_btn"
-                     onclick="window.open('https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf')" />
+                     onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincal')" />
                      Register Here</button>
                </div>
 
-				<hr style="col-md-4 col-sm-12" />
-
-             <div class="form-group" style="align-items: center;">
-            	  	<br/>
-         	  	      <div class="table-responsive">
-		              <table class="table table-sm table-borderless mb-0">
-		                <tbody>
-		                  <tr>
-		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-		                  </tr>
-		                  <tr>
-		                    <td>6th March 2020</td>
-		                  </tr>
-		    	          </tbody>
-		        	  </table>
-			      </div>	
-				
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
-				</div>
-
-                    <button class="btn shopping_cart_btn courses_reg_btn"
-                     onclick="window.open('https://www.oruk.org/wp-content/uploads/2017/08/Event_registration_form.pdf')" />
-                     Register Here</button>
-               </div>
-      
 
         <hr style="col-md-4 col-sm-12" />
 
@@ -451,7 +404,7 @@
                   <br/>
                     <div class="table-responsive">
                   <table class="table table-sm table-borderless mb-0">
-                    <tbody>
+                    <tbody class="course_tbody">
                       <tr>
                         <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
                       </tr>
@@ -470,9 +423,35 @@
         <button class="btn shopping_cart_btn courses_reg_btn"
                      data-toggle="modal" data-target="#registration_modal_feb" />
                      Register Here</button>
-
                </div>
          </div>
+
+				<hr style="col-md-4 col-sm-12" />
+
+             <div class="form-group" style="align-items: center;">
+            	  	<br/>
+         	  	      <div class="table-responsive">
+		              <table class="table table-sm table-borderless mb-0">
+		                <tbody class="course_tbody">
+		                  <tr>
+		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+		                  </tr>
+		                  <tr>
+		                    <td>6th March 2020</td>
+		                  </tr>
+		    	          </tbody>
+		        	  </table>
+			      </div>	
+				
+				<div>
+					<p class="m-0 p-0"><strong>In association with</strong></p>
+					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
+				</div>
+
+                    <button class="btn shopping_cart_btn courses_reg_btn"
+                     onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalmarch/')" />
+                     Register Here</button>
+               </div>
 
 			<hr style="col-md-4 col-sm-12" />
 
@@ -480,7 +459,7 @@
             	  	<br/>
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
-		                <tbody>
+		                <tbody class="course_tbody">
 		                  <tr>
 		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 		                  </tr>
@@ -521,6 +500,32 @@
          <div class="uk-panel uk-margin">
             <p>{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
          </div>
+         <div class="table-responsive">
+              <table class="table table-sm table-borderless mb-0">
+                <tbody>
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
+                    <td>{{$course->registration}}</td>
+                  </tr>
+
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Duration</strong></th>
+                    <td>{{$course->duration}}</td>
+                  </tr>
+
+                  <tr>
+                   <th class="pl-0 w-25" scope="row"><strong>who should attend?</strong></th>
+                    <td>{{$course->who_should_attend}}</td>
+                  </tr>
+
+                   <tr>
+                   <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
+                    <td> £{{$course->participant_price}} per candidate or £{{$course->observer_price}} per observer</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              </div>  
       </div>
       
       <div class="course_section_details mt-5">
