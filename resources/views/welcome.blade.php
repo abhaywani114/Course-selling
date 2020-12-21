@@ -385,7 +385,7 @@
 		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 		                  </tr>
 		                  <tr>
-		                    <td>9th January 2021</td>
+		                    <td><strong>9th January 2021</strong></td>
 		                  </tr>
 		    	          </tbody>
 		        	  </table>
@@ -412,7 +412,7 @@
                         <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
                       </tr>
                       <tr>
-                        <td>20th February 2021</td>
+                        <td><strong>20th February 2021</strong></td>
                       </tr>
                     </tbody>
                 </table>
@@ -439,7 +439,7 @@
 		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 		                  </tr>
 		                  <tr>
-		                    <td>6th March 2020</td>
+		                    <td><strong>6th March 2020</strong></td>
 		                  </tr>
 		    	          </tbody>
 		        	  </table>
@@ -465,7 +465,7 @@
 		                    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 		                  </tr>
 		                  <tr>
-		                    <td>17th April 2020</td>
+		                    <td><strong>17th April 2020</strong></td>
 		                  </tr>
 		    	          </tbody>
 		        	  </table>
