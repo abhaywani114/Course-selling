@@ -1,15 +1,13 @@
 <html >
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content=">FRCS Mock-Exam Course| Viva And Clinical With Individual Feedback" />
-
-
+        <meta name="description" content=">FRCS Mock-Exam Course | Viva And Clinical With Individual Feedback" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content=">FRCS Mock-Exam Course | Viva And Clinical With Individual Feedback" />
-        <meta property="og:description" content=">FRCS Mock-Exam Course | Viva And Clinical With Individual Feedback" />
-        <meta property="og:url" content="{{url('/')}}"/>
+        <meta property="og:title" content="FRCS Mock-Exam Course" />
+        <meta property="og:description" content="Viva And Clinical With Individual Feedback" />
         <meta property="og:image" content="{{asset('/img/link_preview.png')}}"/>
+        <meta property="og:url" content="{{url('/')}}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{asset('/img/favicon-32x32.png')}}" type="image/x-icon" />
@@ -206,7 +204,9 @@
     </head>
     
     <body>
-
+            <link itemprop="thumbnailUrl" href="{{asset('/img/link_preview.png')}}">
+        <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+        <link itemprop="url" href="{{asset('/img/link_preview.png')}}"></span>
         <nav class="navbar sticky-top navbar-expand-md" style="min-height:60px;"> 
         
             <button class="navbar-toggler" type="button" data-toggle="collapse" 
