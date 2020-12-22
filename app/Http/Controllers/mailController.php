@@ -15,13 +15,12 @@ class mailController extends Controller
                 "fname"=> ['required'],
                 "lname"	=>	 ['required'],
                 "email" => ['required','email'],
-                "subject" => ['required'],
                 "message" => ['required'],
         	]);
 			
 			Mail::send('email.contact_support',compact('data') , function($message) use ($data) {
-			   $sub = $data['subject'];
-			   $message->from(env('MAIL_FROM_ADDRESS'), 'Support' );
+			   $sub = $data['subject'] ?? '';
+			   $message->from('support@frcsmockexam.com', 'Support' );
 			   $message->to(env('MAIL_FROM_ADDRESS'))->subject("$sub | Contact Request");
 			});
 
@@ -53,7 +52,7 @@ class mailController extends Controller
 		]);
 
         Mail::send('email.course_notification', compact('body'), function($message) use ($emails, $subject){
-           $message->from(env('MAIL_FROM_ADDRESS'));
+           $message->from('support@frcsmockexam.com');
            $message->to($emails)->
            subject($subject);
        });
@@ -70,14 +69,14 @@ class mailController extends Controller
 		 	first();
 
 		Mail::send('email.course_invoice', compact('courses', 'payment','tx_id'), function($message) use ($tx_id, $payment) {
-           $message->from(env('MAIL_FROM_ADDRESS'));
+           $message->from('support@frcsmockexam.com');
            $message->to($payment->email, $payment->name)->
            subject("Invoice | $tx_id");
        });
 
 		$courses =	DB::table('courses')->first();
 		Mail::send('email.course_reg', compact('courses', 'payment','tx_id'), function($message) use ($tx_id, $payment) {
-           $message->from(env('MAIL_FROM_ADDRESS'));
+           $message->from('support@frcsmockexam.com');
            $message->to(env('MAIL_FROM_ADDRESS'))->
            subject("Payment Recv | $tx_id");
        });
@@ -85,7 +84,7 @@ class mailController extends Controller
 
 	public function sendResetPassword($email, $password) {
 		Mail::send('email.reset_password', compact('email', 'password'), function($message) use ($email) {
-           $message->from(env('MAIL_FROM_ADDRESS'));
+           $message->from('support@frcsmockexam.com');
            $message->to($email)->
            subject("Reset Password");
        });	

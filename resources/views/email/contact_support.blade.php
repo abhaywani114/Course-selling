@@ -6,7 +6,7 @@
 <p>
 <strong>Email:</strong> {{ $data['email'] }}
 <br/>
-<strong>Subject:</strong> {{ $data['subject'] }}
+<strong>Subject:</strong> {{ $data['subject'] ?? '' }}
 </p>
  
 <p>
