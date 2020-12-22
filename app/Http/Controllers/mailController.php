@@ -13,8 +13,8 @@ class mailController extends Controller
 	public function sendContactForm(Request $request) {
 		
 			$validator = Validator::make($request->all(),[
-                "fname"		=> 'required',
-                "lname"		=> 'required',
+                "first_name"		=> 'required',
+                "last_name"		=> 'required',
                 "email" 	=> ['required','email'],
                 "message" 	=> 'required'
 			]);
@@ -28,8 +28,8 @@ class mailController extends Controller
 
 
 		    $data = $request->validate([
-                "fname"=> ['required'],
-                "lname"	=>	 ['required'],
+                "first_name" => ['required'],
+                "last_name"	=>	 ['required'],
                 "email" => ['required','email'],
                 "message" => ['required'],
         	]);

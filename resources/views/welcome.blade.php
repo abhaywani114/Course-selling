@@ -700,10 +700,10 @@
             <form method="post" id="contact_form" data-aos="fade" class="aos-init aos-animate">
                <div class="form-group row">
                   <div class="col-md-6 mb-3 mb-lg-0">
-                     <input type="text" name="fname" class="form-control" placeholder="First name" required>
+                     <input type="text" name="first_name" class="form-control" placeholder="First name" required>
                   </div>
                   <div class="col-md-6">
-                     <input type="text" name='lname' class="form-control" placeholder="Last name" required>
+                     <input type="text" name='last_name' class="form-control" placeholder="Last name" required>
                   </div>
                </div>
                <div class="form-group row">
