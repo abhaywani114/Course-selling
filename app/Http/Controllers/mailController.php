@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 use Mail;
 use DB;
 use \Auth;
@@ -10,14 +11,29 @@ use \Auth;
 class mailController extends Controller
 {
 	public function sendContactForm(Request $request) {
-		    
+		
+			$validator = Validator::make($request->all(),[
+                "fname"		=> 'required',
+                "lname"		=> 'required',
+                "email" 	=> ['required','email'],
+                "message" 	=> 'required'
+			]);
+
+			if ($validator->fails()) {
+				return response()->json(array(
+					'success' => false,
+					'errors' => $validator->getMessageBag()->toArray()
+				), 400);
+			}
+
+
 		    $data = $request->validate([
                 "fname"=> ['required'],
                 "lname"	=>	 ['required'],
                 "email" => ['required','email'],
                 "message" => ['required'],
         	]);
-			
+			 
 			Mail::send('email.contact_support',compact('data') , function($message) use ($data) {
 			   $sub = $data['subject'] ?? '';
 			   $message->from('support@frcsmockexam.com', 'Support' );

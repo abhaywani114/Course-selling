@@ -700,10 +700,10 @@
             <form method="post" id="contact_form" data-aos="fade" class="aos-init aos-animate">
                <div class="form-group row">
                   <div class="col-md-6 mb-3 mb-lg-0">
-                     <input type="text" name="fname" class="form-control" placeholder="First name">
+                     <input type="text" name="fname" class="form-control" placeholder="First name" required>
                   </div>
                   <div class="col-md-6">
-                     <input type="text" name='lname' class="form-control" placeholder="Last name">
+                     <input type="text" name='lname' class="form-control" placeholder="Last name" required>
                   </div>
                </div>
                <div class="form-group row">
@@ -713,12 +713,12 @@
                </div>
                <div class="form-group row">
                   <div class="col-md-12">
-                     <input type="email" name='email' class="form-control" placeholder="Email">
+                     <input type="email" name='email' class="form-control" placeholder="Email" required>
                   </div>
                </div>
                <div class="form-group row">
                   <div class="col-md-12">
-                     <textarea class="form-control " name='message' style="height:auto" id="" cols="30" rows="7" placeholder="Write your message here."></textarea>
+                     <textarea class="form-control " name='message' style="height:auto" id="" cols="30" rows="7" placeholder="Write your message here." required></textarea>
                   </div>
                </div>
                <div class="form-group row">
@@ -910,7 +910,9 @@
          messageModal("Contact form sent")
          $("#contact_form")[0].reset();
       }).fail( (data) => {
-            messageModal(handleValdationError(data));
+        console.log(handleValdationError(data))
+           messageModal(handleValdationError(data));
+          // messageModal("Please fill in all the information correctly");
       });
    }
 </script>
