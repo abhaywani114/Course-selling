@@ -20,6 +20,7 @@ tr:nth-child(even) {
 }
 </style>
 <p>Thank you for purchasing courses from us. <br/>We have recieved your payment and your transaction id is: <strong>{{$tx_id}}</strong></p>
+<p>Booking Type: {{ucfirst($payment->type)}} | Booking Date: {{date("d F Y")}}</p>
 <table style="width:100%;">
 	<thead>
 	  <tr>

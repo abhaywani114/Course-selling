@@ -727,6 +727,12 @@
                         class=" shopping_cart_btn btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message"/>
                   </div>
                </div>
+
+               <div class="form-group row">
+				  <div class="col-md-12 mx-auto text-center pt-2">
+						<h4>Email: <strong>thefrcsmentor@gmail.com</strong></h4>
+					</div>
+				</div>
             </form>
          </div>
       </div>
