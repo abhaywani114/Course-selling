@@ -131,8 +131,8 @@
         min-height: 65%;
   }
 </style>
-<div class="slide-1 welcome_height" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="min-height: 65%;" @endif >
-   <div class="pallax welcome_height" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10;max-height: 65%;" @endif></div>
+<div class="slide-1 welcome_height" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="min-height: 75%;" @endif >
+   <div class="pallax welcome_height" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10;max-height: 75%;" @endif></div>
    <div class="container"  @if(!$is_admin) style=" z-index: 12;
     position: absolute;" @endif>
       <div class="row intro_custom_1 text-white " >
@@ -143,8 +143,10 @@
             <ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
               <li class="mb-4 h4 text-white">CPD approved by RCSEd</li>
               <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
-              <li class="mb-4 h4 text-white" >Cover all viva stations , short and intermediate clinicals.</li>  
-               <li class="mb-4 h4 text-white">Faculty  formally trained to provide high quality questions and feedback.</li>  
+              <li class="mb-4 h4 text-white" >Covers all viva stations , short and intermediate clinicals.</li>  
+			   <li class="mb-4 h4 text-white">Faculty formally trained to provide high quality questions and feedback.</li>  
+				<li class="mb-4 h4 text-white">Suitable for candidates preparing for JCIE and JSCFE Fellowship Examinations</li>
+				<li class="mb-4 h4 text-white">High quality questions aligned with the previous exams</li>
             </ul>
             
          </div>
@@ -349,6 +351,11 @@
         <h4 style="font-size:17px;text-transform: capitalize;"
             class="course_title_main" >{{$course->short_description}}</h4>
         <hr class="course_divider_hr" />
+
+		<div>
+			<p class="m-0 p-0"><strong>In association with</strong></p>
+			<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_1.jpg')}}" />
+		</div>
          <div>
             <h2 class="course_places_available">UPCOMING COURSES</h2>
                <div class="form-group" style="align-items: center;">
@@ -367,16 +374,17 @@
               </div>
             </div>
 		
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_1.jpg')}}" />
-				</div>
 		        <button class="btn shopping_cart_btn courses_reg_btn mt-0"
 		          onclick="window.location = 'https://registrations.formstack.com/forms/19th_december_frcs_registration_form'" />
 		          Register Here</button>
                </div>
 
 				<hr style="col-md-4 col-sm-12" />
+
+				<div>
+					<p class="m-0 p-0"><strong>In association with</strong></p>
+					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
+				</div>
             	  <div class="form-group" style="align-items: center;">
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
@@ -391,10 +399,6 @@
 		        	  </table>
 			      </div>	
 			
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
-				</div>
 
                     <button class="btn shopping_cart_btn courses_reg_btn"
                      onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincal')" />
@@ -404,6 +408,10 @@
 
         <hr style="col-md-4 col-sm-12" />
 
+        <div>
+          <p class="m-0 p-0"><strong>In association with</strong></p>
+          <img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
+        </div>
              <div class="form-group" style="align-items: center;">
                     <div class="table-responsive">
                   <table class="table table-sm table-borderless mb-0">
@@ -418,10 +426,6 @@
                 </table>
             </div>  
         
-        <div>
-          <p class="m-0 p-0"><strong>In association with</strong></p>
-          <img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
-        </div>
 
         <button class="btn shopping_cart_btn courses_reg_btn"
                      data-toggle="modal" data-target="#registration_modal_feb" />
@@ -431,6 +435,10 @@
 
 				<hr style="col-md-4 col-sm-12" />
 
+				<div>
+					<p class="m-0 p-0"><strong>In association with</strong></p>
+					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
+				</div>
              <div class="form-group" style="align-items: center;">
          	  	      <div class="table-responsive">
 		              <table class="table table-sm table-borderless mb-0">
@@ -445,10 +453,6 @@
 		        	  </table>
 			      </div>	
 				
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
-				</div>
 
                     <button class="btn shopping_cart_btn courses_reg_btn"
                      onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalmarch/')" />
@@ -456,6 +460,11 @@
                </div>
 
 			<hr style="col-md-4 col-sm-12" />
+
+			<div>
+				<p class="m-0 p-0"><strong>In association with</strong></p>
+				<img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
+			</div>
 
              <div class="form-group" style="align-items: center;">
          	  	      <div class="table-responsive">
@@ -471,10 +480,6 @@
 		        	  </table>
 			      </div>	
 				
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
-				</div>
 
 				<button class="btn shopping_cart_btn courses_reg_btn"
                      data-toggle="modal" data-target="#registration_modal_a" />
