@@ -355,33 +355,7 @@
 	 <div>
 	    <h2 class="course_places_available">UPCOMING COURSES</h2>
 	       <div class="form-group" style="align-items: center;">
-		    <div class="form-group" style="align-items: center;">
-		      <div class="table-responsive">
-		    <table class="table table-sm table-borderless mb-0">
-		      <tbody class="course_tbody">
-			<tr>
-			  <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-			</tr>
-			<tr>
-			  <td>{{date("d F Y",strtotime($course->date))}}</td>
-			</tr>
-		      </tbody>
-		  </table>
-	      </div>
-	    </div>
-
-			<button class="btn shopping_cart_btn courses_reg_btn mt-0"
-			  onclick="window.location = 'https://registrations.formstack.com/forms/19th_december_frcs_registration_form'" />
-			  Register Here</button>
-
-	       </div>
-		<div>
-			<p class="m-0 p-0"><strong>In association with</strong></p>
-			<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_1.jpg')}}" />
-		</div>
-
-				<hr style="col-md-4 col-sm-12" />
-
+			
 			  <div class="form-group" style="align-items: center;">
 			      <div class="table-responsive">
 			      <table class="table table-sm table-borderless mb-0">
@@ -426,7 +400,7 @@
 
 
 	<button class="btn shopping_cart_btn courses_reg_btn"
-		     data-toggle="modal" data-target="#registration_modal_feb" />
+		     onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalfeb/')">
 		     Register Here</button>
 
 	       </div>
@@ -481,7 +455,7 @@
 
 
 				<button class="btn shopping_cart_btn courses_reg_btn"
-		     data-toggle="modal" data-target="#registration_modal_a" />
+		     		onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalapr/')" />
 		     Register Here</button>
 	       </div>
 			<div>
