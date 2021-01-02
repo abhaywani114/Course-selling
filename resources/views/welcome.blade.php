@@ -17,18 +17,18 @@
    /* Full height */
    min-height: 100%;
    /* Create the parallax scrolling effect */
-    background-attachment: fixed !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background-attachment: fixed !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
    }
    .slide-1:before, .pallax {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: #003e716b;
-    opacity: 1;
-    border-bottom-right-radius: 0px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #003e716b;
+	opacity: 1;
+	border-bottom-right-radius: 0px;
    }
    .form-box {
    padding: 40px;
@@ -48,7 +48,7 @@
    margin-bottom: 1.8rem;
    font-weight: 700;
    }
-    .site-section {
+	.site-section {
    padding: 4em 0;
    position: relative;
    }
@@ -123,103 +123,103 @@
 		.left_padding > li {
 			padding-left: 0;
 		}
-    .welcome_height {
+	.welcome_height {
 	  min-height: 85% !important;
-    }
 	}
-    .welcome_height {
+	}
+	.welcome_height {
 	min-height: 65%;
   }
 </style>
 <div class="slide-1 welcome_height" id="home-section" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="min-height: 75%;" @endif >
    <div class="pallax welcome_height" @if($is_admin) style="max-height: 65%;height: 65%;" @else style="z-index: 10;max-height: 75%;" @endif></div>
    <div class="container"  @if(!$is_admin) style=" z-index: 12;
-    position: absolute;" @endif>
-      <div class="row intro_custom_1 text-white " >
+	position: absolute;" @endif>
+	  <div class="row intro_custom_1 text-white " >
 	 <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @else 
-	    style="text-align: center;margin-left: auto;padding-top:2em;"  @endif >
-	    <div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
-	    <h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
-	    <ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
-	      <li class="mb-4 h4 text-white">CPD approved by RCSEd</li>
-	      <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
-	      <li class="mb-4 h4 text-white" >Covers all viva stations , short and intermediate clinicals.</li>  
+		style="text-align: center;margin-left: auto;padding-top:2em;"  @endif >
+		<div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
+		<h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
+		<ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
+		  <li class="mb-4 h4 text-white">CPD approved by RCSEd</li>
+		  <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
+		  <li class="mb-4 h4 text-white" >Covers all viva stations , short and intermediate clinicals.</li>  
 			   <li class="mb-4 h4 text-white">Faculty formally trained to provide high quality questions and feedback.</li>  
 				<li class="mb-4 h4 text-white">Suitable for candidates preparing for JCIE and JSCFE Fellowship Examinations</li>
 				<li class="mb-4 h4 text-white">High quality questions aligned with the previous exams</li>
-	    </ul>
+		</ul>
 
 	 </div>
 	 </div>
 	 <div class="col-lg-5 ml-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="5000">
    @if ($is_admin)
-	    <div class="tab-content">
+		<div class="tab-content">
 			@guest
-	       <div  id="signupme" class="tab-pane fade welcome_tab show in active">
+		   <div  id="signupme" class="tab-pane fade welcome_tab show in active">
 		  <form method="post"  class="form-box" id="sign_up_form">
-		     <h3 class="h4 text-black mb-2">Sign Up</h3>
+			 <h3 class="h4 text-black mb-2">Sign Up</h3>
 					<div id="sign_up_response" class="py-1">
 					</div>
-		     <div class="form-group">
+			 <div class="form-group">
 			<input type="text" name="name" class="form-control" placeholder="Name" required>
-		     </div>
-		     <div class="form-group">
+			 </div>
+			 <div class="form-group">
 			<input type="text" name="email" class="form-control" placeholder="Email Addresss" required>
-		     </div>
-		     <div class="form-group">
+			 </div>
+			 <div class="form-group">
 			<input type="password" name="password" class="form-control" placeholder="Password" required>
-		     </div>
-		     <div class="form-group mb-4">
+			 </div>
+			 <div class="form-group mb-4">
 			<input type="password" name="password_confirmation" class="form-control" placeholder="Re-type Password" required>
-		     </div>
-		     <div class="form-group mb-4">
+			 </div>
+			 <div class="form-group mb-4">
 			  <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_SITE_KEY')}}"></div>
-		     </div>
-		     <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
+			 </div>
+			 <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
 			<button onclick="signMeUp()" class="btn shopping_cart_btn" style="width: 90px;">Sign Up</button>
 			<img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-left: -30px;display:none;" id="loading-signup" / >
 			<a href="#login" onclick="showLogin()"
 			   style="text-decoration:none;float:right;text-align:right;">I already have an account!</a>
-		     </div>
+			 </div>
 		  </form>
-	       </div>
-	       <div id="loginme" class="tab-pane welcome_tab fade">
+		   </div>
+		   <div id="loginme" class="tab-pane welcome_tab fade">
 				  <form method="post" id="sign_in_form"	class="form-box">
-		     <h3 class="h4 text-black mb-4">Sign In</h3>
+			 <h3 class="h4 text-black mb-4">Sign In</h3>
 					<div id="sign_in_response" class="py-1">
 					</div>
-		     <div class="form-group">
+			 <div class="form-group">
 			<input name="email" type="text" class="form-control" placeholder="Email Addresss" required>
-		     </div>
-		     <div class="form-group">
+			 </div>
+			 <div class="form-group">
 			<input type="password" name="password" class="form-control" placeholder="Password" required>
-		     </div>
-		     <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
+			 </div>
+			 <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
 			<button onclick="loginMeNow()" class="btn shopping_cart_btn" style="width: 90px;">Sign In</button>
 			<img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-right: auto;margin-left: 10px;display: none;" id="loading-signin" / >
 			<a href="#login" onclick="showSignUp()"
 			   style="text-decoration:none;float:right;text-align:right;">I am a new user!</a>
-		     </div>
-		     <div class="form-group" style="align-items: center;text-align: center;">
+			 </div>
+			 <div class="form-group" style="align-items: center;text-align: center;">
 			<a href="#login" onclick="resetPwd()"
 			   style="text-decoration:none;text-align:center;">Reset Password</a>
-		     </div>
+			 </div>
 		  </form>
-	       </div>
-	       <div id="resetpassword" class="tab-pane welcome_tab fade">
+		   </div>
+		   <div id="resetpassword" class="tab-pane welcome_tab fade">
 		  <form action="" id="reset_password_form" method="post" class="form-box">
-		     <h3 class="h4 text-black mb-4">Reset Password</h3>
-		     <div id="reset_password_response" class="py-1"></div>
-		     <div class="form-group">
+			 <h3 class="h4 text-black mb-4">Reset Password</h3>
+			 <div id="reset_password_response" class="py-1"></div>
+			 <div class="form-group">
 			<input type="text" class="form-control" name="email" placeholder="Email Addresss" required>
-		     </div>
-		     <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
+			 </div>
+			 <div class="form-group" style="align-items: center;display: flex;justify-content: space-between;">
 			<button type="submit" class="btn shopping_cart_btn"  onclick="resetpassword()"
-			      style="width: 140px;">Reset Password</button>
+				  style="width: 140px;">Reset Password</button>
 			<img src="{{asset('/img/loading.gif')}}" style="width: 22px;margin-right: auto;margin-left: 10px;display: none;" id="loading-reset-pwd" / >
 			<a href="#login" onclick="showLogin()"
 			   style="text-decoration:none;float:right;text-align:right;">Back</a>
-		     </div>
+			 </div>
 		  </form>
 			   </div>
 			@endguest
@@ -234,7 +234,7 @@
 			@endforeach
 							  </ul>
 					</div>
-			    </div>
+				</div>
 				@endif
 
 				@if (Auth::User()->type == 'admin')
@@ -246,32 +246,32 @@
 			   <br/>You can manage your courses, faculty and payments by clicking Admin link in the navigation bar.</li>
 							  </ul>
 					</div>
-			    </div>
+				</div>
 	 @endif
 				@endif
 			@endauth
-	    </div>
+		</div>
 	 </div>
 
-      </div>      
+	  </div>      
    </div>
 
 </div>
 <style type="">
 
   .btn-floating {
-    background: #0D87E1;
-    color: #fff;
-    font-size: 1.5em;
-    padding: 10px;
-    margin: 15px;
-    display: block;
-    width: 40px;
-    text-align: center;
+	background: #0D87E1;
+	color: #fff;
+	font-size: 1.5em;
+	padding: 10px;
+	margin: 15px;
+	display: block;
+	width: 40px;
+	text-align: center;
   }
 
   .btn-floating > i {
-    color: #fff;
+	color: #fff;
   }
 
 </style>
@@ -279,69 +279,69 @@
    <div class="container" style="position: relative;">
 	<div style="position:   absolute; top: 0;right: 0;">
 	   <a class="btn-floating" style="background: #F44336;"
-	     href="https://www.youtube.com/channel/UCpKGX6esbmV364XDaTQGckQ?view_as=subscriber" 
+		 href="https://www.youtube.com/channel/UCpKGX6esbmV364XDaTQGckQ?view_as=subscriber" 
 	  target="_blank"  ><i class="fa fa-youtube"></i></a>
-      <a class="btn-floating"  href="https://twitter.com/Dr_FirasArnaout" 
+	  <a class="btn-floating"  href="https://twitter.com/Dr_FirasArnaout" 
 	  target="_blank"  ><i class="fa fa-twitter"></i></a>
 	<a class="btn-floating"  href="https://www.facebook.com/TheFRCSMentor" 
 	  target="_blank" style="background: #3F51B5;"><i class="fa fa-facebook"></i></a>
-     </div>
-      <div class="row mb-3 mt-5 justify-content-center">
-     <!--     <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
-	    <h2 class="section-title">Courses</h2>
+	 </div>
+	  <div class="row mb-3 mt-5 justify-content-center">
+	 <!--     <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+		<h2 class="section-title">Courses</h2>
 	 </div> -->
-      </div>
-      <div class="row m-0 p-0" id="courses_div" style="width:100%;display: block">
+	  </div>
+	  <div class="row m-0 p-0" id="courses_div" style="width:100%;display: block">
 	<style type="text/css">
 
 	   .course_title_main {
-	       margin-bottom: 0!important;
-	       text-align: left!important;
-	       animation-name: uk-fade;
-	       animation-duration: .8s;
-	       animation-timing-function: linear;
-	       line-height: 1.2;
-	       color: #003673;
-	       font-weight: 100;
-	       text-transform: uppercase;
-	       margin: 0 0 20px 0; 
-	       color: #006ba1;
-	       font-size: 40px;
+		   margin-bottom: 0!important;
+		   text-align: left!important;
+		   animation-name: uk-fade;
+		   animation-duration: .8s;
+		   animation-timing-function: linear;
+		   line-height: 1.2;
+		   color: #003673;
+		   font-weight: 100;
+		   text-transform: uppercase;
+		   margin: 0 0 20px 0; 
+		   color: #006ba1;
+		   font-size: 40px;
 	   }
 	   .course_divider_hr {
-	    display:block;
-	     margin: 20px 0 20px 0;    
-	     width: 80px;
-	     max-width: 100%;
-	     border-top: 4px solid #007dc3;
-	     vertical-align: top;
+		display:block;
+		 margin: 20px 0 20px 0;    
+		 width: 80px;
+		 max-width: 100%;
+		 border-top: 4px solid #007dc3;
+		 vertical-align: top;
 	   }
 	   .course_places_available {
-	     line-height: 1.238;
-	     font-weight: 300;
-	     text-transform: uppercase;
-	     border-left: 3px solid #00F;
-	     padding-left: 10px;
-	     margin: 25px 0px;
+		 line-height: 1.238;
+		 font-weight: 300;
+		 text-transform: uppercase;
+		 border-left: 3px solid #00F;
+		 padding-left: 10px;
+		 margin: 25px 0px;
 	   }
 
 	   .courses_reg_btn {
-	     width: 160px;
-	     font-size: 16px;
-	     font-weight: 700;
-	     margin-top: 10px;
-	     border-radius: 10px;
-	     border: 3px solid
+		 width: 160px;
+		 font-size: 16px;
+		 font-weight: 700;
+		 margin-top: 10px;
+		 border-radius: 10px;
+		 border: 3px solid
 	   }
 	   .course_section_details > h1 {
-		      border-left: 3px solid #00F;
-	     padding-left: 10px;
+			  border-left: 3px solid #00F;
+		 padding-left: 10px;
 	   }
 
 	   .course_tbody {
-	      font-size: 18px;
-	      padding-bottom: 10px;
-	      display: block;
+		  font-size: 18px;
+		  padding-bottom: 10px;
+		  display: block;
 	  }
 
 	</style>
@@ -349,374 +349,363 @@
 
 	<h2 class="course_title_main">{{$course->name}}</h2>
 	<h4 style="font-size:17px;text-transform: capitalize;"
-	    class="course_title_main" >{{$course->short_description}}</h4>
+		class="course_title_main" >{{$course->short_description}}</h4>
 	<hr class="course_divider_hr" />
 
 	 <div>
-	    <h2 class="course_places_available">UPCOMING COURSES</h2>
-	       <div class="form-group" style="align-items: center;">
-			
-			  <div class="form-group" style="align-items: center;">
-			      <div class="table-responsive">
-			      <table class="table table-sm table-borderless mb-0">
-				<tbody class="course_tbody">
-				  <tr>
-				    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-				  </tr>
-				  <tr>
-				    <td><strong>9th January 2021</strong></td>
-				  </tr>
-				  </tbody>
-				  </table>
-			      </div>	
 
-
-		    <button class="btn shopping_cart_btn courses_reg_btn"
-		     onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincal')" />
-		     Register Here</button>
+		<p class="m-0 p-0 h3 text-center"><strong>In association with</strong></p>
+		<div class="row">
+			<div class="col-md-4 mx-auto">
+					<img class="d-block mt-3 mb-3 w-75" src="{{asset('img/assoc_2.jpg')}}" />
 			</div>
 
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
-				</div>
-
-
-	<hr style="col-md-4 col-sm-12" />
-
-	     <div class="form-group" style="align-items: center;">
-		    <div class="table-responsive">
-		  <table class="table table-sm table-borderless mb-0">
-		    <tbody class="course_tbody">
-		      <tr>
-			<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-		      </tr>
-		      <tr>
-			<td><strong>20th February 2021</strong></td>
-		      </tr>
-		    </tbody>
-		</table>
-	    </div>  
-
-
-	<button class="btn shopping_cart_btn courses_reg_btn"
-		     onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalfeb/')">
-		     Register Here</button>
-
-	       </div>
-	<div>
-	  <p class="m-0 p-0"><strong>In association with</strong></p>
-	  <img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
-	</div>
-	 </div>
-
-				<hr style="col-md-4 col-sm-12" />
-
-	     <div class="form-group" style="align-items: center;">
-			      <div class="table-responsive">
-			      <table class="table table-sm table-borderless mb-0">
+			<div class="col-md-4 mx-auto">
+				<img class="d-block  mb-3 w-75" src="{{asset('img/assoc_3.jpg')}}" />
+			</div>
+		</div>
+		<h2 class="course_places_available">UPCOMING COURSES</h2>
+		  <div class="row">
+			 {{--<div class=" form-group" style="align-items: center;">--}}
+			  <div class="col-md-3 form-group" style="align-items: center;">
+				  <div class="table-responsive">
+				  <table class="table table-sm table-borderless mb-0">
 				<tbody class="course_tbody">
 				  <tr>
-				    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 				  </tr>
 				  <tr>
-				    <td><strong>6th March 2020</strong></td>
+					<td><strong>9th January 2021</strong></td>
 				  </tr>
 				  </tbody>
 				  </table>
-			      </div>	
-
-
-		    <button class="btn shopping_cart_btn courses_reg_btn"
-		     onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalmarch/')" />
-		     Register Here</button>
-	       </div>
-				<div>
-					<p class="m-0 p-0"><strong>In association with</strong></p>
-					<img class="d-block mt-3 mb-3 w-25" src="{{asset('img/assoc_2.jpg')}}" />
-				</div>
-
-			<hr style="col-md-4 col-sm-12" />
-
-
-	     <div class="form-group" style="align-items: center;">
-			      <div class="table-responsive">
-			      <table class="table table-sm table-borderless mb-0">
-				<tbody class="course_tbody">
-				  <tr>
-				    <th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-				  </tr>
-				  <tr>
-				    <td><strong>17th April 2020</strong></td>
-				  </tr>
-				  </tbody>
-				  </table>
-			      </div>	
+				  </div>	
 
 
 				<button class="btn shopping_cart_btn courses_reg_btn"
-		     		onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalapr/')" />
-		     Register Here</button>
-	       </div>
-			<div>
-				<p class="m-0 p-0"><strong>In association with</strong></p>
-				<img class="d-block  mb-3 w-25" src="{{asset('img/assoc_3.jpg')}}" />
+				 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincal')" />
+				 Register Here</button>
 			</div>
+
+		 <div class="col-md-3 form-group" style="align-items: center;">
+			<div class="table-responsive">
+		  <table class="table table-sm table-borderless mb-0">
+			<tbody class="course_tbody">
+			  <tr>
+			<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+			  </tr>
+			  <tr>
+			<td><strong>20th February 2021</strong></td>
+			  </tr>
+			</tbody>
+		</table>
+		</div>  
+
+
+		<button class="btn shopping_cart_btn courses_reg_btn"
+			 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalfeb/')">
+			 Register Here</button>
+		   </div>
+
+
+		 <div class="form-group col-md-3" style="align-items: center;">
+				  <div class="table-responsive">
+				  <table class="table table-sm table-borderless mb-0">
+				<tbody class="course_tbody">
+				  <tr>
+					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+				  </tr>
+				  <tr>
+					<td><strong>6th March 2020</strong></td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  </div>	
+
+
+			<button class="btn shopping_cart_btn courses_reg_btn"
+			 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalmarch/')" />
+			 Register Here</button>
+		   </div>
+
+
+
+		 <div class="form-group col-md-3" style="align-items: center;">
+				  <div class="table-responsive">
+				  <table class="table table-sm table-borderless mb-0">
+				<tbody class="course_tbody">
+				  <tr>
+					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+				  </tr>
+				  <tr>
+					<td><strong>17th April 2020</strong></td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  </div>	
+
+
+				<button class="btn shopping_cart_btn courses_reg_btn"
+					onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalapr/')" />
+			 Register Here</button>
+		   </div>
+
+	   </div>
 	 </div>
-      <div class="course_section_details mt-5">
+	  <div class="course_section_details mt-5">
 	 <h1 style=""><span>Overview</span></h1>
 	 <div class="uk-panel uk-margin">
-	    <p>{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
+		<p>{!! nl2br(strip_tags($course->details, '<p><a><br>'));  !!}</p>
 	 </div>
-      </div>
+	  </div>
 
-      <div class="course_section_details mt-5">
+	  <div class="course_section_details mt-5">
 	 <h1 style=""><span>Course Aims</span></h1>
 	 <div class="uk-panel uk-margin">
-	    <p>{!! nl2br(strip_tags($course->course_aims, '<p><a><br>'));  !!}</p>
+		<p>{!! nl2br(strip_tags($course->course_aims, '<p><a><br>'));  !!}</p>
 	 </div>
-      </div>
+	  </div>
 
-      <div class="course_section_details mt-5">
+	  <div class="course_section_details mt-5">
 	 <h1 style=""><span>Structure</span></h1>
 	 <div class="uk-panel uk-margin">
-	    <p>{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
+		<p>{!! nl2br(strip_tags($course->structure, '<p><a><br>'));  !!}</p>
 	 </div>
 	 <div class="table-responsive">
-	      <table class="table table-sm table-borderless mb-0">
+		  <table class="table table-sm table-borderless mb-0">
 		<tbody>
 		  <tr>
-		    <th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
-		    <td>{{$course->registration}}</td>
+			<th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
+			<td>{{$course->registration}}</td>
 		  </tr>
 
 		  <tr>
-		    <th class="pl-0 w-25" scope="row"><strong>Duration</strong></th>
-		    <td>{{$course->duration}}</td>
+			<th class="pl-0 w-25" scope="row"><strong>Duration</strong></th>
+			<td>{{$course->duration}}</td>
 		  </tr>
 
 		  <tr>
 		   <th class="pl-0 w-25" scope="row"><strong>who should attend?</strong></th>
-		    <td>{{$course->who_should_attend}}</td>
+			<td>{{$course->who_should_attend}}</td>
 		  </tr>
 
 		   <tr>
 		   <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
-		    <td> £{{$course->participant_price}} per candidate or £{{$course->observer_price}} per observer</td>
+			<td> £{{$course->participant_price}} per candidate or £{{$course->observer_price}} per observer</td>
 		  </tr>
 
 		</tbody>
-	      </table>
-	      </div>  
-      </div>
+		  </table>
+		  </div>  
+	  </div>
 
-      <div class="course_section_details mt-5">
+	  <div class="course_section_details mt-5">
 	 <h1 style=""><span>Timetable</span></h1>
 	 <div class="uk-panel uk-margin">
-	    <p>{!! nl2br(strip_tags($course->timetable, '<p><a><br>'));  !!}</p>
+		<p>{!! nl2br(strip_tags($course->timetable, '<p><a><br>'));  !!}</p>
 	 </div>
-      </div>
+	  </div>
 
-       <div class="course_section_details mt-5">
+	   <div class="course_section_details mt-5">
 	 <h1 style=""><span>Marking Criteria</span></h1>
 	 <div class="uk-panel uk-margin">
-	    <p>{!! nl2br(strip_tags($course->marking, '<p><a><br>'));  !!}</p>
+		<p>{!! nl2br(strip_tags($course->marking, '<p><a><br>'));  !!}</p>
 	 </div>
-      </div>
+	  </div>
 
-      <div class="course_section_details mt-5" id="study_aid_section">
+	  <div class="course_section_details mt-5" id="study_aid_section">
 	 <h1 style=""><span>Revision Book</span></h1>
 	 <img class='mt-3 mb-3 w-25' src="{{asset('img/firas_book.webp')}}">
 	 <div class="uk-panel uk-margin">
-	    <p>{!! nl2br(strip_tags($course->study_aid, '<p><a><br>'));  !!}</p>
+		<p>{!! nl2br(strip_tags($course->study_aid, '<p><a><br>'));  !!}</p>
 	 </div>
 	 <div class="form-group" style="align-items: center;display: flex;
-	    justify-content: space-between;">
+		justify-content: space-between;">
 		<button onclick="window.open('https://www.amazon.co.uk/Concise-Orthopaedic-Notes-Revision-Examinations-ebook/dp/B087ZR9ZB7/')" style="width: 300px;" 
 		 class="btn shopping_cart_btn courses_reg_btn" >
 		  Link to purchase book at Amazon</button>
-	    </div>
-      </div>
+		</div>
+	  </div>
 @endif
 
    </div>
 </div>
 <div class="slide-1  pt-3" id="teachers-section" >
    <div class="container ">
-      <div class="row mb-3 mt-5 justify-content-center">
+	  <div class="row mb-3 mt-5 justify-content-center">
 	 <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
-	    <h2 class="teachers-section-section-title section-title">Teaching Faculty</h2>
+		<h2 class="teachers-section-section-title section-title">Teaching Faculty</h2>
 	 </div>
-      </div>
-      <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">
+	  </div>
+	  <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">
 	 {!! $teachers !!}
-      </div>
-      <div style="">
+	  </div>
+	  <div style="">
 	 <button class="btn shopping_cart_btn" onclick="moreTeacher()" 
-	    style="margin: auto;display: block;width: 150px;color:#fff;border-color:#fff;"><i 
-	    class="fa fa-angle-down"></i> More</button><br/><br/>
-      </div>
+		style="margin: auto;display: block;width: 150px;color:#fff;border-color:#fff;"><i 
+		class="fa fa-angle-down"></i> More</button><br/><br/>
+	  </div>
    </div>
 </div>
 <div class="slide-1 mb-3" id="review-section" style="min-height: 60%;" >
    <div class="parallax-curtain">
-      <div class="container">
+	  <div class="container">
 	 <div class="row mb-2 pt-5 justify-content-center">
 	 </div>
 	 <div class="col-sm-10 col-md-7 mx-auto">
-	    <div class="wrapper-carousel-fix c_custom">
-	       <!-- Carousel Wrapper -->
-	       <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+		<div class="wrapper-carousel-fix c_custom">
+		   <!-- Carousel Wrapper -->
+		   <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
 		  data-interval="2500">
 		  <!--Slides-->
 		  <div class="carousel-inner text -center mt-5 mb-3 " role="listbox" style="min-height: 200px;">
-		     <div class="carousel-item active">
+			 <div class="carousel-item active">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
-			      <br/>
-			      <i class="fa fa-quote-left"></i> It was a great experience and an opportunity for me 
-			      to be guided on how to structure my future study and preparation for the exam.
-			      </p>
+				  <br/>
+				  <i class="fa fa-quote-left"></i> It was a great experience and an opportunity for me 
+				  to be guided on how to structure my future study and preparation for the exam.
+				  </p>
 			   <h4 class="font-weight-bold">Mohamed Naell</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
-		     </div>
+			 </div>
 
-		     <div class="carousel-item ">
+			 <div class="carousel-item ">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
-			      <br/>
-			      <i class="fa fa-quote-left"></i> Very good need more like this course.
+				  <br/>
+				  <i class="fa fa-quote-left"></i> Very good need more like this course.
 			   </p>
 			   <h4 class="font-weight-bold">Rajeev Jahagirdar</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
-		     </div>
+			 </div>
 
-		     <div class="carousel-item">
+			 <div class="carousel-item">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
-			      <br/>
-			      <i class="fa fa-quote-left"></i> Keep up the good work.
+				  <br/>
+				  <i class="fa fa-quote-left"></i> Keep up the good work.
 			   </p>
 			   <h4 class="font-weight-bold">Winster D'Souza</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
-		     </div>
+			 </div>
 
-		     <div class="carousel-item">
+			 <div class="carousel-item">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
-			      <br/>
-			      <i class="fa fa-quote-left"></i> It gave me a good idea of the difficulty level of the exam, 
-			      I will definately change my strategy of studying.
+				  <br/>
+				  <i class="fa fa-quote-left"></i> It gave me a good idea of the difficulty level of the exam, 
+				  I will definately change my strategy of studying.
 			   </p>
 			   <h4 class="font-weight-bold">Harry Benjamin-Laing</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
-		     </div>
+			 </div>
 
-		     <div class="carousel-item">
+			 <div class="carousel-item">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
-			      <br/>
-			      <i class="fa fa-quote-left"></i> It will help me become more succinct and clear 
-			      in my presentation of case and on the basis of my observation.
+				  <br/>
+				  <i class="fa fa-quote-left"></i> It will help me become more succinct and clear 
+				  in my presentation of case and on the basis of my observation.
 			   </p>
 			   <h4 class="font-weight-bold">Nicholas Bezzina</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
-		     </div>
+			 </div>
 
-		     <div class="carousel-item">
+			 <div class="carousel-item">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
-			      <br/>
-			      <i class="fa fa-quote-left"></i> Very constructive feedback demonstrating how to organise the answers.
+				  <br/>
+				  <i class="fa fa-quote-left"></i> Very constructive feedback demonstrating how to organise the answers.
 			   </p>
 			   <h4 class="font-weight-bold">Umesh Birole</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
-		     </div>
+			 </div>
 		  </div>
 		  <!--Slides-->
 		  <!--Controls-->
 		  <a class="carousel-control-prev left carousel-control text-white" href="#carousel-example-1" role="button"
-		     data-slide="prev" style="font-size: 3em;color: #000;">
+			 data-slide="prev" style="font-size: 3em;color: #000;">
 		  <i class="fa fa-angle-left" aria-hidden="true"></i>
 		  <span class="sr-only">Previous</span>
 		  </a>
 		  <a class="carousel-control-next right carousel-control text-white" href="#carousel-example-1" role="button"
-		     data-slide="next" style="font-size: 3em;color: #000;">
+			 data-slide="next" style="font-size: 3em;color: #000;">
 		  <i class="fa fa-angle-right" aria-hidden="true"></i>
 		  <span class="sr-only">Next</span>
 		  </a>
 		  <!--Controls-->
-	       </div>
-	       <!-- Carousel Wrapper -->
-	    </div>
+		   </div>
+		   <!-- Carousel Wrapper -->
+		</div>
 	 </div>
-      </div>
+	  </div>
    </div>
 </div>
 <!----------------------- CONTACT US -------------------------->
 <div class="site-section bg-light" style="margin-top:-3em;" id="contact-section">
    <div class="container">
-      <div class="row mt-2 justify-content-center">
+	  <div class="row mt-2 justify-content-center">
 	 <div class="col-sm-7 col-md-10 col-lg-7">
-	    <h2 class="section-title mb-3">Contact Us</h2>
-	    <p class="mb-5"></p>
-	    <form method="post" id="contact_form" data-aos="fade" class="aos-init aos-animate">
-	       <div class="form-group row">
+		<h2 class="section-title mb-3">Contact Us</h2>
+		<p class="mb-5"></p>
+		<form method="post" id="contact_form" data-aos="fade" class="aos-init aos-animate">
+		   <div class="form-group row">
 		  <div class="col-md-6 mb-3 mb-lg-0">
-		     <input type="text" name="first_name" class="form-control" placeholder="First name" required>
+			 <input type="text" name="first_name" class="form-control" placeholder="First name" required>
 		  </div>
 		  <div class="col-md-6">
-		     <input type="text" name='last_name' class="form-control" placeholder="Last name" required>
+			 <input type="text" name='last_name' class="form-control" placeholder="Last name" required>
 		  </div>
-	       </div>
-	       <div class="form-group row">
+		   </div>
+		   <div class="form-group row">
 		  <div class="col-md-12">
-		     <input type="text" name='subject' class="form-control" placeholder="Subject">
+			 <input type="text" name='subject' class="form-control" placeholder="Subject">
 		  </div>
-	       </div>
-	       <div class="form-group row">
+		   </div>
+		   <div class="form-group row">
 		  <div class="col-md-12">
-		     <input type="email" name='email' class="form-control" placeholder="Email" required>
+			 <input type="email" name='email' class="form-control" placeholder="Email" required>
 		  </div>
-	       </div>
-	       <div class="form-group row">
+		   </div>
+		   <div class="form-group row">
 		  <div class="col-md-12">
-		     <textarea class="form-control " name='message' style="height:auto" id="" cols="30" rows="7" placeholder="Write your message here." required></textarea>
+			 <textarea class="form-control " name='message' style="height:auto" id="" cols="30" rows="7" placeholder="Write your message here." required></textarea>
 		  </div>
-	       </div>
-	       <div class="form-group row">
+		   </div>
+		   <div class="form-group row">
 		  <div class="col-md-6">
-		     <input type="submit" onclick="sendContactForm()" 
+			 <input type="submit" onclick="sendContactForm()" 
 			class=" shopping_cart_btn btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message"/>
 		  </div>
-	       </div>
+		   </div>
 
-	       <div class="form-group row">
+		   <div class="form-group row">
 				  <div class="col-md-12 mx-auto text-center pt-2">
 						<h4>Email: <strong>thefrcsmentor@gmail.com</strong></h4>
 					</div>
 				</div>
-	    </form>
+		</form>
 	 </div>
-      </div>
+	  </div>
    </div>
 </div>
 
@@ -733,61 +722,61 @@
 <div id="registration_modal_{{$key}}" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-dialog-centered" role="document">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
 	<h4 class="modal-title">Registration</h4>
 	<button type="button" class="text-white close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-     <form method="post" action="{{route('payment.checkout')}}">
+	  </div>
+	  <div class="modal-body">
+	 <form method="post" action="{{route('payment.checkout')}}">
 
 	 <div class="form-group">
-	    <input type="text" name="fname" class="form-control" 
-	       placeholder="First Name" required>
+		<input type="text" name="fname" class="form-control" 
+		   placeholder="First Name" required>
 	 </div>
 
 	<div class="form-group">
-	    <input type="text" name="sname" class="form-control" 
-	       placeholder="Surname" required>
+		<input type="text" name="sname" class="form-control" 
+		   placeholder="Surname" required>
 	 </div>
 
 	 <div class="form-group">
-	    <input type="text" name="hospital" class="form-control" 
-	       placeholder="Hospital / Institution" required>
+		<input type="text" name="hospital" class="form-control" 
+		   placeholder="Hospital / Institution" required>
 	 </div>
 
 	 <div class="form-group">
-	    <input type="text" name="country" class="form-control" 
-	       placeholder="Country" required>
+		<input type="text" name="country" class="form-control" 
+		   placeholder="Country" required>
 	 </div>
 
 	 <div class="form-group">
-	    <input type="tel" name="mobile" class="form-control" 
-	       placeholder="Mobile" required>
+		<input type="tel" name="mobile" class="form-control" 
+		   placeholder="Mobile" required>
 	 </div>
 
 	<div class="form-group">
-	    <input type="text" name="email" class="form-control" 
-	       placeholder="Email" required>
+		<input type="text" name="email" class="form-control" 
+		   placeholder="Email" required>
 	 </div>
 
 	<div class="form-group">
 	  <span>Price</span>
 	   <select type="text" name="type" class="form-control"  required>
-	      <option value="participant" class="form-control" @if ( (16 - app('\App\Http\Controllers\CoursesController')->enrolledCourse($value)) < 1) disabled @endif>Participant: £{{$course->participant_price ?? 0}}  @if (16 - app('\App\Http\Controllers\CoursesController')->enrolledCourse($value) < 1) (0 Seats Left) @endif </option>
-	      <option value="observer" 
+		  <option value="participant" class="form-control" @if ( (16 - app('\App\Http\Controllers\CoursesController')->enrolledCourse($value)) < 1) disabled @endif>Participant: £{{$course->participant_price ?? 0}}  @if (16 - app('\App\Http\Controllers\CoursesController')->enrolledCourse($value) < 1) (0 Seats Left) @endif </option>
+		  <option value="observer" 
 		class="form-control">Observer : £{{$course->observer_price ?? 0}}</option>
-	    </select>
+		</select>
 	</div>
 	<input type="hidden" name="booking_date" value="{{$value}}">
 	 @csrf
 	  <div class="modal-footer" style="border: none;padding: 10px 0px;">
-	       <button type="submit" class="btn shopping_cart_btn">Checkout</button>
+		   <button type="submit" class="btn shopping_cart_btn">Checkout</button>
 	 </div>
-     </form>
-      </div>
-    </div>
+	 </form>
+	  </div>
+	</div>
   </div>
 </div>
 @endforeach
