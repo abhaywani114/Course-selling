@@ -357,11 +357,13 @@
 		<p class="m-0 p-0 h3 text-center"><strong>In association with</strong></p>
 		<div class="row">
 			<div class="col-md-4 mx-auto">
-					<img class="d-block mt-3 mb-3 w-75" src="{{asset('img/assoc_2.jpg')}}" />
+					<img class="d-block mt-3 mb-3 w-75 p-3"  style="cursor:pointer;"
+						onclick="window.open('https://www.oruk.org/')" src="{{asset('img/assoc_2.jpg')}}" />
 			</div>
 
 			<div class="col-md-4 mx-auto">
-				<img class="d-block  mb-3 w-75" src="{{asset('img/assoc_3.jpg')}}" />
+				<img class="d-block  mb-3 w-75" style="cursor:pointer;"
+					onclick="window.open('http://frcsmentor.co.uk')" src="{{asset('img/assoc_3.jpg')}}" />
 			</div>
 		</div>
 		<h2 class="course_places_available">UPCOMING COURSES</h2>
@@ -476,7 +478,7 @@
 		<tbody>
 		  <tr>
 			<th class="pl-0 w-25" scope="row"><strong>Candidate login time</strong></th>
-			<td>{{$course->registration}}</td>
+			<td>09:30</td>
 		  </tr>
 
 		  <tr>
