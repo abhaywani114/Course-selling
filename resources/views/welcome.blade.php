@@ -452,6 +452,27 @@
 			 Register Here</button>
 		   </div>
 
+	 <div class="form-group col-md-3" style="align-items: center;">
+				  <div class="table-responsive">
+				  <table class="table table-sm table-borderless mb-0">
+				<tbody class="course_tbody">
+				  <tr>
+					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+				  </tr>
+				  <tr>
+					<td><strong>27th March 2020</strong></td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  </div>	
+
+
+			<button class="btn shopping_cart_btn courses_reg_btn"
+			data-target='#registration_modal_mar' data-toggle="modal"/>
+			 Register Here</button>
+		   </div>
+
+
 	   </div>
 	 </div>
 	  <div class="course_section_details mt-5">
@@ -719,7 +740,7 @@
 },
 </style>
 
-@foreach ([ 'a' => '2021-04-17', 'feb' => '2021-02-20' ] as $key => $value)
+@foreach ([ 'a' => '2021-04-17', 'feb' => '2021-02-20', 'mar' => '2021-03-27' ] as $key => $value)
 <!-- Modal -->
 <div id="registration_modal_{{$key}}" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-dialog-centered" role="document">
