@@ -429,6 +429,25 @@
 			 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalmarch/')" />
 			 Register Here</button>
 		   </div>
+		   <div class="form-group col-md-3" style="align-items: center;">
+				  <div class="table-responsive">
+				  <table class="table table-sm table-borderless mb-0">
+				<tbody class="course_tbody">
+				  <tr>
+					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
+				  </tr>
+				  <tr>
+					<td><strong>27th March 2020</strong></td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  </div>	
+
+
+			<button class="btn shopping_cart_btn courses_reg_btn"
+			data-target='#registration_modal_mar' data-toggle="modal"/>
+			 Register Here</button>
+		   </div>
 
 
 
@@ -452,26 +471,7 @@
 			 Register Here</button>
 		   </div>
 
-	 <div class="form-group col-md-3" style="align-items: center;">
-				  <div class="table-responsive">
-				  <table class="table table-sm table-borderless mb-0">
-				<tbody class="course_tbody">
-				  <tr>
-					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-				  </tr>
-				  <tr>
-					<td><strong>27th March 2020</strong></td>
-				  </tr>
-				  </tbody>
-				  </table>
-				  </div>	
-
-
-			<button class="btn shopping_cart_btn courses_reg_btn"
-			data-target='#registration_modal_mar' data-toggle="modal"/>
-			 Register Here</button>
-		   </div>
-
+	
 
 	   </div>
 	 </div>

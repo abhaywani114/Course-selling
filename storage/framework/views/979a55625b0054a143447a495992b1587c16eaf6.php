@@ -1,8 +1,16 @@
 <html >
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content=">FRCS Mock-Exam Course | Viva And Clinical With Individual Feedback" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="FRCS Mock-Exam Course" />
+        <meta property="og:description" content="Viva And Clinical With Individual Feedback" />
+        <meta property="og:image" content="<?php echo e(asset('/img/link_preview.png')); ?>"/>
+        <meta property="og:url" content="<?php echo e(url('/')); ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+        <link rel="shortcut icon" href="<?php echo e(asset('/img/favicon-32x32.png')); ?>" type="image/x-icon" />
         <title><?php echo $__env->yieldContent('page_title', env('APP_NAME')); ?></title>
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
@@ -17,8 +25,8 @@
             .navbar {
                 padding-top: 0;
                 padding-bottom: 0;
-                padding-left: 7rem;
-                padding-right: 7rem;
+                padding-left: 3.5rem;
+                padding-right: 3.5rem;
                 -webkit-box-shadow: 4px 0 20px -5px rgb(188 207 223);
                 box-shadow: 4px 0 20px -5px rgb(188 207 223);
             }
@@ -33,7 +41,7 @@
                 color: #444242d9;
                 display: inline-block;
                 text-decoration: none!important;
-                font-size: 17px;
+                font-size: 15.5px;
                 margin: 0px 20px;
             }
             li > .nav-link > span:hover, li > .nav-link > span:active,
@@ -196,7 +204,9 @@
     </head>
     
     <body>
-
+            <link itemprop="thumbnailUrl" href="<?php echo e(asset('/img/link_preview.png')); ?>">
+        <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+        <link itemprop="url" href="<?php echo e(asset('/img/link_preview.png')); ?>"></span>
         <nav class="navbar sticky-top navbar-expand-md" style="min-height:60px;"> 
         
             <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -214,6 +224,7 @@
                     <li><a href="/#courses-section" class="nav-link"><span>Courses</span></a></li>
                     <li><a href="/#teachers-section" class="nav-link"><span>Teaching Faculty</span></a></li>
                     <li><a href="/#review-section" class="nav-link"><span>Testimonials</span></a></li>
+                    <li><a href="/#study_aid_section" class="nav-link"><span>Revision Book</span></a></li>
                     <li><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
 
 					<?php if(auth()->guard()->check()): ?>	
@@ -252,7 +263,7 @@
 
 
 			</ul> 
-                <button onclick="renderCart()" data-toggle="modal" data-target="#shopping_cart" class="btn shopping_cart_btn"><i class="fa fa-shopping-cart"></i> Cart</button>
+             <!--    <button onclick="renderCart()" data-toggle="modal" data-target="#shopping_cart" class="btn shopping_cart_btn"><i class="fa fa-shopping-cart"></i> Cart</button> -->
             </div>
 
         </nav>   
@@ -280,7 +291,7 @@
             <div class="col-md-12">
                 <div>
                     <p class="p-0 m-0">
-                        Copyright ©2020 All rights reserved | Designed with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>Network Venture</strong>
+                        Copyright ©2020 All rights reserved | Designed with <i class="fa fa-heart" aria-hidden="true"></i> by <strong><a href="https://www.network-venture.com/" target="_blank" style="color:#fff">Network Venture</a></strong>
                     </p>
                 </div>
             </div>
@@ -367,7 +378,7 @@
             $.post("<?php echo e(route('admin.courses.viewCourseDetail')); ?>", {
                 course_id : course_id
              }).done( (res) => {
-                $("#course_res_div").append(res);
+                $("#course_res_div").html(res);
                 if ($('.modal.in, .modal.show').length < 1) {
                     $('.modal-backdrop').remove();
                     $("#product_detail_modal").modal('show')
@@ -379,7 +390,7 @@
             $.post("<?php echo e(route('admin.courses.viewTeacherDetail')); ?>", {
                 teacher_id : teacher_id
              }).done( (res) => {
-                $("#course_res_div").append(res);
+                $("#course_res_div").html (res);
                 if ($('.modal.in, .modal.show').length < 1) {
                     $('.modal-backdrop').remove();
                     $("#person_detail").modal('show')
@@ -460,4 +471,4 @@
 
     <?php echo $__env->yieldContent('js'); ?>
 </html>
-<?php /**PATH D:\Server_Files\Network Venture\project_7001a\resources\views/layout/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\Projects\project_700a\resources\views/layout/layout.blade.php ENDPATH**/ ?>
