@@ -141,12 +141,12 @@
 		<div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
 		<h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
 		<ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
-		  <li class="mb-4 h4 text-white">CPD approved by RCSEd</li>
-		  <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1</li>
+		  <li class="mb-4 h4 text-white">CPD approved by RCSEd.</li>
+		  <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1.</li>
 		  <li class="mb-4 h4 text-white" >Covers all viva stations , short and intermediate clinicals.</li>  
 			   <li class="mb-4 h4 text-white">Faculty formally trained to provide high quality questions and feedback.</li>  
-				<li class="mb-4 h4 text-white">Suitable for candidates preparing for JCIE and JSCFE Fellowship Examinations</li>
-				<li class="mb-4 h4 text-white">High quality questions aligned with the previous exams</li>
+				<li class="mb-4 h4 text-white">Suitable for candidates preparing for JCIE and JSCFE Fellowship Examinations.</li>
+				<li class="mb-4 h4 text-white">High quality questions aligned with the previous exams.</li>
 		</ul>
 
 	 </div>
