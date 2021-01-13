@@ -437,7 +437,7 @@
 					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 				  </tr>
 				  <tr>
-					<td><strong>03 April 2021</strong></td>
+					<td><strong>3rd April 2021</strong></td>
 				  </tr>
 				  </tbody>
 				  </table>
