@@ -369,7 +369,7 @@
 		<h2 class="course_places_available">UPCOMING COURSES</h2>
 		  <div class="row">
 			 {{--<div class=" form-group" style="align-items: center;">--}}
-			  <!--<div class="col-md-3 form-group" style="align-items: center;">
+			  <div class="col-md-3 form-group" style="align-items: center;">
 				  <div class="table-responsive">
 				  <table class="table table-sm table-borderless mb-0">
 				<tbody class="course_tbody">
@@ -387,7 +387,7 @@
 				<button class="btn shopping_cart_btn courses_reg_btn"
 				 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincal')" />
 				 Register Here</button>
-			</div>-->
+			</div>
 
 		 <div class="col-md-3 form-group" style="align-items: center;">
 			<div class="table-responsive">
