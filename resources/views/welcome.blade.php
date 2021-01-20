@@ -610,7 +610,6 @@
 				  to be guided on how to structure my future study and preparation for the exam.
 				  </p>
 			   <h4 class="font-weight-bold">Mohamed Naell</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -639,7 +638,6 @@
 				  <i class="fa fa-quote-left"></i> Very good need more like this course.
 			   </p>
 			   <h4 class="font-weight-bold">Rajeev Jahagirdar</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -668,7 +666,6 @@
 				  <i class="fa fa-quote-left"></i> David Hughes was excellent as were a number of other faculty.
 			   </p>
 			   <h4 class="font-weight-bold">Winster D'Souza</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -698,7 +695,6 @@
 				  I will definately change my strategy of studying.
 			   </p>
 			   <h4 class="font-weight-bold">Harry Benjamin-Laing</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -728,7 +724,6 @@
 				  in my presentation of case and on the basis of my observation.
 			   </p>
 			   <h4 class="font-weight-bold">Nicholas Bezzina</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -757,7 +752,6 @@
 				  <i class="fa fa-quote-left"></i> Very constructive feedback demonstrating how to organise the answers.
 			   </p>
 			   <h4 class="font-weight-bold">Umesh Birole</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -786,7 +780,6 @@
 				  <i class="fa fa-quote-left"></i> Really well run despite being online. amazing what can be done despite being overseas and virtual.
 			   </p>
 			   <h4 class="font-weight-bold">Amir</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -815,7 +808,6 @@
 				  <i class="fa fa-quote-left"></i> I found the majority of faculty supportive and their feedback constructive.
 			   </p>
 			   <h4 class="font-weight-bold">Gary McLean</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -844,7 +836,6 @@
 				  <i class="fa fa-quote-left"></i> It helped me to understand better the set up of the exams and adjust my preparation and focus in certain topics/things.
 			   </p>
 			   <h4 class="font-weight-bold">Ahmed Farooq</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div> 
@@ -875,7 +866,6 @@
 confidence boost for area that I have done well in.
 			   </p>
 			   <h4 class="font-weight-bold">Rashid</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
@@ -904,7 +894,6 @@ confidence boost for area that I have done well in.
 				  <i class="fa fa-quote-left"></i> I found the majority of faculty supportive and their feedback constructive.
 			   </p>
 			   <h4 class="font-weight-bold">Kaisar</h4>
-			   <h6 class="font-weight-bold my-3">Candidate</h6>
 			   <!--Review-->
 			</div>
 			 </div>
