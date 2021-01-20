@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @extends('layout.layout')
 @section('content')
 <style>
@@ -589,6 +590,19 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+                  </div>
 				  <i class="fa fa-quote-left"></i> It was a great experience and an opportunity for me 
 				  to be guided on how to structure my future study and preparation for the exam.
 				  </p>
