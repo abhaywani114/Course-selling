@@ -580,9 +580,11 @@
 		   <!-- Carousel Wrapper -->
 		   <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
 		  data-interval="2500">
-		  <!--Slides-->
+		  
+          <!--Slides-->
 		  <div class="carousel-inner text -center mt-5 mb-3 " role="listbox" style="min-height: 200px;">
-			 <div class="carousel-item active">
+			 
+             <div class="carousel-item active">
 			<div class="testimonial text-white p-4">
 			   <!--Content-->
 			   <p class="text-justify">
@@ -662,7 +664,6 @@
 			   <!--Review-->
 			</div>
 			 </div>
-		  </div>
           
         <div class="carousel-item ">
 			<div class="testimonial text-white p-4">
@@ -730,6 +731,8 @@ confidence boost for area that I have done well in.
 			   <!--Review-->
 			</div>
 			 </div>
+             
+             </div>
           
 		  <!--Slides-->
 		  <!--Controls-->
