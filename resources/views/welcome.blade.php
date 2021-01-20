@@ -663,6 +663,61 @@
 			</div>
 			 </div>
 		  </div>
+          
+        <div class="carousel-item ">
+			<div class="testimonial text-white p-4">
+			   <!--Content-->
+			   <p class="text-justify">
+				  <br/>
+				  <i class="fa fa-quote-left"></i>Really well run despite being online. amazing what can be done despite being overseas and virtual.
+			   </p>
+			   <h4 class="font-weight-bold">Amir</h4>
+			   <h6 class="font-weight-bold my-3">Candidate</h6>
+			   <!--Review-->
+			</div>
+			 </div>
+             
+             <div class="carousel-item ">
+			<div class="testimonial text-white p-4">
+			   <!--Content-->
+			   <p class="text-justify">
+				  <br/>
+				  <i class="fa fa-quote-left"></i>I found the majority of faculty supportive and their feedback constructive.
+			   </p>
+			   <h4 class="font-weight-bold">Gary McLean</h4>
+			   <h6 class="font-weight-bold my-3">Candidate</h6>
+			   <!--Review-->
+			</div>
+			 </div>
+             
+             <div class="carousel-item ">
+			<div class="testimonial text-white p-4">
+			   <!--Content-->
+			   <p class="text-justify">
+				  <br/>
+				  <i class="fa fa-quote-left"></i>It helped me to understand better the set up of the exams and adjust my preparation and focus in certain topics/things.
+			   </p>
+			   <h4 class="font-weight-bold">Ahmed Farooq</h4>
+			   <h6 class="font-weight-bold my-3">Candidate</h6>
+			   <!--Review-->
+			</div>
+			 </div> 
+             
+             
+             <div class="carousel-item ">
+			<div class="testimonial text-white p-4">
+			   <!--Content-->
+			   <p class="text-justify">
+				  <br/>
+				  <i class="fa fa-quote-left"></i>Great impact, put me back on track , zoomed in on area that need improvement and a
+confidence boost for area that I have done well in.
+			   </p>
+			   <h4 class="font-weight-bold">Rashid</h4>
+			   <h6 class="font-weight-bold my-3">Candidate</h6>
+			   <!--Review-->
+			</div>
+			 </div>
+          
 		  <!--Slides-->
 		  <!--Controls-->
 		  <a class="carousel-control-prev left carousel-control text-white" href="#carousel-example-1" role="button"
