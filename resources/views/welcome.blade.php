@@ -718,6 +718,19 @@ confidence boost for area that I have done well in.
 			</div>
 			 </div>
           
+          <div class="carousel-item ">
+			<div class="testimonial text-white p-4">
+			   <!--Content-->
+			   <p class="text-justify">
+				  <br/>
+				  <i class="fa fa-quote-left"></i>I found the majority of faculty supportive and their feedback constructive.
+			   </p>
+			   <h4 class="font-weight-bold">Kaisar</h4>
+			   <h6 class="font-weight-bold my-3">Candidate</h6>
+			   <!--Review-->
+			</div>
+			 </div>
+          
 		  <!--Slides-->
 		  <!--Controls-->
 		  <a class="carousel-control-prev left carousel-control text-white" href="#carousel-example-1" role="button"
