@@ -590,19 +590,22 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
+
                   <div>
                     <style>
                     .checked {
                     color: orange;
                     }
                     </style>
-                    <h2>Star Rating</h2>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
                   </div>
+                  <br>
+
 				  <i class="fa fa-quote-left"></i> It was a great experience and an opportunity for me 
 				  to be guided on how to structure my future study and preparation for the exam.
 				  </p>
@@ -617,6 +620,22 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
+                  <br>
+                  
 				  <i class="fa fa-quote-left"></i> Very good need more like this course.
 			   </p>
 			   <h4 class="font-weight-bold">Rajeev Jahagirdar</h4>
@@ -630,7 +649,23 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
-				  <i class="fa fa-quote-left"></i> Keep up the good work.
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
+                  <br>
+                  
+				  <i class="fa fa-quote-left"></i> David Hughes was excellent as were a number of other faculty.
 			   </p>
 			   <h4 class="font-weight-bold">Winster D'Souza</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
@@ -643,6 +678,22 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                  </div>
+                  <br>
+                  
 				  <i class="fa fa-quote-left"></i> It gave me a good idea of the difficulty level of the exam, 
 				  I will definately change my strategy of studying.
 			   </p>
@@ -657,6 +708,22 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
+                  <br>
+                  
 				  <i class="fa fa-quote-left"></i> It will help me become more succinct and clear 
 				  in my presentation of case and on the basis of my observation.
 			   </p>
@@ -671,6 +738,22 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
+                  <br>
+                  
 				  <i class="fa fa-quote-left"></i> Very constructive feedback demonstrating how to organise the answers.
 			   </p>
 			   <h4 class="font-weight-bold">Umesh Birole</h4>
@@ -684,7 +767,23 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
-				  <i class="fa fa-quote-left"></i>Really well run despite being online. amazing what can be done despite being overseas and virtual.
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                  </div>
+                  <br>
+                  
+				  <i class="fa fa-quote-left"></i> Really well run despite being online. amazing what can be done despite being overseas and virtual.
 			   </p>
 			   <h4 class="font-weight-bold">Amir</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
@@ -697,7 +796,23 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
-				  <i class="fa fa-quote-left"></i>I found the majority of faculty supportive and their feedback constructive.
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                  </div>
+                  <br>
+                  
+				  <i class="fa fa-quote-left"></i> I found the majority of faculty supportive and their feedback constructive.
 			   </p>
 			   <h4 class="font-weight-bold">Gary McLean</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
@@ -710,7 +825,23 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
-				  <i class="fa fa-quote-left"></i>It helped me to understand better the set up of the exams and adjust my preparation and focus in certain topics/things.
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
+                  <br>
+                  
+				  <i class="fa fa-quote-left"></i> It helped me to understand better the set up of the exams and adjust my preparation and focus in certain topics/things.
 			   </p>
 			   <h4 class="font-weight-bold">Ahmed Farooq</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
@@ -724,7 +855,23 @@
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
-				  <i class="fa fa-quote-left"></i>Great impact, put me back on track , zoomed in on area that need improvement and a
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                  </div>
+                  <br>
+                  
+				  <i class="fa fa-quote-left"></i> Great impact, put me back on track , zoomed in on area that need improvement and a
 confidence boost for area that I have done well in.
 			   </p>
 			   <h4 class="font-weight-bold">Rashid</h4>
@@ -738,7 +885,23 @@ confidence boost for area that I have done well in.
 			   <!--Content-->
 			   <p class="text-justify">
 				  <br/>
-				  <i class="fa fa-quote-left"></i>I found the majority of faculty supportive and their feedback constructive.
+                  
+                  <div>
+                    <style>
+                    .checked {
+                    color: orange;
+                    }
+                    </style>
+                    <h3>Candidate Reviews</h3>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                  </div>
+                  <br>
+                  
+				  <i class="fa fa-quote-left"></i> I found the majority of faculty supportive and their feedback constructive.
 			   </p>
 			   <h4 class="font-weight-bold">Kaisar</h4>
 			   <h6 class="font-weight-bold my-3">Candidate</h6>
