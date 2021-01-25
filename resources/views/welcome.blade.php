@@ -446,7 +446,7 @@
 
 
 			<button class="btn shopping_cart_btn courses_reg_btn"
-			data-target='#registration_modal_mar' data-toggle="modal"/>
+			data-target='#registration_modal_apr' data-toggle="modal"/>
 			 Register Here</button>
 		   </div>
 
@@ -977,7 +977,7 @@ confidence boost for area that I have done well in.
 },
 </style>
 
-@foreach ([ 'a' => '2021-04-17', 'feb' => '2021-02-20', 'mar' => '2021-03-27' ] as $key => $value)
+@foreach ([ 'a' => '2021-04-17', 'feb' => '2021-02-20', 'mar' => '2021-03-27' 'april' => '2020-04-01'  ] as $key => $value)
 <!-- Modal -->
 <div id="registration_modal_{{$key}}" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-dialog-centered" role="document">
