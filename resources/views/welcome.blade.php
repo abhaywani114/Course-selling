@@ -446,7 +446,7 @@
 
 
 			<button class="btn shopping_cart_btn courses_reg_btn"
-			data-target='#registration_modal_apr' data-toggle="modal"/>
+			data-target='#registration_modal_april' data-toggle="modal"/>
 			 Register Here</button>
 		   </div>
 
