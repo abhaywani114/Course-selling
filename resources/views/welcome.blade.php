@@ -390,46 +390,7 @@
 				 Register Here</button>
 			</div>-->
 
-		 <div class="col-md-3 form-group" style="align-items: center;">
-			<div class="table-responsive">
-		  <table class="table table-sm table-borderless mb-0">
-			<tbody class="course_tbody">
-			  <tr>
-			<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-			  </tr>
-			  <tr>
-			<td><strong>20th February 2021</strong></td>
-			  </tr>
-			</tbody>
-		</table>
-		</div>  
-
-
-		<button class="btn shopping_cart_btn courses_reg_btn"
-			 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalfeb/')">
-			 Register Here</button>
-		   </div>
-
-
-		 <div class="form-group col-md-3" style="align-items: center;">
-				  <div class="table-responsive">
-				  <table class="table table-sm table-borderless mb-0">
-				<tbody class="course_tbody">
-				  <tr>
-					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-				  </tr>
-				  <tr>
-					<td><strong>6th March 2021</strong></td>
-				  </tr>
-				  </tbody>
-				  </table>
-				  </div>	
-
-
-			<button class="btn shopping_cart_btn courses_reg_btn"
-			 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincalmarch/')" />
-			 Register Here</button>
-		   </div>
+		
 		   <div class="form-group col-md-3" style="align-items: center;">
 				  <div class="table-responsive">
 				  <table class="table table-sm table-borderless mb-0">
