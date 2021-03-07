@@ -620,7 +620,7 @@
 	  <div class="row mb-3 mt-5 justify-content-center">
 	 <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
 		<h2 class="teachers-section-section-title section-title">Teaching Faculty</h2>
-        <h4 style="align:center; color:white;">We would love to hear from you, if you are interested to join us & become a faculty, please get in touch & <a href="mailto:thefrcsmentor@gmail.com" style="text-decoration:underline; a:link{color:#FF8F00}">drop us an email.</a></h4>
+        <h4 style="align:center; color:white;">We would love to hear from you, if you are interested to join us & become a faculty, please get in touch & <a href="mailto:thefrcsmentor@gmail.com" style="text-decoration:underline;">drop us an email.</a></h4>
 	 </div>
 	  </div>
 	  <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">
