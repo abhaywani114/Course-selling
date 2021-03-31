@@ -13,6 +13,7 @@
    }
    #home-section {
    background: url("{{asset('img/bg.jpg')}}");
+   margin-top:-1em;
    }
    .slide-1 { 
    /* Full height */
@@ -22,6 +23,7 @@
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
+    
    }
    .slide-1:before, .pallax {
 	position: absolute;
@@ -42,6 +44,7 @@
    #courses-section {
    /* background: url("{{asset('img/underwater_bubbling.gif')}}"); */
    padding-bottom:25px;
+   padding-left:40px;
    }
    .section-title {
    font-size: 3rem;
@@ -137,17 +140,17 @@
    <div class="container"  @if(!$is_admin) style=" z-index: 12;
 	position: absolute;" @endif>
 	  <div class="row intro_custom_1 text-white " >
-	 <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white" @else 
+	 <div  @if ($is_admin)  class="col-lg-6 mb-4 text-white"  @else 
 		style="text-align: center;margin-left: auto;padding-top:2em;"  @endif >
-		<div    @if ($is_admin) class="intro_subtitle_mainsection" @endif>
+		<div    @if ($is_admin) class="intro_subtitle_mainsection" ; @endif>
 		<h1 data-aos="fade-up" data-aos-delay="100" >Learn From The Experts</h1>
-		<ul class="left_padding"  style="color: #fff;list-style: none;text-align: left;padding-top: 1.5em;">
-		  <li class="mb-4 h4 text-white">CPD approved by RCSEd.</li>
-		  <li class="mb-4 h4 text-white">Faculty to candidate ratio 1:1.</li>
-		  <li class="mb-4 h4 text-white" >Covers all viva stations , short and intermediate clinicals.</li>  
-			   <li class="mb-4 h4 text-white">Faculty formally trained to provide high quality questions and feedback.</li>  
-				<li class="mb-4 h4 text-white">Suitable for candidates preparing for JCIE and JSCFE Fellowship Examinations.</li>
-				<li class="mb-4 h4 text-white">High quality questions aligned with the previous exams.</li>
+		<ul class="left_padding"  style="color: #fff; list-style: none;text-align: left;padding-top: -0.3em; padding-right: 6em;">
+		  <li class="mb-4 h5 text-white">CPD approved by RCSEd.</li>
+		  <li class="mb-4 h5 text-white">Faculty to candidate ratio 1:1.</li>
+		  <li class="mb-4 h5 text-white" >Covers all viva stations , short and intermediate clinicals.</li>  
+			   <li class="mb-4 h5 text-white">Faculty formally trained to provide high quality questions and feedback.</li>  
+				<li class="mb-4 h5 text-white">Suitable for candidates preparing for JCIE and JSCFE Fellowship Examinations.</li>
+				<li class="mb-4 h5 text-white">High quality questions aligned with the previous exams.</li>
 		</ul>
 
 	 </div>
@@ -278,14 +281,15 @@
 </style>
 <div class="slide-1 mb-5" id="courses-section" > 
    <div class="container" style="position: relative;">
-	<div style="position:   absolute; top: 0;right: 0;">
-	   <a class="btn-floating" style="background: #F44336;"
+<div style="position:   absolute; top: -20;right: 0;"> 
+    <a class="btn-floating" style="background: #F44336;"
 		 href="https://www.youtube.com/channel/UCpKGX6esbmV364XDaTQGckQ?view_as=subscriber" 
 	  target="_blank"  ><i class="fa fa-youtube"></i></a>
-	  <a class="btn-floating"  href="https://twitter.com/Dr_FirasArnaout" 
-	  target="_blank"  ><i class="fa fa-twitter"></i></a>
-	<a class="btn-floating"  href="https://www.facebook.com/TheFRCSMentor" 
+      <a class="btn-floating"  href="https://twitter.com/OrthoEvents" 
+	  target="_blank"  ><i class="fa fa-twitter"></i></a>  
+	<a class="btn-floating"  href="https://www.facebook.com/OrthoEvents" 
 	  target="_blank" style="background: #3F51B5;"><i class="fa fa-facebook"></i></a>
+	 </div>
 	 </div>
 	  <div class="row mb-3 mt-5 justify-content-center">
 	 <!--     <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
@@ -294,7 +298,7 @@
 	  </div>
 	  <div class="row m-0 p-0" id="courses_div" style="width:100%;display: block">
 	<style type="text/css">
-
+    
 	   .course_title_main {
 		   margin-bottom: 0!important;
 		   text-align: left!important;
@@ -366,30 +370,19 @@
 				<img class="d-block  mb-3 w-75" style="cursor:pointer;"
 					onclick="window.open('http://frcsmentor.co.uk')" src="{{asset('img/assoc_3.jpg')}}" />
 			</div>
+
+            
+           <div class="col-md-4 mx-auto">
+				<img class="d-block  mb-3 w-75" style="cursor:pointer;"
+					onclick="window.open('http://orthoevents.net')" src="{{asset('https://telegra.ph/file/eb22d638e6182a650ea70.jpg')}}" />
+			</div> 
+            
 		</div>
 		<h2 class="course_places_available">UPCOMING COURSES</h2>
 		  <div class="row">
 			 {{--<div class=" form-group" style="align-items: center;">--}}
-			  <!--<div class="col-md-3 form-group" style="align-items: center;">
-				  <div class="table-responsive">
-				  <table class="table table-sm table-borderless mb-0">
-				<tbody class="course_tbody">
-				  <tr>
-					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
-				  </tr>
-				  <tr>
-					<td><strong>9th January 2021</strong></td>
-				  </tr>
-				  </tbody>
-				  </table>
-				  </div>	
 
-
-				<button class="btn shopping_cart_btn courses_reg_btn"
-				 onclick="window.open('https://www.oruk.org/events/upcoming-events/vivaclincal')" />
-				 Register Here</button>
-			</div>-->
-
+<!--Courses-->
 		
 		   <div class="form-group col-md-3" style="align-items: center;">
 				  <div class="table-responsive">
@@ -481,7 +474,7 @@
 					<th class="pl-0 w-25" scope="row"><strong>Date</strong></th>
 				  </tr>
 				  <tr>
-					<td><strong>4 September 2021</strong></td>
+					<td><strong>2 September 2021</strong></td>
 				  </tr>
 				  </tbody>
 				  </table>
@@ -620,7 +613,7 @@
 	  <div class="row mb-3 mt-5 justify-content-center">
 	 <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
 		<h2 class="teachers-section-section-title section-title">Teaching Faculty</h2>
-        <h5 style="align:center; color:white;">We would love to hear from you, if you are interested to join us & become a faculty, please get in touch & <a href="mailto:thefrcsmentor@gmail.com" style="text-decoration:underline;">drop us an email.</a></h5>
+        <h5 style="align:center; color:white;">We would love to hear from you, if you are interested to join us & become a faculty, please get in touch & <strong><a href="mailto:thefrcsmentor@gmail.com" style="text-decoration:underline; text-decoration-color:#8afb20; text-decoration-thickness:.20rem; color:#FFFFFF;"></strong>drop us an email.</a></h5>
 	 </div>
 	  </div>
 	  <div class="row m-0 p-0 padding_neg_marging" id="teacher_div" style="width:100%">
@@ -1029,8 +1022,11 @@ confidence boost for area that I have done well in.
 	 </div>
 	  </div>
    </div>
+   
+   
+     
+   
 </div>
-
 
 <!-- -->
 <style>
